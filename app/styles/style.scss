@@ -35,6 +35,9 @@ h4 {
   margin-bottom: $padding-large-vertical;
   .media {
     padding: $padding-large-vertical;
+    .avatar {
+      width: 48px;
+    }
   }
 }
 .avatar {
@@ -114,5 +117,22 @@ h4 {
   }
   .no-backgroundsize & {
     background-image: none !important;
+  }
+}
+
+// spinner
+
+.spinner {
+  height: 200px;
+  width: 200px;
+  background: red;
+  margin: 0 auto;
+}
+
+// Tag Cloud
+@for $i from 1 through 10 {
+  .importance-#{$i} {
+    $count: $i / 10;
+    @include opacity($count);
   }
 }

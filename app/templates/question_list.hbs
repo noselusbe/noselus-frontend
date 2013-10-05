@@ -1,15 +1,18 @@
 <div class="activityfeed--story">
   <div class="media">
       <div class="pull-left">
-        <img src="http://uifaces.com/faces/_twitter/aaronbushnell_48.jpg" alt="" class="avatar media-object">
-        <img src="http://uifaces.com/faces/_twitter/poopsplat_48.jpg" alt="" class="avatar media-object">
+        {{{question.askedByPolitician.thumbImage}}}
+        {{! <img src="http://uifaces.com/faces/_twitter/poopsplat_48.jpg" alt="" class="avatar media-object"> }}
       </div>
       <div class="media-body">
         <small class="activityfeed--header--authors text-muted small">
           {{#linkTo 'politician' question.askedByPolitician}}
             {{question.askedByPolitician.fullName}}
           {{/linkTo}}
-          à demander à <a href="">Rudy de Motte</a>
+          a demandé à
+          {{#linkTo 'politician' question.askedToPolitician}}
+            {{question.askedToPolitician.fullName}}
+          {{/linkTo}}
         </small>
         <header class="activityfeed--header">
           <h3>

@@ -1,1 +1,2 @@
-Noselus.QuestionView = Ember.View.extend();
+Noselus.QuestionView = Ember.View.extend({
+});

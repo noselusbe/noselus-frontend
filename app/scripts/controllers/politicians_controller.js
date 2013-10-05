@@ -1,2 +1,3 @@
-Noselus.PoliticiansController = Ember.ArrayController.extend();
+Noselus.PoliticiansController = Ember.ArrayController.extend({
+});
 
