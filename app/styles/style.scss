@@ -1,0 +1,54 @@
+@import "compass";
+$brand-primary: #607de2;
+$body-bg: #eee;
+@import "bootstrap-sass/lib/bootstrap";
+
+
+/* Put your CSS here */
+html, body {
+    margin: 30px 0;
+}
+
+
+// Activityfeed
+
+.activityfeed--story {
+  border: 1px solid #eee;
+  background: #fff;
+  @include border-radius(3px);
+  margin-bottom: $padding-large-vertical;
+  .media {
+    padding: $padding-large-vertical;
+  }
+  .avatar {
+    background: #efefef;
+    @include border-radius(3px);
+    margin-bottom: $padding-large-vertical;
+    border: 1px solid #eee;
+    padding: 2px;
+  }
+}
+
+.activityfeed--socialbox--actions {
+  list-style: none;
+  padding: $padding-large-vertical;
+  border-top: 1px solid #eee;
+  margin: 0;
+  li {
+    display: inline-block;
+    &:after {
+      content: ' -';
+    }
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
+
+// Question
+.page-header {
+  margin-top: 0;
+}
+.question--text {
+  margin-bottom: $padding-large-vertical;
+}

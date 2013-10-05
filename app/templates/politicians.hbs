@@ -1,0 +1,9 @@
+<h1>Politicians</h1>
+
+<ul>
+ {{#each model}}
+ <li>{{#linkTo 'politician' this}}{{this.name}}{{/linkTo}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

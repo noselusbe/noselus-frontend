@@ -1,0 +1,12 @@
+<div class="col-xs-8 activityfeed">
+  {{#each question in controller}}
+    {{view Noselus.QuestionListView contentBinding='question'}}
+  {{/each}}
+</div>
+
+<aside class="col-xs-4 sidebar">
+  {{widget-map}}
+  {{widget-people title='People'}}
+  {{widget-category}}
+  {{widget-tagcloud}}
+</aside>

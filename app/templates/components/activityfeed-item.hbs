@@ -1,0 +1,30 @@
+<div class="activityfeed--story">
+  <div class="media">
+      <div class="pull-left">
+        <img src="/images/avatar.gif" alt="" class="avatar media-bject">
+        <br>
+        <img src="/images/avatar.gif" alt="" class="avatar media-bject">
+      </div>
+      <div class="media-body">
+        <small class="activityfeed--header--authors text-muted small"><a href="">Boris Rorsvort</a> à demander à <a href="">Elio Di Rupo</a></small>
+        <header class="activityfeed--header">
+          <h4>
+            {{#linkTo 'question' question}}
+              {{question.title}}
+            {{/linkTo}}
+          </h4>
+        </header>
+        <div class="activityfeed--excerpt">
+          <p>{{this.excerpt}}</p>
+          <p><a href="">Lire la suite</a></p>
+        </div>
+      </div>
+  </div>
+  <div class="activityfeed--socialbox">
+    <ul class="activityfeed--socialbox--actions">
+      <li><a href=''>J'aime</a></li>
+      <li><a href=''>Suivre</a></li>
+      <li><a href=''>Lire plus tard</a></li>
+    </ul>
+  </div>
+</div>
