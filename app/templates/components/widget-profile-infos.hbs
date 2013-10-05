@@ -5,9 +5,25 @@
   <div class="panel-body">
     <dl>
       <dt>Nom</dt>
-      <dd>{{fullName}}</dd>
+      <dd>{{model.fullName}}</dd>
       <dt>Parti</dt>
-      <dd>{{party}}</dd>
+      <dd>{{model.party}}</dd>
+      <dt>Adresse</dt>
+      <dd>
+        {{model.address}}
+        ,<br>
+        {{model.postalCode}}
+        ,<br>
+        {{model.town}}
+      </dd>
+      <dt>Téléphone</dt>
+      <dd>{{model.phone}}</dd>
+      <dt>Fax</dt>
+      <dd>{{model.fax}}</dd>
+      <dt>Email</dt>
+      <dd>{{model.email}}</dd>
+      <dt>Site</dt>
+      <dd>{{model.site}}</dd>
     </dl>
   </div>
 </div>

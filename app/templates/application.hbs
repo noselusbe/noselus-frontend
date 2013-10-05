@@ -14,9 +14,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#">Questions parlementaires</a></li>
-          <li><a href="#">Nos élus</a></li>
-          <li><a href="#">Thématiques</a></li>
+          <li>
+            {{#linkTo 'questions'}}Questions parlementaires{{/linkTo}}
+          </li>
+          <li>{{#linkTo 'politicians'}}Nos élus{{/linkTo}}</li>
+          <li>{{#linkTo 'categories'}}Thématiques{{/linkTo}}</li>
         </ul>
       </div><!-- /.navbar-collapse -->
   </div>

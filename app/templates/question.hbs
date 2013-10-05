@@ -7,20 +7,40 @@
 
   <div class="question--header page-header">
     <h1>{{title}}</h1>
-    <small class="question--header--authors text-muted small">
-      {{#linkTo 'politician' askedByPolitician}}
-        {{askedByPolitician.fullName}}
-      {{/linkTo}}
-      à demandé à <a href="">Rudy de Motte</a>
-    </small>
   </div>
 
-  <div class="question--text question--text-question">
-    {{{questionText}}}
+  <div class="question--text question--text-question media">
+    <div class="pull-left">
+      <img src="http://uifaces.com/faces/audrey_48.jpg" alt="" class="media-object avatar">
+    </div>
+    <div class="media-body">
+      <header>
+        <h4 class="question--header--authors text-muted small">
+          {{#linkTo 'politician' askedByPolitician}}
+            {{askedByPolitician.fullName}}
+          {{/linkTo}}
+          a demandé:
+        </h4>
+      </header>
+      {{{questionText}}}
+    </div>
   </div>
-
-  <div class="question--text question--text-question">
-    {{{answerText}}}
+  <hr>
+  <div class="question--text question--text-question media">
+    <div class="pull-left">
+      <img src="http://uifaces.com/faces/audrey_48.jpg" alt="" class="media-object avatar">
+    </div>
+    <div class="media-body">
+      <header>
+        <h4 class="question--header--authors text-muted small">
+          {{#linkTo 'politician' askedByPolitician}}
+            Rudy De motte
+          {{/linkTo}}
+          a répondu:
+        </h4>
+      </header>
+      {{{answerText}}}
+    </div>
   </div>
 </div>
 

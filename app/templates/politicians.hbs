@@ -1,11 +1,11 @@
-<h1>Nos elus</h1>
-
-<ul>
- {{#each politician in controller}}
-    <li>
-      {{#linkTo 'politician' politician}}{{politician.fullName}}{{/linkTo}}
-    </li>
-  {{/each}}
-</ul>
-
-{{outlet}}
+<div class="panel">
+  <div class="panel-body">
+    <div class='row'>
+     {{#each politician in controller}}
+        <div class='col-xs-2 mini-profile-small'>
+          {{widget-mini-profile model=politician}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

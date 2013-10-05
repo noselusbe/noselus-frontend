@@ -9,6 +9,22 @@ html, body {
     margin: 30px 0;
 }
 
+h1,h2,h3,h4 {
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 13px;
+}
+
+.media header {
+  h4 {
+    margin-top: 0;
+  }
+}
 
 // Activityfeed
 
@@ -20,13 +36,13 @@ html, body {
   .media {
     padding: $padding-large-vertical;
   }
-  .avatar {
-    background: #efefef;
-    @include border-radius(3px);
-    margin-bottom: $padding-large-vertical;
-    border: 1px solid #eee;
-    padding: 2px;
-  }
+}
+.avatar {
+  background: #efefef;
+  @include border-radius(3px);
+  margin-bottom: $padding-large-vertical;
+  border: 1px solid #eee;
+  padding: 2px;
 }
 
 .activityfeed--socialbox--actions {
@@ -60,7 +76,11 @@ html, body {
   position: relative;
   padding: 0;
   margin-bottom: 20px;
+  .mini-profile-small & {
+    height: 150px;
+  }
   .caption {
+    color: #fff;
     text-overflow: ellipsis;
     position: absolute;
     bottom: 0;

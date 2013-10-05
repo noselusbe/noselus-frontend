@@ -1,6 +1,18 @@
 (function() {
 
-var Noselus = window.Noselus = Ember.Application.create();
+var Noselus = window.Noselus = Ember.Application.create({
+
+  // Basic logging, e.g. "Transitioned into 'post'"
+  LOG_TRANSITIONS: true,
+
+  // Extremely detailed logging, highlighting every internal
+  // step made while transitioning into a route, including
+  // `beforeModel`, `model`, and `afterModel` hooks, and
+  // information about redirects and aborted transitions
+  LOG_VIEW_LOOKUPS: true,
+  LOG_ACTIVE_GENERATION: true
+
+});
 
 /* Order and include as you please. */
 
@@ -9,7 +21,17 @@ var Noselus = window.Noselus = Ember.Application.create();
 
 (function() {
 
-Noselus.PoliticianController = Ember.ArrayController.extend();
+Noselus.CategoriesController = Ember.ObjectController.extend({
+  // Implement your controller here.
+});
+
+
+
+})();
+
+(function() {
+
+Noselus.PoliticianController = Ember.ObjectController.extend();
 
 
 })();
@@ -40,6 +62,42 @@ Noselus.Store = DS.Store.extend({
     url: 'https://noselus.herokuapp.com'
   })
 });
+
+
+})();
+
+(function() {
+
+Noselus.Category = DS.Model.extend({});
+
+// probably should be mixed-in...
+Noselus.Category.reopen({
+  // certainly I'm duplicating something that exists elsewhere...
+  attributes: function(){
+    var attrs = [];
+    var model = this;
+    $.each(Em.A(Ember.keys(this.get('data.attributes'))), function(idx, key){
+      var pair = { key: key, value: model.get(key) };
+      attrs.push(pair);
+    });
+    return attrs;
+  }.property()
+});
+
+// delete below here if you do not want fixtures
+Noselus.Category.FIXTURES = [
+  
+  {
+    id: 0,
+    
+  },
+  
+  {
+    id: 1,
+    
+  }
+  
+];
 
 
 })();
@@ -87,12 +145,21 @@ Noselus.ApplicationRoute = Ember.Route.extend();
 
 (function() {
 
-Noselus.PoliticianRoute = Ember.Route.extend({
-  model: function(attr) {
-    return Noselus.Politician.find(attr.politician_id);
-  },
-  setupController: function(controller) {
-    controller.set('questions', Noselus.Question.find());
+Noselus.CategoriesRoute = Ember.Route.extend({
+  model: function() {
+    return Noselus.Category.find();
+  }
+});
+
+
+
+})();
+
+(function() {
+
+Noselus.CategoryRoute = Ember.Route.extend({
+  model: function(model) {
+    return Noselus.Category.find(model.category_id);
   }
 });
 
@@ -120,6 +187,24 @@ Noselus.QuestionsRoute = Ember.Route.extend({
   }
 });
 
+
+
+})();
+
+(function() {
+
+Noselus.CategoriesView = Ember.View.extend({
+    templateName: 'categories'
+});
+
+
+})();
+
+(function() {
+
+Noselus.CategoryView = Ember.View.extend({
+    templateName: 'category'
+});
 
 
 })();
@@ -175,10 +260,28 @@ Noselus.QuestionsView = Ember.View.extend({
 (function() {
 
 Noselus.Router.map(function () {
+
+  this.resource('categories');
+  this.resource('category', { path: '/categories/:category_id' });
+
   this.resource('politicians');
   this.resource('politician', { path: '/politicians/:politician_id' });
+
   this.resource('questions');
   this.resource('question', { path: '/questions/:question_id' });
+
+});
+
+
+})();
+
+(function() {
+
+Noselus.WidgetMapProfileComponent = Ember.Component.extend({
+  classNames: ['widget'],
+  style: function() {
+    return 'style';
+  }
 });
 
 
