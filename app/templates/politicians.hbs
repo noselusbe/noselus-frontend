@@ -1,8 +1,10 @@
-<h1>Politicians</h1>
+<h1>Nos elus</h1>
 
 <ul>
- {{#each model}}
- <li>{{#linkTo 'politician' this}}{{this.name}}{{/linkTo}}</li>
+ {{#each politician in controller}}
+    <li>
+      {{#linkTo 'politician' politician}}{{politician.fullName}}{{/linkTo}}
+    </li>
   {{/each}}
 </ul>
 

@@ -4,18 +4,24 @@
       Retours aux questions
     {{/linkTo}}
   </div>
+
   <div class="question--header page-header">
     <h1>{{title}}</h1>
-    <small class="question--header--authors text-muted small"><a href="">Boris Rorsvort</a> à demandé à <a href="">Elio Di Rupo</a></small>
+    <small class="question--header--authors text-muted small">
+      {{#linkTo 'politician' askedByPolitician}}
+        {{askedByPolitician.fullName}}
+      {{/linkTo}}
+      à demandé à <a href="">Rudy de Motte</a>
+    </small>
   </div>
 
   <div class="question--text question--text-question">
     {{{questionText}}}
   </div>
+
   <div class="question--text question--text-question">
     {{{answerText}}}
   </div>
-
 </div>
 
 <aside class="col-xs-4 sidebar">

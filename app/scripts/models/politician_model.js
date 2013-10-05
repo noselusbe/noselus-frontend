@@ -1,30 +1,11 @@
-Noselus.Politician = DS.Model.extend({});
-
-// probably should be mixed-in...
-Noselus.Politician.reopen({
-  // certainly I'm duplicating something that exists elsewhere...
-  attributes: function(){
-    var attrs = [];
-    var model = this;
-    $.each(Em.A(Ember.keys(this.get('data.attributes'))), function(idx, key){
-      var pair = { key: key, value: model.get(key) };
-      attrs.push(pair);
-    });
-    return attrs;
-  }.property()
+Noselus.Politician = DS.Model.extend({
+  fullName: DS.attr('string'),
+  party: DS.attr('string'),
+  address: DS.attr('string'),
+  postalCode: DS.attr('string'),
+  town: DS.attr('string'),
+  phone: DS.attr('string'),
+  fax: DS.attr('string'),
+  email: DS.attr('string'),
+  site: DS.attr('string')
 });
-
-// delete below here if you do not want fixtures
-Noselus.Politician.FIXTURES = [
-
-  {
-    id: 0,
-    name: 'Elio Di Rupo'
-  },
-
-  {
-    id: 1,
-    name: 'Elio Di Rupo'
-  }
-
-];

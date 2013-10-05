@@ -1,18 +1,14 @@
-<h1>Politician</h1>
-
-<table>
-  {{#each model.attributes}}
-  <tr>
-    <td>
-      <strong>{{this.key}}:</strong>
-    </td>
-    <td>
-      {{this.value}}
-    </td>
-  </tr>
+<div class="col-xs-8 activityfeed">
+  {{#each question in questions}}
+    {{view Noselus.QuestionListView contentBinding='question'}}
   {{/each}}
-</table>
+</div>
 
-{{#linkTo 'user.edit' model}}Change{{/linkTo}}
-
-{{outlet}}
+<aside class="col-xs-4 sidebar">
+  {{widget-mini-profile fullName='fullName'}}
+  {{widget-profile-infos fullName=fullName}}
+  {{widget-map}}
+  {{widget-people}}
+  {{widget-category}}
+  {{widget-tagcloud}}
+</aside>

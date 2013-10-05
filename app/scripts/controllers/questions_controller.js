@@ -1,4 +1,2 @@
-Noselus.QuestionsController = Ember.ArrayController.extend({
-  // Implement your controller here.
-});
+Noselus.QuestionsController = Ember.ArrayController.extend();
 

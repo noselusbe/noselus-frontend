@@ -1,3 +1,4 @@
 Noselus.PoliticianView = Ember.View.extend({
-    templateName: 'politician'
+    templateName: 'politician',
+    classNames: ['row']
 });

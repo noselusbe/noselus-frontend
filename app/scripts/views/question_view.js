@@ -1,5 +1,1 @@
-Noselus.QuestionView = Ember.View.extend({
-  didInsertElement: function (argument) {
-
-  }
-});
+Noselus.QuestionView = Ember.View.extend();

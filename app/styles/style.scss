@@ -52,3 +52,47 @@ html, body {
 .question--text {
   margin-bottom: $padding-large-vertical;
 }
+
+// Widget
+
+.mini-profile {
+  height: 350px;
+  position: relative;
+  padding: 0;
+  margin-bottom: 20px;
+  .caption {
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 0;
+    background: #000;
+    opacity: 0.8;
+    width: 100%;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+
+// CENTERED BACKGROUND
+// We use this to center an image inside a div. e.g. avatars, ...
+// It requires to be linked to a div that has a (min-)height
+// --------------------------------------------------
+.centered-background {
+  background-color: #000;
+  background-position: 50%;
+  background-repeat: none;
+  background-size: cover !important;
+  overflow: hidden;
+  position: relative;
+  img {
+    // background-image is inline
+    width: 100%;
+    html.backgroundsize & {
+      display: none;
+    }
+  }
+  .no-backgroundsize & {
+    background-image: none !important;
+  }
+}

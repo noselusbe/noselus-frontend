@@ -1,6 +1,6 @@
 Noselus.PoliticiansRoute = Ember.Route.extend({
   model: function() {
-    return politicians;
+    return Noselus.Politician.find();
   }
 });
 

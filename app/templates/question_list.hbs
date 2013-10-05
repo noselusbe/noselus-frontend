@@ -1,12 +1,16 @@
 <div class="activityfeed--story">
   <div class="media">
       <div class="pull-left">
-        <img src="/images/avatar.gif" alt="" class="avatar media-bject">
-        <br>
-        <img src="/images/avatar.gif" alt="" class="avatar media-bject">
+        <img src="http://uifaces.com/faces/_twitter/aaronbushnell_48.jpg" alt="" class="avatar media-object">
+        <img src="http://uifaces.com/faces/_twitter/poopsplat_48.jpg" alt="" class="avatar media-object">
       </div>
       <div class="media-body">
-        <small class="activityfeed--header--authors text-muted small"><a href="">Boris Rorsvort</a> à demander à <a href="">Elio Di Rupo</a></small>
+        <small class="activityfeed--header--authors text-muted small">
+          {{#linkTo 'politician' question.askedByPolitician}}
+            {{question.askedByPolitician.fullName}}
+          {{/linkTo}}
+          à demander à <a href="">Rudy de Motte</a>
+        </small>
         <header class="activityfeed--header">
           <h4>
             {{#linkTo 'question' question}}
@@ -16,7 +20,11 @@
         </header>
         <div class="activityfeed--excerpt">
           <p>{{question.excerpt}}</p>
-          <p><a href="">Lire la suite</a></p>
+          <p>
+            {{#linkTo 'question' question}}
+              Lire la suite
+            {{/linkTo}}
+          </p>
         </div>
       </div>
   </div>
