@@ -80,7 +80,8 @@ Noselus.PoliticianController = Ember.ObjectController.extend({
     name: "Coopération au développement",
     tagClass: 'importance-5'
   }
-  ]
+  ],
+  questions: []
 });
 
 Noselus.WidgetMiniProfileComponent = Ember.Component.extend({
