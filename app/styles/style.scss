@@ -160,3 +160,16 @@ h4 {
     margin-bottom: $padding-large-vertical;
    }
 }
+
+.WAL,
+.FED {
+  float: right;
+  width: 32px;
+  height: 32px;
+}
+.WAL {
+  background-image: url('/images/logo-wal.png');
+}
+.FED {
+  background-image: url('/images/logo-fed.png');
+}

@@ -8,6 +8,7 @@ Noselus.Politician = DS.Model.extend({
   fax: DS.attr('string'),
   email: DS.attr('string'),
   site: DS.attr('string'),
+  assembly: DS.attr('string'),
   thumb: function() {
     return 'https://noselus-test.herokuapp.com/politicians/picture/'+this.get('id')
   }.property(),

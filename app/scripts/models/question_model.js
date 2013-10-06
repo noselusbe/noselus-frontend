@@ -19,40 +19,9 @@ Noselus.Question = DS.Model.extend({
 Noselus.Question.reopenClass({
   search: function(criteria) {
     var replaced = criteria.split(' ').join('+');
-    $('<div class="spinner"></div>').insertAfter('.search-form').spin();
-    $.getJSON("http://noselus-test.herokuapp.com/questions?+"+replaced, function(data) {
-        $('.spinner').spin(false);
-        return data;
-    });
-    // $.getJSON('http://noselus-test.herokuapp.com/questions', {q: replaced}, function(data, textStatus) {
-    //     $('.spinner').spin(false);
-    //     return data;
-    // }).done(function() {
-    //   console.log( "second success" );
-    // })
-    // .fail(function() {
-    //   console.log( "error" );
-    // })
-    // .always(function() {
-    //   console.log( "complete" );
-    // });
-
-    // $.ajax({
-    //   url: 'http://noselus-test.herokuapp.com/questions',
-    //   type: 'GET',
-    //   // dataType: 'json',
-    //   data: {q: replaced},
-    //   beforeSend: function(xhr) {
-
-    //   },
-    //   error: function(xhr, textStatus, errorThrown) {
-
-    //   },
-    //   success: function (data, textStatus) {
-    //     $('.spinner').spin(false);
-    //     return data;
-    //   }
-    // });
+    $('<div class="spinner"></div>').insertAfter('.search-form').show().spin();
+    var results = Noselus.Question.find({q: replaced});
+    return results;
   }
 });
 

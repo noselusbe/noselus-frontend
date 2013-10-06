@@ -1,13 +1,15 @@
 <div class="activityfeed--story">
   <div class="media">
       <div class="pull-left">
-        {{{question.askedByPolitician.thumbImage}}}
-        {{{question.askedToPolitician.thumbImage}}}
+        {{#linkTo 'politician' question.askedByPolitician}}
+          {{{question.askedByPolitician.thumbImage}}}
+        {{/linkTo}}
+        {{#linkTo 'politician' question.askedToPolitician}}
+          {{{question.askedToPolitician.thumbImage}}}
+        {{/linkTo}}
       </div>
       <div class="media-body">
         <div {{bindAttr class='question.askedByPolitician.assembly'}}></div>
-        {{! <img src="/images/logo-fed.png"></div> }}
-        <div class="pull-right" rel='tooltip' title='Parlement Wallonne'><img src="/images/logo-wal.png"></div>
         <small class="activityfeed--header--authors text-muted small">
           {{#linkTo 'politician' question.askedByPolitician}}
             {{question.askedByPolitician.fullName}}
