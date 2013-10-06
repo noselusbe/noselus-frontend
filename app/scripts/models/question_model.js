@@ -5,7 +5,7 @@ Noselus.Question = DS.Model.extend({
   answerText: DS.attr('string'),
   askedBy: DS.attr('number'),
   askedTo: DS.attr('number'),
-  dateAsked: DS.attr('date'),
+  dateAsked: DS.attr('string'),
   askedByPolitician: function() {
     politician = Noselus.Politician.find(this.get('askedBy'));
     return politician;
