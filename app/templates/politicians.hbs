@@ -4,11 +4,15 @@
       <h2>Élus du Parlement wallon</h2>
     </div>
     <div class="row">
-      {{#each politician in politicianFromWal}}
-        <div class='col-xs-4 mini-profile-small'>
-          {{widget-mini-profile model=politician}}
-        </div>
-      {{/each}}
+      {{#if politicianFromWal}}
+        {{#each politician in politicianFromWal}}
+          <div class='col-xs-4 mini-profile-small'>
+            {{widget-mini-profile model=politician}}
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="spinner"></div>
+      {{/if}}
     </div>
   </div>
   <div class="col-xs-6">
@@ -16,11 +20,15 @@
       <h2>Élus du Parlement Fédéral</h2>
     </div>
     <div class="row">
-      {{#each politician in politicianFromFed}}
-        <div class='col-xs-4 mini-profile-small'>
-          {{widget-mini-profile model=politician}}
-        </div>
-      {{/each}}
+      {{#if politicianFromFed}}
+        {{#each politician in politicianFromFed}}
+          <div class='col-xs-4 mini-profile-small'>
+            {{widget-mini-profile model=politician}}
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="spinner"></div>
+      {{/if}}
     </div>
   </div>
 </div>
