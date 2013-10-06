@@ -9,6 +9,8 @@
   </div>
   {{#each question in controller}}
     {{view Noselus.QuestionListView contentBinding='question'}}
+  {{else}}
+    <div class="alert alert-warning">Nous n'avons pas pu trouver de questions repondant à vos critère</div>
   {{/each}}
 </div>
 

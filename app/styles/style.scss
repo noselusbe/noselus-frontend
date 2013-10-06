@@ -49,9 +49,13 @@ h4 {
   width: 48px;
 }
 
-.mini-profile.avatar {
-  width: auto;
+.mini-profile {
+  position: relative;
+  .avatar {
+    width: auto;
+  }
 }
+
 
 .activityfeed--header--authors {
   margin-bottom: $padding-large-vertical;
@@ -166,10 +170,22 @@ h4 {
   float: right;
   width: 32px;
   height: 32px;
+  .mini-profile & {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 .WAL {
   background-image: url('/images/logo-wal.png');
 }
 .FED {
   background-image: url('/images/logo-fed.png');
+}
+
+
+
+//back button
+.back-button {
+  margin-top: $padding-large-vertical;
 }
