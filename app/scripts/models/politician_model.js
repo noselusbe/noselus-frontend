@@ -10,9 +10,9 @@ Noselus.Politician = DS.Model.extend({
   site: DS.attr('string'),
   assembly: DS.attr('string'),
   thumb: function() {
-    return 'https://noselus-test.herokuapp.com/politicians/picture/'+this.get('id')
+    return 'https://noselus.herokuapp.com/politicians/picture/'+this.get('id')
   }.property(),
   thumbImage: function() {
-    return '<img src="https://noselus-test.herokuapp.com/politicians/picture/'+this.get('id')+'" class="avatar media-object"/>'
+    return '<img src="https://noselus.herokuapp.com/politicians/picture/'+this.get('id')+'" class="avatar media-object"/>'
   }.property()
 });
