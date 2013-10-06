@@ -2,28 +2,44 @@
   <div class="panel-heading">
     Informations
   </div>
-  <div class="panel-body">
+  <div class="panel-body profile--infos">
     <dl>
       <dt>Nom</dt>
       <dd>{{model.fullName}}</dd>
-      <dt>Parti</dt>
-      <dd>{{model.party}}</dd>
-      <dt>Adresse</dt>
-      <dd>
-        {{model.address}}
-        ,<br>
-        {{model.postalCode}}
-        ,<br>
-        {{model.town}}
-      </dd>
-      <dt>Téléphone</dt>
-      <dd>{{model.phone}}</dd>
-      <dt>Fax</dt>
-      <dd>{{model.fax}}</dd>
-      <dt>Email</dt>
-      <dd>{{model.email}}</dd>
-      <dt>Site</dt>
-      <dd>{{model.site}}</dd>
+      {{#if model.party}}
+        <dt>Parti</dt>
+        <dd>{{model.party}}</dd>
+      {{/if}}
+      {{#if model.address}}
+        <dt>Adresse</dt>
+        <dd>
+          {{model.address}}
+          ,<br>
+          {{model.postalCode}}
+          ,<br>
+          {{model.town}}
+        </dd>
+      {{/if}}
+      {{#if model.phone}}
+        <dt>Téléphone</dt>
+        <dd>{{model.phone}}</dd>
+      {{/if}}
+      {{#if model.fax}}
+        <dt>Fax</dt>
+        <dd>{{model.fax}}</dd>
+      {{/if}}
+      {{#if model.email}}
+        <dt>Email</dt>
+        <dd>{{model.email}}</dd>
+      {{/if}}
+      {{#if model.site}}
+        <dt>Site</dt>
+        <dd>
+          <a {{bindAttr href=model.site}}>
+            {{model.site}}
+          </a>
+        </dd>
+      {{/if}}
     </dl>
   </div>
 </div>
