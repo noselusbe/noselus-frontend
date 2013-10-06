@@ -2,9 +2,11 @@
   <div class="media">
       <div class="pull-left">
         {{{question.askedByPolitician.thumbImage}}}
-        {{! <img src="http://uifaces.com/faces/_twitter/poopsplat_48.jpg" alt="" class="avatar media-object"> }}
+        {{{question.askedToPolitician.thumbImage}}}
       </div>
       <div class="media-body">
+        {{! <div class="pull-right"><img src="/images/logo-fed.png"></div> }}
+        <div class="pull-right" rel='tooltip' title='Parlement Wallonne'><img src="/images/logo-wal.png"></div>
         <small class="activityfeed--header--authors text-muted small">
           {{#linkTo 'politician' question.askedByPolitician}}
             {{question.askedByPolitician.fullName}}
