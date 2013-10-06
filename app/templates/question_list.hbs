@@ -5,7 +5,8 @@
         {{{question.askedToPolitician.thumbImage}}}
       </div>
       <div class="media-body">
-        {{! <div class="pull-right"><img src="/images/logo-fed.png"></div> }}
+        <div {{bindAttr class='question.askedByPolitician.assembly'}}></div>
+        {{! <img src="/images/logo-fed.png"></div> }}
         <div class="pull-right" rel='tooltip' title='Parlement Wallonne'><img src="/images/logo-wal.png"></div>
         <small class="activityfeed--header--authors text-muted small">
           {{#linkTo 'politician' question.askedByPolitician}}
@@ -15,6 +16,7 @@
           {{#linkTo 'politician' question.askedToPolitician}}
             {{question.askedToPolitician.fullName}}
           {{/linkTo}}
+          {{format-date dateAsked}}
         </small>
         <header class="activityfeed--header">
           <h3>

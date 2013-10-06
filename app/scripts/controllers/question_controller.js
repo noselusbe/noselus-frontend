@@ -1,5 +1,5 @@
-Noselus.QuestionsController = Ember.ArrayController.extend({
-  tags: [
+Noselus.QuestionController = Ember.ObjectController.extend({
+    tags: [
   {
     name: 'Budget',
     tagClass: 'importance-1'
@@ -80,10 +80,5 @@ Noselus.QuestionsController = Ember.ArrayController.extend({
     name: "Coopération au développement",
     tagClass: 'importance-5'
   }
-  ],
-  search: function() {
-    var _this = this;
-    var result = Noselus.Question.search($('.search-field').val());
-    this.set('content', result);
-  }
+  ]
 });

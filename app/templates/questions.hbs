@@ -1,4 +1,12 @@
 <div class="col-xs-8 activityfeed">
+  <div class="panel search-form form">
+    <div class="panel-body">
+      <div class="form-group">
+        <input type="text" class="form-control search-field" placeholder="Rechercher une question, une thématique ou un politique">
+      </div>
+      <button {{action 'search'}} class="btn btn-default">Chercher</button>
+    </div>
+  </div>
   {{#each question in controller}}
     {{view Noselus.QuestionListView contentBinding='question'}}
   {{/each}}
@@ -6,7 +14,6 @@
 
 <aside class="col-xs-4 sidebar">
   {{widget-map}}
-  {{widget-people title='People'}}
-  {{widget-category}}
-  {{widget-tagcloud}}
+  {{widget-category categories=tags}}
+  {{widget-tagcloud tags=tags}}
 </aside>

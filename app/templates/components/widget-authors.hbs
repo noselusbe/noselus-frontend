@@ -3,21 +3,26 @@
     Auteurs
   </div>
   <div class="panel-body">
-    <div class="col-xs-6">
-      <div class='thumbnail'>
-        <img src="http://uifaces.com/faces/audrey_128.jpg">
-        <div class="caption">
-          <a href="">Jane doe</a>
-        </div>
+    <div class="media">
+      <div class="pull-left">
+        {{{askedBy.thumbImage}}}
+      </div>
+      <div class="media-body">
+        {{#linkTo 'politician' askedTo}}
+          {{askedBy.fullName}}
+        {{/linkTo}}
       </div>
     </div>
-
-    <div class="col-xs-6">
-      <div class='thumbnail'>
-        <img src="http://uifaces.com/faces/audrey_128.jpg">
-        <div class="caption">
-          <a href="">Jane doe</a>
+    <div class="media">
+      {{#if askedTo.thumbImage}}
+        <div class="pull-left">
+          {{{askedTo.thumbImage}}}
         </div>
+      {{/if}}
+      <div class="media-body">
+        {{#linkTo 'politician' askedTo}}
+          {{askedTo.fullName}}
+        {{/linkTo}}
       </div>
     </div>
   </div>

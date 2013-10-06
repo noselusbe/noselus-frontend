@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
     {{#each tag in tags}}
-      {{tag.name}}
+      <span {{bindAttr class="tag.tagClass"}}>{{tag.name}}</span>
     {{/each}}
   </div>
 </div>
