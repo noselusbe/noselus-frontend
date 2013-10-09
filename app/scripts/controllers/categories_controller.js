@@ -1,4 +1,4 @@
-Noselus.CategoriesController = Ember.ObjectController.extend({
+Noselus.CategoriesController = Ember.ArrayController.extend({
   // Implement your controller here.
 });
 
