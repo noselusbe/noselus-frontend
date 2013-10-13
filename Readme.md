@@ -9,7 +9,7 @@ This the frontend application for the
 * Compass - [http://compass-style.org/](http://compass-style.org/)
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
 
-## How to contribute to the project
+## Install the project locally
 
 ```
 // Install Node - http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/
@@ -21,3 +21,33 @@ This the frontend application for the
 // Create test using Mocha js 
 // Create a pull request
 ```
+Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
+
+More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the Code Guide, maintained by Mark Otto.
+
+Editor preferences are available in the editor config for easy use in common text editors. Read more and download plugins at http://editorconfig.org.
+
+## Guideline 
+
+### Contributing
+
+Have a bug or a feature request? Please open a [new issue](https://github.com/noselusbe/noselus-frontend/issues). Before opening any issue, please search for existing issues and read the Issue Guidelines, written by Boris Rorsvort.
+
+
+### Bugs
+
+We only accept issues that are bug reports or feature requests. Bugs must be isolated and reproducible problems that we can fix within the Noselus-frontend code.
+
+Search for existing issues. Try not to duplicate issues. Moreover, the issue may have already been resolved with a fix available.
+Create an isolated and reproducible test case. Be sure the problem exists in Noselus-frontend code with a reduced test case that should be included in each bug report.
+
+Share as much information as possible. Include operating system and version, browser and version. Also include steps to reproduce the bug.
+
+### Pull requests
+
+* CSS changes must be done in .scss files first, never just the compiled .css files.
+* Try not to pollute your pull request with unintended changes -- keep them simple and small
+* Try to share which browsers your code has been tested in before submitting a pull request
+
+
+
