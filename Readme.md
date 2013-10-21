@@ -1,6 +1,6 @@
 # NosElus Frontend application
 
-This the frontend application for the 
+This the frontend application for the
 
 ## Tools
 
@@ -18,16 +18,19 @@ This the frontend application for the
 // npm install
 // grunt server
 // Create a feature branch for your changes
-// Create test using Mocha js 
+// Create test using Mocha js
 // Create a pull request
 ```
 Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
 
-More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the Code Guide, maintained by Mark Otto.
+More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests.
 
-Editor preferences are available in the editor config for easy use in common text editors. Read more and download plugins at http://editorconfig.org.
+## Project Management
 
-## Guideline 
+For all roadmaps and project management related stuffs please signup to the trello board.
+[trello.com/b/JRnHcMGG/noselus](trello.com/b/JRnHcMGG/noselus)
+
+## Guideline
 
 ### Contributing
 
