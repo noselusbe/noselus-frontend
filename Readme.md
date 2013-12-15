@@ -8,6 +8,9 @@ This the frontend application for the
 * Ember.js - [http://emberjs.com](http://emberjs.com)
 * Compass - [http://compass-style.org/](http://compass-style.org/)
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
+* Code climate 
+
+[![Code Climate](https://codeclimate.com/repos/525c31e956b10250eb006ec7/badges/fb8c70d3db6a19413f12/gpa.png)](https://codeclimate.com/repos/525c31e956b10250eb006ec7/feed)
 
 ## Install the project locally
 
