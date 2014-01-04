@@ -12,6 +12,7 @@ This the frontend application for the
 
 [![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ## Install the project locally
 
