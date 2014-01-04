@@ -6,9 +6,10 @@ This the frontend application for the
 
 * Yeoman - [http://yeoman.io/](http://yeoman.io/)
 * Ember.js - [http://emberjs.com](http://emberjs.com)
+* Bower - [http://bower.io/](http://bower.io/)
 * Compass - [http://compass-style.org/](http://compass-style.org/)
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
-* Code climate 
+* Code climate [https://codeclimate.com/github/noselusbe/noselus-frontend](https://codeclimate.com/github/noselusbe/noselus-frontend)
 
 [![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
@@ -19,12 +20,17 @@ This the frontend application for the
 ```
 // Install Node - http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/
 // Install Yeoman - https://github.com/yeoman/yeoman/wiki/Getting-Started
+// Install Bower - http://bower.io/
 // Fork The project https://github.com/noselusbe/noselus-frontend](https://github.com/noselusbe/noselus-frontend
-// npm install
+npm install
+bower install
 // grunt server
 // Create a feature branch for your changes
+// Make sure sure you can build the project without JHint errors
+grunt build
 // Create test using Mocha js
-// Create a pull request
+grunt test
+// Create a pull request ...
 ```
 Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
 
@@ -32,16 +38,13 @@ More over, if your pull request contains JavaScript patches or features, you mus
 
 ## Project Management
 
-For all roadmaps and project management related stuffs please signup to the trello board.
-
-[http://trello.com/b/JRnHcMGG/noselus](http://trello.com/b/JRnHcMGG/noselus)
+For all roadmaps and project management related stuffs, refer to the github issues and Milestones
 
 ## Guideline
 
 ### Contributing
 
-Have a bug or a feature request? Please open a [new issue](https://github.com/noselusbe/noselus-frontend/issues). Before opening any issue, please search for existing issues and read the Issue Guidelines, written by Boris Rorsvort.
-
+Have a bug or a feature request? Please open a [new issue](https://github.com/noselusbe/noselus-frontend/issues). Before opening any issue, please search for existing issues and read the Contributing Guidelines.
 
 ### Bugs
 
