@@ -18,5 +18,17 @@
   "strict": false,
   "trailing": false,
   "smarttabs": false,
-  "jquery": false
+  "jquery": false,
+  "globals": {
+    "$": false,
+    "Noselus": true,
+    "alert": false,
+    "window": false,
+    "jQuery": false,
+    "document": false,
+    "navigator": false,
+    "Modernizr": false,
+    "require": false,
+    "module": false
+  }
 }

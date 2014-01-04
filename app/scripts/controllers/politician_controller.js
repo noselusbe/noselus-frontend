@@ -4,7 +4,7 @@ Noselus.PoliticianController = Ember.ObjectController.extend({
 
 Noselus.WidgetMiniProfileComponent = Ember.Component.extend({
   backgroundThumb: function() {
-    return 'background-image: url("'+this.get('model.thumb')+'")'
+    return 'background-image: url("'+this.get('model.thumb')+'")';
   }.property()
 });
 
