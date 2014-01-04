@@ -1,18 +1,17 @@
-var Noselus = window.Noselus = Ember.Application.create({
+var logger = {};
 
-  // Basic logging, e.g. "Transitioned into 'post'"
-  LOG_TRANSITIONS: true,
+if (AppConfig.env === 'development') {
+  logger = {
+    LOG_TRANSITIONS: true,
+    LOG_VIEW_LOOKUPS: true,
+    LOG_ACTIVE_GENERATION: true
+  };
+}
 
-  // Extremely detailed logging, highlighting every internal
-  // step made while transitioning into a route, including
-  // `beforeModel`, `model`, and `afterModel` hooks, and
-  // information about redirects and aborted transitions
-  LOG_VIEW_LOOKUPS: true,
-  LOG_ACTIVE_GENERATION: true
+// Create Ember App
+var Noselus = window.Noselus = Ember.Application.create(logger);
 
-});
-
-/* Order and include as you please. */
+// Importing application files
 require('scripts/controllers/*');
 require('scripts/store');
 require('scripts/models/*');
