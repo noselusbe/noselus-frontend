@@ -1,6 +1,6 @@
 # NosElus Frontend application
 
-This the frontend application for the
+This the frontend application for the Noselus.be application
 
 ## Tools
 
@@ -24,7 +24,7 @@ This the frontend application for the
 // Fork The project https://github.com/noselusbe/noselus-frontend](https://github.com/noselusbe/noselus-frontend
 npm install
 bower install
-// grunt server
+grunt server
 // Create a feature branch for your changes
 // Make sure sure you can build the project without JHint errors
 grunt build
