@@ -1,13 +1,10 @@
 <div class="col-xs-8 activityfeed">
   {{#each question in questions}}
-    {{view Noselus.QuestionListView contentBinding='question'}}
+    {{render 'question_list' question}}
   {{/each}}
 </div>
 
 <aside class="col-xs-4 sidebar">
   {{widget-mini-profile model=model}}
   {{widget-profile-infos model=model}}
-  {{widget-map-profile model=model}}
-  {{widget-category categories=tags}}
-  {{widget-tagcloud tags=tags}}
 </aside>

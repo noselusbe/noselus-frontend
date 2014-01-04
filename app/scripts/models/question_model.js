@@ -1,17 +1,19 @@
+var attr = DS.attr;
+
 Noselus.Question = DS.Model.extend({
-  title        : DS.attr('string'),
-  excerpt      : DS.attr('string'),
-  questionText : DS.attr('string'),
-  answerText   : DS.attr('string'),
-  askedBy      : DS.attr('number'),
-  askedTo      : DS.attr('number'),
-  dateAsked    : DS.attr('string'),
+  title        : attr('string'),
+  excerpt      : attr('string'),
+  questionText : attr('string'),
+  answerText   : attr('string'),
+  askedBy      : attr('number'),
+  askedTo      : attr('number'),
+  dateAsked    : attr('string'),
   askedByPolitician: function() {
-    politician = Noselus.Politician.find(this.get('askedBy'));
+    politician = this.store.find('politician', this.get('askedBy'));
     return politician;
   }.property(),
   askedToPolitician: function() {
-    politician = Noselus.Politician.find(this.get('askedTo'));
+    politician = this.store.find('politician',this.get('askedTo'));
     return politician;
   }.property()
 });
@@ -20,7 +22,7 @@ Noselus.Question.reopenClass({
   search: function(criteria) {
     var replaced = criteria.split(' ').join('+');
     $('<div class="spinner"></div>').insertAfter('.search-form').show().spin();
-    var results = Noselus.Question.find({q: replaced});
+    var results = this.store.find('question', {q: replaced});
     return results;
   }
 });

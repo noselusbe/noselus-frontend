@@ -1,3 +1,5 @@
 Noselus.QuestionListView = Ember.View.extend({
-  templateName: 'question_list'
+  templateName: 'question_list',
+  tagName: 'div',
+  classNames: ['activityfeed--story']
 });

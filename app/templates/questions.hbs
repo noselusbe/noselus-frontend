@@ -1,4 +1,4 @@
-<div class="col-xs-8 activityfeed">
+<div class="col-xs-12 activityfeed">
   <div class="panel search-form form">
     <div class="panel-body">
       <div class="form-group">
@@ -8,14 +8,10 @@
     </div>
   </div>
   {{#each question in controller}}
-    {{view Noselus.QuestionListView contentBinding='question'}}
+    {{!-- {{view Noselus.QuestionListView question: question}} --}}
+    {{render 'question_list' question}}
   {{else}}
     <div class="alert alert-warning">Nous n'avons pas pu trouver de questions repondant à vos critère</div>
   {{/each}}
 </div>
 
-<aside class="col-xs-4 sidebar">
-  {{widget-map}}
-  {{widget-category categories=tags}}
-  {{widget-tagcloud tags=tags}}
-</aside>

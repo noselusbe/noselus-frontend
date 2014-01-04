@@ -1,47 +1,38 @@
-<div class="activityfeed--story">
-  <div class="media">
-      <div class="pull-left">
-        {{#linkTo 'politician' question.askedByPolitician}}
-          {{{question.askedByPolitician.thumbImage}}}
-        {{/linkTo}}
-        {{#linkTo 'politician' question.askedToPolitician}}
-          {{{question.askedToPolitician.thumbImage}}}
-        {{/linkTo}}
+<div class="media">
+    <div class="pull-left">
+      {{#link-to 'politician' askedByPolitician}}
+        {{{askedByPolitician.thumbImage}}}
+      {{/link-to}}
+      {{#link-to 'politician' askedToPolitician}}
+        {{{askedToPolitician.thumbImage}}}
+      {{/link-to}}
+    </div>
+    <div class="media-body">
+      <div {{bind-attr class='askedByPolitician.assembly'}}></div>
+      <small class="activityfeed--header--authors text-muted small">
+        {{#link-to 'politician' askedByPolitician}}
+          {{askedByPolitician.fullName}}
+        {{/link-to}}
+        a demandé à
+        {{#link-to 'politician' askedToPolitician}}
+          {{askedToPolitician.fullName}}
+        {{/link-to}}
+        {{format-date dateAsked}}
+      </small>
+      <header class="activityfeed--header">
+        <h3>
+          {{#link-to 'question' question}}
+            {{title}}
+          {{/link-to}}
+        </h3>
+      </header>
+      <div class="activityfeed--excerpt">
+        <p>{{{excerpt}}}</p>
+        <p>
+          {{#link-to 'question' question}}
+            Lire la suite
+          {{/link-to}}
+        </p>
       </div>
-      <div class="media-body">
-        <div {{bindAttr class='question.askedByPolitician.assembly'}}></div>
-        <small class="activityfeed--header--authors text-muted small">
-          {{#linkTo 'politician' question.askedByPolitician}}
-            {{question.askedByPolitician.fullName}}
-          {{/linkTo}}
-          a demandé à
-          {{#linkTo 'politician' question.askedToPolitician}}
-            {{question.askedToPolitician.fullName}}
-          {{/linkTo}}
-          {{format-date question.dateAsked}}
-        </small>
-        <header class="activityfeed--header">
-          <h3>
-            {{#linkTo 'question' question}}
-              {{question.title}}
-            {{/linkTo}}
-          </h3>
-        </header>
-        <div class="activityfeed--excerpt">
-          <p>{{{question.excerpt}}}</p>
-          <p>
-            {{#linkTo 'question' question}}
-              Lire la suite
-            {{/linkTo}}
-          </p>
-        </div>
-      </div>
-  </div>
-  <div class="activityfeed--socialbox">
-    <ul class="activityfeed--socialbox--actions">
-      <li><a href=''>J'aime</a></li>
-      <li><a href=''>Suivre</a></li>
-      <li><a href=''>Lire plus tard</a></li>
-    </ul>
-  </div>
+    </div>
 </div>

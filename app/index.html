@@ -2,21 +2,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Nos élus .be: L'observatoire c </title>
+        <title>Nos élus .be: L'observatoire citoyen de l'activité parlementaire</title>
 
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/style.css">
         <!-- endbuild -->
 </head>
     <body>
-        <!-- build:js scripts/components.js -->
+        <!-- build:js(app) scripts/components.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/handlebars/handlebars.runtime.js"></script>
-        <script src="bower_components/ember/ember-1.0.0-rc.6.1.js"></script>
-        <script src="bower_components/ember-data-shim/ember-data.js"></script>
-        <script src="bower_components/spin.js/dist/spin.js"></script>
+        <script src="@@ember"></script>
+        <script src="@@ember_data"></script>
+        <script src="@@app_config"></script>
+        <script src="bower_components/spinjs/spin.js"></script>
+        <script src="bower_components/spinjs/jquery.spin.js"></script>
         <script src="bower_components/momentjs/moment.js"></script>
-
         <!-- endbuild -->
 
         <!-- build:js(.tmp) scripts/templates.js -->
@@ -27,8 +28,19 @@
         <script src="scripts/combined-scripts.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js scripts/plugins.js -->
-
+        <!-- build:js(app) scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass/js/affix.js"></script>
+        <script src="bower_components/bootstrap-sass/js/alert.js"></script>
+        <script src="bower_components/bootstrap-sass/js/dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass/js/tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass/js/modal.js"></script>
+        <script src="bower_components/bootstrap-sass/js/transition.js"></script>
+        <script src="bower_components/bootstrap-sass/js/button.js"></script>
+        <script src="bower_components/bootstrap-sass/js/popover.js"></script>
+        <script src="bower_components/bootstrap-sass/js/carousel.js"></script>
+        <script src="bower_components/bootstrap-sass/js/scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass/js/collapse.js"></script>
+        <script src="bower_components/bootstrap-sass/js/tab.js"></script>
         <!-- endbuild -->
 </body>
 </html>
