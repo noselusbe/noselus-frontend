@@ -1,6 +1,6 @@
 Noselus.PoliticianView = Ember.View.extend({
   templateName: 'politician',
-  classNames: ['row'],
+  classNames: ['container'],
   didInsertElement: function (argument) {
     $('body').animate({scrollTop: 0}, 'fast'); // Scroll top
   }

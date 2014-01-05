@@ -129,7 +129,7 @@
           generatedImagesDir: '.tmp/images/generated',
           imagesDir: '<%= yeoman.app %>/images',
           javascriptsDir: '<%= yeoman.app %>/scripts',
-          fontsDir: '<%= yeoman.app %>/styles/fonts',
+          fontsDir: '<%= yeoman.app %>/fonts',
           importPath: 'app/bower_components',
           httpImagesPath: '/images',
           httpGeneratedImagesPath: '/images/generated',
@@ -149,8 +149,8 @@
             src: [
               '<%= yeoman.dist %>/scripts/{,*/}*.js',
               '<%= yeoman.dist %>/styles/{,*/}*.css',
-              '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-              '<%= yeoman.dist %>/styles/fonts/*'
+              // '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+              // '<%= yeoman.dist %>/styles/fonts/*'
             ]
           }
         }
@@ -238,6 +238,22 @@
         }
       },
       copy: {
+        fonts_dev: {
+          files: [{
+            expand: true,
+            cwd: 'app/bower_components/bootstrap-sass/fonts/',
+            src: ['**'],
+            dest: '.tmp/styles/fonts/'
+          }]
+        },
+        fonts_dist: {
+          files: [{
+            expand: true,
+            cwd: 'app/bower_components/bootstrap-sass/fonts/',
+            src: ['**'],
+            dest: '<%= yeoman.dist %>/styles/fonts/'
+          }]
+        },
         dist: {
           files: [{
             expand: true,
@@ -308,7 +324,7 @@
         'concurrent:server',
         'neuter:app',
         'connect:livereload',
-        'open',
+        'copy:fonts_dev',
         'watch'
       ]);
     });
@@ -331,7 +347,8 @@
       'concat',
       'cssmin',
       'uglify',
-      'copy',
+      'copy:dist',
+      'copy:fonts_dist',
       'rev',
       'usemin',
       'jshint'
