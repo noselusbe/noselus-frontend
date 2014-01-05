@@ -1,6 +1,5 @@
 .tmp
 .sass-cache
-dist
 node_modules
 app/bower_components
 .tmp
