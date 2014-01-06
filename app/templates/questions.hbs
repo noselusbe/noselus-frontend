@@ -3,16 +3,15 @@
     <div class="panel search-form form">
       <div class="panel-body">
         <div class="form-group">
-          {{input type="text" class="form-control search-field" placeholder="Rechercher une question, une thématique ou un politique" action="search"}}
+          {{view Ember.TextField valueBinding="searchQuery" class='form-control search-field' placeholder="Rechercher une question, une thématique ou un politique"}}
         </div>
-        <button {{action 'search'}} class="btn btn-default">Chercher</button>
       </div>
     </div>
+    {{#if searchQuery}}
+      <h3 class="page-header">Résultats pour: {{searchQuery}}</h3>
+    {{/if}}
     {{#each question in controller}}
-      {{!-- {{view Noselus.QuestionListView question: question}} --}}
       {{render 'question_list' question}}
-    {{else}}
-      <div class="alert alert-warning">Nous n'avons pas pu trouver de questions repondant à vos critère</div>
     {{/each}}
   </div>
 </div>

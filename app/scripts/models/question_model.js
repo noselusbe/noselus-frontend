@@ -18,15 +18,6 @@ Noselus.Question = DS.Model.extend({
   }.property()
 });
 
-Noselus.Question.reopenClass({
-  search: function(criteria) {
-    var replaced = criteria.split(' ').join('+');
-    $('<div class="spinner"></div>').insertAfter('.search-form').show().spin();
-    var results = this.store.find('question', {q: replaced});
-    return results;
-  }
-});
-
 Ember.Handlebars.registerBoundHelper('format-date', function(date) {
   return moment(date, 'YYYY-MM-DD').fromNow();
 });
