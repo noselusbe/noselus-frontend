@@ -359,6 +359,10 @@
       'test',
       'build'
     ]);
+
+    grunt.registerTask('lint', [
+      'jshint'
+    ]);
   };
 
 }());
