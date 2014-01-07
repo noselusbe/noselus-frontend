@@ -9,12 +9,19 @@ Noselus.Question = DS.Model.extend({
   askedTo      : attr('number'),
   dateAsked    : attr('string'),
   askedByPolitician: function() {
-    politician = this.store.find('politician', this.get('askedBy'));
+    var politician = this.store.find('politician', this.get('askedBy'));
     return politician;
   }.property(),
   askedToPolitician: function() {
-    politician = this.store.find('politician',this.get('askedTo'));
+    var politician = this.store.find('politician',this.get('askedTo'));
     return politician;
+  }.property(),
+  questionHasAnswer: function() {
+    if (this.get('answerText') !== null) {
+      return true;
+    } else {
+      return false;
+    }
   }.property()
 });
 
