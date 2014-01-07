@@ -1,19 +1,27 @@
+Ember.throttledObserver = function (func, key, time) {
+  return Em.observer(function () {
+    Em.run.throttle(this, func, time);
+  }, key);
+};
+
 Noselus.QuestionsController = Ember.ArrayController.extend({
   searchQuery: null,
 
-  search: function() {
-    var controller = this;
-    var query = controller.get('searchQuery').split(' ').join('+');
+  // Throttle the text field value binding so you dont get 10000 requests while typing
+  searchQueryObserver: Ember.throttledObserver(function() {
+    var query = this.get('searchQuery').split(' ').join('+');
+    this.execQuery(query);
+  }, 'searchQuery', 600),
+
+  execQuery: function (query) {
     var content;
 
-    if (query === '') {
-      content = this.store.find('question');
-    } else {
+    if (query !== '') {
       content = this.store.find('question', {q: query});
     }
-    controller.set('content', content);
 
-  }.observes('searchQuery'),
+    this.set('content', content);
+  },
 
   activateSpinner: function() {
     $('.spinner').spin();
