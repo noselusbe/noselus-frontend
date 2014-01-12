@@ -1,4 +1,4 @@
-Noselus.QuestionsController = Ember.ArrayController.extend({
+Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.ControllerMixin, {
   searchQuery: null,
 
   // Throttle the text field value binding so you dont get 10000 requests while typing

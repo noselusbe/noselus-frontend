@@ -323,8 +323,33 @@
           src: '<%= yeoman.app %>/scripts/app.js',
           dest: '.tmp/scripts/combined-scripts.js'
         }
+      },
+      manifest: {
+        generate: {
+          options: {
+            basePath: '<%= yeoman.dist %>',
+            network: ['*'],
+            preferOnline: false,
+            timestamp: true
+          },
+          src: [
+            // Put HTML, CSS and JS first (not sure if it makes a difference)
+            '**/*.html',
+            '**/*.css',
+            '**/*.js',
+            // Then include everything else...
+            '**/*.*',
+            // .. but exclude these
+            '!apple-touch-*',
+            '!favicon.ico',
+            '!cache.manifest'
+          ],
+          dest: '<%= yeoman.dist %>/cache.manifest'
+        }
       }
     });
+
+    grunt.loadNpmTasks('grunt-manifest');
 
     grunt.registerTask('server', function (target) {
       if (target === 'dist') {
@@ -380,6 +405,7 @@
       'copy:fonts_dist',
       'rev',
       'usemin',
+      'manifest',
       'jshint'
     ]);
 
@@ -392,6 +418,8 @@
     grunt.registerTask('lint', [
       'jshint'
     ]);
+
+
   };
 
 }());

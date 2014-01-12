@@ -10,8 +10,20 @@
     {{#if searchQuery}}
       <h3 class="page-header">Résultats pour: {{searchQuery}}</h3>
     {{/if}}
-    {{#each question in controller}}
-      {{render 'question_list' question}}
-    {{/each}}
+
+    <div class="inf-scroll-outer-container vertical">
+      <div class="inf-scroll-inner-container">
+        {{#each question in controller}}
+          {{render 'question_list' question}}
+        {{/each}}
+      </div>
+    </div>
+
+    {{#if loadingMore}}
+      Loading more data (automatically!)
+    {{else}}
+      <a href='#' {{action 'getMore'}}>Load more data (manually)</a>
+    {{/if}}
+
   </div>
 </div>
