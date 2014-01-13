@@ -16,6 +16,9 @@
         a demandé à
         {{#link-to 'politician' askedToPolitician}}
           {{askedToPolitician.fullName}}
+          {{#if questionHasAnswer}}
+            (Répondu)
+          {{/if}}
         {{/link-to}}
         {{format-date dateAsked}}
       </small>
