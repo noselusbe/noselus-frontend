@@ -223,6 +223,19 @@
             dest: '.tmp/index.html'
           }]
         },
+        appjava: {
+          options: {
+            variables: {
+              ember: 'bower_components/ember/ember.js',
+              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              app_config: 'scripts/app_config/development_java.js'
+            }
+          },
+          files: [{
+            src: '<%= yeoman.app %>/index.html',
+            dest: '.tmp/index.html'
+          }]
+        },
         dist: {
           options: {
             variables: {
@@ -321,6 +334,22 @@
       grunt.task.run([
         'clean:server',
         'replace:app',
+        'concurrent:server',
+        'neuter:app',
+        'connect:livereload',
+        'copy:fonts_dev',
+        'watch'
+      ]);
+    });
+
+    grunt.registerTask('serverJava', function (target) {
+      if (target === 'dist') {
+        return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+      }
+
+      grunt.task.run([
+        'clean:server',
+        'replace:appjava',
         'concurrent:server',
         'neuter:app',
         'connect:livereload',

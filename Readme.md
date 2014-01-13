@@ -15,23 +15,30 @@ This the frontend application for the Noselus.be application
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-## Install the project locally
+## Setup the project locally
 
 ```
 // Install Node - http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/
 // Install Yeoman - https://github.com/yeoman/yeoman/wiki/Getting-Started
 // Install Bower - http://bower.io/
 // Fork The project https://github.com/noselusbe/noselus-frontend](https://github.com/noselusbe/noselus-frontend
+
 npm install
 bower install
-grunt server
-// Create a feature branch for your changes
-// Make sure sure you can build the project without JHint errors
-grunt build
-// Create test using Mocha js
-grunt test
-// Create a pull request ...
 ```
+
+## Run Standalone server with Mock db
+
+```
+grunt server
+```
+
+## Run server with local Java backend
+
+```
+grunt serverJava
+```
+
 Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
 
 More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests.
@@ -60,6 +67,7 @@ Share as much information as possible. Include operating system and version, bro
 * CSS changes must be done in .scss files first, never just the compiled .css files.
 * Try not to pollute your pull request with unintended changes -- keep them simple and small
 * Try to share which browsers your code has been tested in before submitting a pull request
+* Build must pass all test (try to run "grunt build")
 
 
 
