@@ -1,236 +1,38 @@
 @import "compass";
 
-// Variable Setup
-// ==============
-
-// Bootstrap
-$brand-primary: lighten(#563d7c, 10%);
-$body-bg: #eee;
-$navbar-inverse-bg: darken($brand-primary, 30%);
-$navbar-inverse-link-color: lighten($brand-primary, 60%);
-$icon-font-path: "/styles/fonts/";
-
-// Library Imports
+// Bootstrap import
 // ===============
+@import "core/variables";
 @import "bootstrap-sass/lib/bootstrap";
 
-// General style
+// Core Imports
 // ===============
-html, body {
-  margin: 25px 0;
-}
+@import "core/layout";
+@import "core/type";
+@import "core/icons";
+@import "core/buttons";
+@import "core/utils";
 
-// Typography
-// ==========
+// Bootstrap custom Imports
+// ========================
 
-h1,h2,h3,h4 {
-  font-weight: 300;
-}
+@import "bootstrap_custom/bootstrap_custom";
 
-.media header {
-  h4 {
-    margin-top: 0;
-  }
-}
+// Component Imports
+// =================
+@import "components/activityfeed";
+@import "components/avatar";
+@import "components/headers";
+@import "components/mini_profile";
+@import "components/parlements";
+@import "components/search_form";
+@import "components/spinner";
+@import "components/tag_cloud";
 
-.centered {
-  text-align: center;
-}
-
-// Activityfeed
-// ============
-
-.activityfeed--story {
-  border: 1px solid #eee;
-  background: #fff;
-  @include border-radius(3px);
-  margin-bottom: $padding-large-vertical;
-  .media {
-    padding: $padding-large-vertical;
-  }
-}
-.avatar {
-  background: #efefef;
-  @include border-radius(3px);
-  margin-bottom: $padding-large-vertical;
-  border: 1px solid #eee;
-  padding: 2px;
-  width: 48px;
-}
-
-.mini-profile {
-  position: relative;
-  .avatar {
-    width: auto;
-  }
-}
-
-.activityfeed--header--authors {
-  margin-bottom: $padding-large-vertical;
-  display: block;
-}
-
-.activityfeed--socialbox--actions {
-  list-style: none;
-  padding: $padding-large-vertical;
-  border-top: 1px solid #eee;
-  margin: 0;
-  li {
-    display: inline-block;
-    &:after {
-      content: ' -';
-    }
-    &:last-child:after {
-      content: '';
-    }
-  }
-}
-
-// Question
-// ========
-.page-header {
-  margin-top: 0;
-}
-.question--text {
-  margin-bottom: $padding-large-vertical;
-}
-
-// Widget
-// ======
-
-.mini-profile {
-  height: 350px;
-  position: relative;
-  padding: 0;
-  margin-bottom: 20px;
-  .mini-profile-small & {
-    height: 150px;
-  }
-  .caption {
-    color: #fff;
-    text-overflow: ellipsis;
-    position: absolute;
-    bottom: 0;
-    background: #000;
-    opacity: 0.8;
-    width: 100%;
-    a {
-      color: #fff;
-    }
-  }
-}
+// Sections Imports
+// =================
+@import "sections/homepage";
+@import "sections/profile";
+@import "sections/question";
 
 
-// CENTERED BACKGROUND
-// We use this to center an image inside a div. e.g. avatars, ...
-// It requires to be linked to a div that has a (min-)height
-// --------------------------------------------------
-.centered-background {
-  background-color: $brand-primary;
-  background-position: 50%;
-  background-repeat: none;
-  background-size: cover !important;
-  overflow: hidden;
-  position: relative;
-  img {
-    // background-image is inline
-    width: 100%;
-    html.backgroundsize & {
-      display: none;
-    }
-  }
-  .no-backgroundsize & {
-    background-image: none !important;
-  }
-}
-
-// Spinner
-// =======
-.spinner {
-  height: 100px;
-  width: 100px;
-  margin: 0 auto;
-}
-
-// Tag Cloud
-// =========
-@for $i from 1 through 10 {
-  .importance-#{$i} {
-    $count: $i / 10;
-    $size: 12 + ($i * 2);
-    display: inline;
-    margin-right: 10px;
-    font-size: #{$size}px;
-    @include opacity($count);
-  }
-}
-
-// profile info
-// ============
-.profile--infos {
-  dl {
-    margin-top: 0;
-  }
-  dd {
-    margin-bottom: $padding-large-vertical;
-   }
-}
-
-.WAL,
-.FED {
-  float: right;
-  width: 32px;
-  height: 32px;
-  .mini-profile & {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-}
-.WAL {
-  background-image: url('/images/logo-wal.png');
-}
-.FED {
-  background-image: url('/images/logo-fed.png');
-}
-
-// Back button
-// ==========
-.back-button {
-  margin-top: $padding-large-vertical;
-}
-
-// Homepage section
-// ================
-
-.homepage--section {
-  padding: 40px;
-}
-
-.homepage--section-bigheader {
-  background-image: url('/images/homepage-polticians.jpg');
-  min-height: 300px;
-  color: #fff;
-}
-
-.homepage--section-bigheader--header {
-  margin-bottom: $grid-gutter-width;
-}
-
-.homepage--section--header {
-  margin-bottom: $grid-gutter-width;
-}
-
-.homepage--section-values {
-  background-color: lighten($brand-primary, 35%);
-
-}
-
-.icon.img-circle {
-  width: 80px;
-  height: 80px;
-  line-height: 90px;
-  font-size: 30px;
-  background-color: #fff;
-  margin: 0 auto 20px;
-}

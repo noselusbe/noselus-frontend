@@ -1,0 +1,17 @@
+.WAL,
+.FED {
+  float: right;
+  width: 32px;
+  height: 32px;
+  .mini-profile & {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+.WAL {
+  background-image: url('/images/logo-wal.png');
+}
+.FED {
+  background-image: url('/images/logo-fed.png');
+}

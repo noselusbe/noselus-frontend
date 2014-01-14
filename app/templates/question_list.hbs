@@ -9,6 +9,13 @@
     </div>
     <div class="media-body">
       <div {{bind-attr class='askedByPolitician.assembly'}}></div>
+      <header class="activityfeed--header">
+        <h3>
+          {{#link-to 'question' question}}
+            {{title}}
+          {{/link-to}}
+        </h3>
+      </header>
       <small class="activityfeed--header--authors text-muted small">
         {{#link-to 'politician' askedByPolitician}}
           {{askedByPolitician.fullName}}
@@ -22,13 +29,6 @@
         {{/link-to}}
         {{format-date dateAsked}}
       </small>
-      <header class="activityfeed--header">
-        <h3>
-          {{#link-to 'question' question}}
-            {{title}}
-          {{/link-to}}
-        </h3>
-      </header>
       <div class="activityfeed--excerpt">
         <p>{{{excerpt}}}</p>
         <p>
