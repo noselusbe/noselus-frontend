@@ -1,0 +1,12 @@
+// Tag Cloud
+// =========
+@for $i from 1 through 10 {
+  .importance-#{$i} {
+    $count: $i / 10;
+    $size: 12 + ($i * 2);
+    display: inline;
+    margin-right: 10px;
+    font-size: #{$size}px;
+    @include opacity($count);
+  }
+}

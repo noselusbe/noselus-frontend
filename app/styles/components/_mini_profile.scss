@@ -1,0 +1,24 @@
+.mini-profile {
+  height: 350px;
+  position: relative;
+  padding: 0;
+  margin-bottom: 20px;
+  .mini-profile-small & {
+    height: 150px;
+  }
+  .caption {
+    color: #fff;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 0;
+    background: #000;
+    opacity: 0.8;
+    width: 100%;
+    a {
+      color: #fff;
+    }
+  }
+  .avatar {
+    width: auto;
+  }
+}

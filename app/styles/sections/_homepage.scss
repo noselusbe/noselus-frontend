@@ -1,0 +1,25 @@
+// Homepage section
+// ================
+
+.homepage--section {
+  padding: 40px;
+}
+
+.homepage--section-bigheader {
+  background-image: url('/images/homepage-polticians.jpg');
+  min-height: 300px;
+  color: #fff;
+}
+
+.homepage--section-bigheader--header {
+  margin-bottom: $grid-gutter-width;
+}
+
+.homepage--section--header {
+  margin-bottom: $grid-gutter-width;
+}
+
+.homepage--section-values {
+  background-color: lighten($brand-primary, 35%);
+
+}
