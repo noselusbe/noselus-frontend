@@ -3,6 +3,7 @@ var AppConfig = {
   // Stub DB
   // =======
   // apiAdapterUrl: 'http://noselus.apiary.io'
+  // apiAdapterUrl: 'http://pagingtest.apiary.io'
 
   // Clone of production + new structure
   // ===================================

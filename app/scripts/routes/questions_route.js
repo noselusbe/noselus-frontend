@@ -8,18 +8,18 @@ Noselus.QuestionsRoute = Ember.Route.extend({
   },
   actions: {
     getMore: function(){
-      var controller = this.get('controller'),
-          nextPage   = controller.get('page') + 1,
-          perPage    = controller.get('perPage'),
+      var meta   = this.store.metadataFor('question'),
+          next   = meta.next,
+          limit  = meta.limit || 20,
           items;
 
-      items = this.send('fetchPage', nextPage, perPage);
+      items = this.send('fetchPage', next, limit);
     },
 
-    fetchPage: function(page, perPage){
+    fetchPage: function(next, limit){
       var that = this;
-      this.store.find('question', {page: page, limit: perPage}).then(function (data) {
-        that.get('controller').send('gotMore', data.get('content'), page);
+      this.store.find('question', {next: next, limit: limit}).then(function (data) {
+        that.get('controller').send('gotMore', data.get('content'), that.store.metadataFor('question'));
       });
     }
   }
