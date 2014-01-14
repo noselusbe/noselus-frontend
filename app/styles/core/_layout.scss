@@ -1,5 +1,9 @@
 // General style
 // ===============
 html, body {
-  margin: 25px 0;
+  margin: 25px 0 0 0;
+}
+
+.main-wrapper {
+  padding-top: $grid-gutter-width;
 }

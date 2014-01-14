@@ -1,0 +1,11 @@
+// Media image alignment
+// -------------------------
+
+.media {
+  > .pull-left {
+    margin-right: 20px;
+  }
+  > .pull-right {
+    margin-left: 20px;
+  }
+}
