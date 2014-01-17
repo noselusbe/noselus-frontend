@@ -7,9 +7,14 @@ if (AppConfig.env === 'development') {
     LOG_ACTIVE_GENERATION: true
   };
 }
-
 // Create Ember App
 var Noselus = window.Noselus = Ember.Application.create(logger);
+
+Ember.throttledObserver = function (func, key, time) {
+  return Em.observer(function () {
+    Em.run.throttle(this, func, time);
+  }, key);
+};
 
 // Importing application files
 require('scripts/libs/*');
