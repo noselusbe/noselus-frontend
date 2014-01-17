@@ -1,8 +1,19 @@
 <div class="row">
   <div class="col-xs-8 activityfeed">
-    {{#each question in questions}}
-      {{render 'question_list' question}}
-    {{/each}}
+    <div class="inf-scroll-outer-container vertical">
+      <div class="inf-scroll-inner-container">
+        {{#each question in questions}}
+          {{render 'question_list' question}}
+        {{/each}}
+      </div>
+    </div>
+
+    {{#if loadingMore}}
+      <div class="spinner"></div>
+    {{else}}
+      <a href='#' {{action 'getMore'}}>Load more data (manually)</a>
+    {{/if}}
+
   </div>
 
   <aside class="col-xs-4 sidebar">

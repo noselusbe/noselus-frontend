@@ -1,4 +1,4 @@
-Noselus.PoliticianController = Ember.ObjectController.extend({
+Noselus.PoliticianController = Ember.ObjectController.extend(InfiniteScroll.ControllerMixin, {
   questions: []
 });
 

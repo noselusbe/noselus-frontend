@@ -2,7 +2,7 @@ Noselus.QuestionsRoute = Ember.Route.extend({
   setupController: function (controller, model) {
     if (!controller.get('searchQuery')) {
       var content;
-      content = this.store.find('question', {limit: 5});
+      content = this.store.find('question');
       controller.set('model', content);
     }
   },
@@ -18,7 +18,16 @@ Noselus.QuestionsRoute = Ember.Route.extend({
 
     fetchPage: function(next, limit){
       var that = this;
-      this.store.find('question', {next: next, limit: limit}).then(function (data) {
+      var params;
+      var query = that.get('controller').get('searchQuery');
+
+      if (query) {
+        params = {q: query, first_element: next, limit: limit};
+      } else{
+        params = {first_element: next, limit: limit};
+      }
+
+      this.store.find('question', params).then(function (data) {
         that.get('controller').send('gotMore', data.get('content'), that.store.metadataFor('question'));
       });
     }

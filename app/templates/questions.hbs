@@ -20,7 +20,7 @@
     </div>
 
     {{#if loadingMore}}
-      Loading more data (automatically!)
+      <div class="spinner"></div>
     {{else}}
       <a href='#' {{action 'getMore'}}>Load more data (manually)</a>
     {{/if}}

@@ -9,9 +9,12 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
 
   execQuery: function (query) {
     var content;
+    var limit = 10;
 
     if (query !== '') {
-      content = this.store.find('question', {q: query});
+      content = this.store.find('question', {q: query, limit: limit});
+    } else {
+      content = this.store.find('question', {limit: limit});
     }
 
     this.set('content', content);
