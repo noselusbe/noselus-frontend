@@ -1,0 +1,14 @@
+// infinite Scroll
+// ===============
+
+.inf-scroll-outer-container.vertical {
+  // overflow-y: scroll; /* <-- required for vertical scrolling */
+  // height: 200px; /* a set height is required for horizontal scrolling */
+}
+.inf-scroll-outer-container.vetical > .inf-scroll-inner-container > * {
+  display: block;
+}
+.inf-scroll-inner-container {
+  overflow: visible; /* <-- required to ensure inner container fully
+                            contains the scroll items */
+}

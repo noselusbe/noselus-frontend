@@ -10,8 +10,20 @@
     {{#if searchQuery}}
       <h3 class="page-header">Résultats pour: {{searchQuery}}</h3>
     {{/if}}
-    {{#each question in controller}}
-      {{render 'question_list' question}}
-    {{/each}}
+
+    <div class="inf-scroll-outer-container vertical">
+      <div class="inf-scroll-inner-container">
+        {{#if controller.content}}
+          {{#each question in controller.content}}
+            {{render 'question_list' question}}
+          {{/each}}
+        {{else}}
+          <div class="spinner"></div>
+        {{/if}}
+      </div>
+      {{#if loadingMore}}
+        <div class="spinner"></div>
+      {{/if}}
+    </div>
   </div>
 </div>

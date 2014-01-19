@@ -12,22 +12,29 @@
       <header class="activityfeed--header">
         <h3>
           {{#link-to 'question' question}}
-            {{title}}
+            {{title}} {{{id}}}
           {{/link-to}}
         </h3>
       </header>
       <small class="activityfeed--header--authors text-muted small">
+        Posée
+        {{format-date dateAsked}}
+        par
         {{#link-to 'politician' askedByPolitician}}
           {{askedByPolitician.fullName}}
         {{/link-to}}
-        a demandé à
+        à
         {{#link-to 'politician' askedToPolitician}}
           {{askedToPolitician.fullName}}
-          {{#if questionHasAnswer}}
-            (Répondu)
-          {{/if}}
         {{/link-to}}
-        {{format-date dateAsked}}
+
+        {{#if questionHasAnswer}}
+          <span class="activityfeed--header--authors--answer-added"></span>
+          <i class="glyphicon glyphicon-share-alt text-muted"></i>
+          Réponse ajoutée
+          {{!-- TODO replace by real answered_at date --}}
+          {{!-- {{format-date dateAsked}} --}}
+        {{/if}}
       </small>
       <div class="activityfeed--excerpt">
         <p>{{{excerpt}}}</p>
