@@ -1,5 +1,5 @@
 (function(window, Ember, $){
-  var InfiniteScroll;
+  var InfiniteScroll = {};
 
   InfiniteScroll.ControllerMixin = Ember.Mixin.create({
     loadingMore: false,
