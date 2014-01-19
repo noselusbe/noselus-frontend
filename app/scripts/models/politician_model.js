@@ -11,10 +11,16 @@ Noselus.Politician = DS.Model.extend({
   email      : attr('string'),
   site       : attr('string'),
   assembly   : attr('string'),
+
   thumb: function() {
-    return 'https://noselus-test.herokuapp.com/politicians/picture/'+this.get('id');
-  }.property(),
+    return AppConfig.apiAdapterUrl + '/politicians/picture/' + this.get('id');
+  }.property('id'),
+
   thumbImage: function() {
-    return '<img src="https://noselus-test.herokuapp.com/politicians/picture/'+this.get('id')+'" class="avatar media-object"/>';
-  }.property()
+    return '<img src="' + AppConfig.apiAdapterUrl + '/politicians/picture/'+this.get('id') + '" class="avatar media-object"/>';
+  }.property('id'),
+
+  backgroundThumb: function() {
+    return 'background-image: url("'+this.get('thumb')+'")';
+  }.property('thumb')
 });

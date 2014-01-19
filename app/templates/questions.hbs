@@ -3,15 +3,27 @@
     <div class="panel search-form form">
       <div class="panel-body">
         <div class="form-group">
-          {{view Ember.TextField valueBinding="searchQuery" class='form-control search-field' placeholder="Rechercher une question, une thématique ou un politique"}}
+          {{view Ember.TextField valueBinding="searchQuery" class='form-control input-lg search-field' placeholder="Rechercher une question, une thématique ou un politique"}}
         </div>
       </div>
     </div>
     {{#if searchQuery}}
       <h3 class="page-header">Résultats pour: {{searchQuery}}</h3>
     {{/if}}
-    {{#each question in controller}}
-      {{render 'question_list' question}}
-    {{/each}}
+
+    <div class="inf-scroll-outer-container vertical">
+      <div class="inf-scroll-inner-container">
+        {{#if controller.content}}
+          {{#each question in controller.content}}
+            {{render 'question_list' question}}
+          {{/each}}
+        {{else}}
+          <div class="spinner"></div>
+        {{/if}}
+      </div>
+      {{#if loadingMore}}
+        <div class="spinner"></div>
+      {{/if}}
+    </div>
   </div>
 </div>

@@ -1,6 +1,8 @@
 Noselus.PoliticiansRoute = Ember.Route.extend({
   model: function() {
-    return this.store.find('politician');
+    return this.store.filter('politician', {}, function(data) {
+      return true;
+    });
   }
 });
 

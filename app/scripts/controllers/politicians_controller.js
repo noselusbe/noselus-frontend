@@ -1,16 +1,32 @@
 Noselus.PoliticiansController = Ember.ArrayController.extend({
-  politicianFromWal: function() {
-    var politicians = this.filter(function(politician) {
-      return politician.get('assembly') === 'WAL';
-    });
-    return politicians;
-  }.property('@each.assembly'),
+  searchQuery: null,
+  isSearching: false,
 
-  politicianFromFed: function() {
-    var politicians = this.filter(function(politician) {
-      return politician.get('assembly') === 'FED';
+  searchQueryObserver: Ember.throttledObserver(function() {
+    var query = this.get('searchQuery').split(' ').join('+');
+    this.updateContent(query);
+  }, 'searchQuery', 600),
+
+  updateContent: function (query) {
+    var that = this;
+    var regexp = new RegExp(query);
+
+    that.clearResults();
+    var politicians = that.store.filter('politician', {}, function(item) {
+      if (query !== '') {
+        return regexp.test(item.get('fullName'));
+      } else {
+        return true;
+      }
+    }).then(function(data) {
+      that.set('isSearching', false);
+      that.set('model', data);
     });
-    return politicians;
-  }.property('@each.duration')
+  },
+
+  clearResults: function () {
+    this.set('isSearching', true);
+    this.store.unloadAll('politician');
+  }
 });
 
