@@ -3,7 +3,7 @@ Noselus.PoliticiansController = Ember.ArrayController.extend({
   isSearching: false,
 
   searchQueryObserver: Ember.throttledObserver(function() {
-    var query = this.get('searchQuery').split(' ').join('+');
+    var query = this.get('searchQuery').toLowerCase();
     this.updateContent(query);
   }, 'searchQuery', 600),
 
@@ -14,7 +14,7 @@ Noselus.PoliticiansController = Ember.ArrayController.extend({
     that.clearResults();
     var politicians = that.store.filter('politician', {}, function(item) {
       if (query !== '') {
-        return regexp.test(item.get('fullName'));
+        return regexp.test(item.get('fullName').toLowerCase());
       } else {
         return true;
       }
