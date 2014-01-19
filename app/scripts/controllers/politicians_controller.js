@@ -1,5 +1,6 @@
 Noselus.PoliticiansController = Ember.ArrayController.extend({
   searchQuery: null,
+  isSearching: false,
 
   searchQueryObserver: Ember.throttledObserver(function() {
     var query = this.get('searchQuery').split(' ').join('+');
@@ -12,21 +13,15 @@ Noselus.PoliticiansController = Ember.ArrayController.extend({
 
     that.clearResults();
     var politicians = that.store.filter('politician', {}, function(item) {
-      that.nameMatcher(item);
+      if (query !== '') {
+        return regexp.test(item.get('fullName'));
+      } else {
+        return true;
+      }
     }).then(function(data) {
       that.set('isSearching', false);
       that.set('model', data);
     });
-  },
-
-  nameMatcher: function (item) {
-    var data;
-    if (query !== '') {
-      data = regexp.test(item.get('fullName'));
-    } else {
-      data = true;
-    }
-    return data;
   },
 
   clearResults: function () {
