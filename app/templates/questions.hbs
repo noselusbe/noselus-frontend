@@ -13,17 +13,17 @@
 
     <div class="inf-scroll-outer-container vertical">
       <div class="inf-scroll-inner-container">
-        {{#each question in controller}}
-          {{render 'question_list' question}}
-        {{/each}}
+        {{#if controller.content}}
+          {{#each question in controller.content}}
+            {{render 'question_list' question}}
+          {{/each}}
+        {{else}}
+          <div class="spinner"></div>
+        {{/if}}
       </div>
+      {{#if loadingMore}}
+        <div class="spinner"></div>
+      {{/if}}
     </div>
-
-    {{#if loadingMore}}
-      <div class="spinner"></div>
-    {{else}}
-      <a href='#' {{action 'getMore'}}>Load more data (manually)</a>
-    {{/if}}
-
   </div>
 </div>

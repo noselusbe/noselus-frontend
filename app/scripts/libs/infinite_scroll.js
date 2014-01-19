@@ -18,10 +18,9 @@
 
       gotMore: function(items, nextPage){
         this.set('loadingMore', false);
-        this.pushObjects(items);
-        this.set('page', nextPage);
       }
     }
+
   });
 
   InfiniteScroll.RouteMixin = Ember.Mixin.create({
@@ -58,7 +57,13 @@
       }
 
       return (viewPortTop - distanceToViewportTop === 0);
-    }
+    },
+
+    activateSpinner: function() {
+      setTimeout(function() {
+        $('.spinner').spin();
+      }, 100);
+    }.observes('controller.loadingMore')
   });
 
   window.InfiniteScroll = InfiniteScroll;
