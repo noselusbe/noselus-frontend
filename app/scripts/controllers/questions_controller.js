@@ -14,9 +14,9 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
         params;
 
     if (query !== '') {
-      params = {q: query, limit: limit}
+      params = {q: query, limit: limit};
     } else {
-      params = {limit: limit}
+      params = {limit: limit};
     }
 
     this.updateContent(params);
@@ -26,7 +26,7 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
     var that = this;
     that.clearResults();
     var questions = that.store.filter('question', params, function(data) {
-      return true
+      return true;
     }).then(function(data) {
       that.set('isSearching', false);
       that.set('model', data);

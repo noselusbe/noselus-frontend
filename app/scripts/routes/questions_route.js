@@ -1,18 +1,10 @@
 Noselus.QuestionsRoute = Ember.Route.extend({
-  model : function (params) {
+  model: function (params) {
     return this.store.filter('question', { limit: 5 }, function(data) {
       return true;
     });
   },
-  // setupController: function (controller, model) {
-    // if (!controller.get('content.isFulfilled')) {
-    //   if (!controller.get('searchQuery')) {
-    //     var content = this.store.find('question', {limit: 10});
-    //     controller.set('model', content);
-    //   }
-    // }
 
-  // },
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),
