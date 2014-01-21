@@ -1,4 +1,4 @@
 var AppConfig = {
   env: 'production',
-  apiAdapterUrl: 'https://noselus-test.herokuapp.com'
+  apiAdapterUrl: 'http://hurion.eu:4567'
 };
