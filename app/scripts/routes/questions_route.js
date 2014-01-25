@@ -1,18 +1,8 @@
 Noselus.QuestionsRoute = Ember.Route.extend({
-  model : function (params) {
-    return this.store.filter('question', { limit: 5 }, function(data) {
-      return true;
-    });
+  model: function (params) {
+    return this.store.find('question', {limit: 5});
   },
-  // setupController: function (controller, model) {
-    // if (!controller.get('content.isFulfilled')) {
-    //   if (!controller.get('searchQuery')) {
-    //     var content = this.store.find('question', {limit: 10});
-    //     controller.set('model', content);
-    //   }
-    // }
 
-  // },
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),
@@ -33,10 +23,15 @@ Noselus.QuestionsRoute = Ember.Route.extend({
       } else{
         params = {first_element: next, limit: limit};
       }
-
-      this.get('store').findQuery('question', params).then(function (data) {
+      var new_questions = this.store.find('question', params);
+      // debugger
+      new_questions.then(function (data) {
+        that.get('controller.model').addObjects(data);
         that.get('controller').send('gotMore');
       });
+      // this.get('store').findQuery('question', params).then(function (data) {
+      //   that.get('controller').send('gotMore');
+      // });
     }
   }
 

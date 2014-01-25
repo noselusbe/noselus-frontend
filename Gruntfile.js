@@ -35,6 +35,10 @@
           files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
           tasks: ['neuter']
         },
+        lint: {
+          files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+          tasks: ['jshint']
+        },
         livereload: {
           options: {
             livereload: LIVERELOAD_PORT

@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-xs-8 panel question">
-    {{#link-to 'questions' class="btn btn-primary back-button"}}
+    {{!-- Here we assume you want to go back to the politician that asked the question or the questions index --}}
+    <a {{action 'goBack' askedByPolitician}} class="btn btn-primary back-button">
       Retours aux questions
-    {{/link-to}}
+    </a>
 
     <div class="question--header page-header">
       <h1>{{title}}</h1>

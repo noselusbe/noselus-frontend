@@ -2,10 +2,12 @@ Noselus.PoliticianRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('politician', params.politician_id);
   },
+
   setupController: function(controller, model) {
-    controller.set('questions', this.store.find('question', {asked_by: model.id}));
+    controller.set('questions', this.store.find('question', {asked_by: model.id, limit: 5}));
     controller.set('model', model);
   },
+
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),
@@ -20,8 +22,10 @@ Noselus.PoliticianRoute = Ember.Route.extend({
       var that = this;
       var params = {first_element: next, limit: limit, asked_by: that.get('controller.model').get('id')};
 
-      this.store.find('question', params).then(function (data) {
-        that.get('controller').send('gotMore', data.get('content'), that.store.metadataFor('question'));
+      var new_questions = this.store.find('question', params);
+      new_questions.then(function (data) {
+        that.get('controller.questions').addObjects(data);
+        that.get('controller').send('gotMore');
       });
     }
   }

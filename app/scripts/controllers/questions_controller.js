@@ -1,6 +1,7 @@
 Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.ControllerMixin, {
   searchQuery: null,
   isSearching: false,
+
   content : [],
   // Throttle the text field value binding so you dont get 10000 requests while typing
   searchQueryObserver: Ember.throttledObserver(function() {
@@ -14,9 +15,9 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
         params;
 
     if (query !== '') {
-      params = {q: query, limit: limit}
+      params = {q: query, limit: limit};
     } else {
-      params = {limit: limit}
+      params = {limit: limit};
     }
 
     this.updateContent(params);
@@ -24,11 +25,17 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
 
   updateContent: function (params) {
     var that = this;
-    that.clearResults();
-    var questions = that.store.filter('question', params, function(data) {
-      return true
-    }).then(function(data) {
+    // that.clearResults();
+    // var questions = that.store.filter('question', params, function(data) {
+    //   return true;
+    // }).then(function(data) {
+    //   that.set('isSearching', false);
+    //   that.set('model', data);
+    // });
+    var questions = that.store.find('question', params);
+    questions.then(function(data) {
       that.set('isSearching', false);
+      // debugger
       that.set('model', data);
     });
   },

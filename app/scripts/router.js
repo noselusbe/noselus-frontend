@@ -14,6 +14,14 @@ Noselus.Router.reopen({
   location: 'hashbang'
 });
 
+Ember.Route.reopen({
+  deactivate: function() {
+    // Store previous path
+    var applicationController = this.controllerFor('application');
+    Noselus.previousPath = applicationController.get('currentPath');
+  }
+});
+
 (function () {
 
   var get = Ember.get;
