@@ -29,11 +29,17 @@
         {{/link-to}}
 
         {{#if questionHasAnswer}}
-          <span class="activityfeed--header--authors--answer-added"></span>
-          <i class="glyphicon glyphicon-share-alt text-muted"></i>
-          Réponse ajoutée
+          <strong class="activityfeed--header--authors--answer-added text-success">
+            <i class="glyphicon glyphicon-share-alt text-success"></i>
+            Réponse ajoutée
+          </strong>
           {{!-- TODO replace by real answered_at date --}}
           {{!-- {{format-date dateAsked}} --}}
+        {{else}}
+          <span class="activityfeed--header--authors--answer-added">
+            <i class="glyphicon glyphicon-share-alt text-muted"></i>
+            Pas encore de réponse
+          </span>
         {{/if}}
       </small>
       <div class="activityfeed--excerpt">
