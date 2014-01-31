@@ -3,6 +3,42 @@
   height: 80px;
   line-height: 90px;
   font-size: 30px;
-  background-color: #fff;
+  background: #fff;
   margin: 0 auto 20px;
+
+  &.img-circle-purple {
+    background: #563d7c;
+    color: #fff;
+  }
+
+  &.img-circle-blue {
+    background: $blue;
+    color: #fff;
+  }
+
+  &.img-circle-green {
+    background: $green;
+    color: #fff;
+  }
+
+  &.img-circle-orange {
+    background: $orange;
+    color: #fff;
+  }
+
+  &.img-circle-red {
+    background: $red;
+    color: #fff;
+  }
+
+  &.img-circle-pink {
+    background: $fuchsia;
+    color: #fff;
+  }
+
+  &.img-circle-yellow {
+    background: $yellow;
+    color: #fff;
+  }
 }
+

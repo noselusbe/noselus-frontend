@@ -7,6 +7,7 @@
 
 .homepage--section-bigheader {
   background-image: url('/images/homepage-polticians.jpg');
+  background-image: url('/images/homepage-polticians-dark.jpg');
   min-height: 300px;
   color: #fff;
 }
@@ -20,6 +21,6 @@
 }
 
 .homepage--section-values {
-  background-color: lighten($brand-primary, 35%);
+  background-color: #fff;
 
 }
