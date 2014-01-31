@@ -18,6 +18,7 @@ Ember.throttledObserver = function (func, key, time) {
 
 // Importing application files
 require('scripts/libs/*');
+require('scripts/mixins/*');
 require('scripts/controllers/*');
 require('scripts/store');
 require('scripts/models/*');

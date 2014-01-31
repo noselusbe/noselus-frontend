@@ -23,7 +23,7 @@
             {{format-date dateAsked}} :
           </h4>
         </header>
-        {{{questionText}}}
+        {{{clean-text questionText}}}
       </div>
     </div>
     {{#if answerText}}
@@ -41,7 +41,7 @@
               a répondu:
             </h4>
           </header>
-          {{{answerText}}}
+          {{{clean-text answerText}}}
         </div>
       </div>
     {{/if}}
