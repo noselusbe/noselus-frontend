@@ -15,9 +15,9 @@ Noselus.PoliticianController = Ember.ObjectController.extend(InfiniteScroll.Cont
         params;
 
     if (query !== '') {
-      params = {q: query, limit: limit, askedBy: politician_id};
+      params = {q: query, limit: limit, asked_by: politician_id};
     } else {
-      params = {limit: limit, askedBy: politician_id};
+      params = {limit: limit, asked_by: politician_id};
     }
 
     this.updateContent(params);

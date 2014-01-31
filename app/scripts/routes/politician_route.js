@@ -24,7 +24,7 @@ Noselus.PoliticianRoute = Ember.Route.extend({
 
       var new_questions = this.store.find('question', params);
       new_questions.then(function (data) {
-        that.get('controller.questions').addObjects(data);
+        that.get('controller.questions.content').addObjects(data);
         that.get('controller').send('gotMore');
       });
     }

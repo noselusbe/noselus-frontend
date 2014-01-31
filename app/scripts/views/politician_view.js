@@ -1,6 +1,6 @@
 Noselus.PoliticianView = Ember.View.extend(InfiniteScroll.ViewMixin,{
   templateName: 'politician',
-  classNames: ['container main-wrapper'],
+  classNames: ['container'],
 
   didInsertElement: function(){
     $('body').animate({scrollTop: 0}, 'fast'); // Scroll top
