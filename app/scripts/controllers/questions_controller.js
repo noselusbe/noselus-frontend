@@ -1,6 +1,10 @@
 Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.ControllerMixin, {
   searchQuery: null,
   isSearching: false,
+  foundQuestionsTotal: function () {
+    var meta = this.store.metadataFor('question');
+    return meta.total;
+  }.property('model'),
 
   content : [],
   // Throttle the text field value binding so you dont get 10000 requests while typing
@@ -25,17 +29,9 @@ Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.Contr
 
   updateContent: function (params) {
     var that = this;
-    // that.clearResults();
-    // var questions = that.store.filter('question', params, function(data) {
-    //   return true;
-    // }).then(function(data) {
-    //   that.set('isSearching', false);
-    //   that.set('model', data);
-    // });
     var questions = that.store.find('question', params);
     questions.then(function(data) {
       that.set('isSearching', false);
-      // debugger
       that.set('model', data);
     });
   },
