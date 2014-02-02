@@ -1,13 +1,13 @@
 Noselus.QuestionsRoute = Ember.Route.extend({
   model: function (params) {
-    return this.store.find('question', {limit: 5});
+    return this.store.find('question', {limit: 20});
   },
 
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),
           next   = meta.next,
-          limit  = meta.limit || 5,
+          limit  = meta.limit || 20,
           items;
 
       items = this.send('fetchPage', next, limit);

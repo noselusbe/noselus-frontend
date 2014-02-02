@@ -6,10 +6,12 @@
 }
 
 .homepage--section-bigheader {
-  background-image: url('/images/homepage-polticians.jpg');
-  background-image: url('/images/homepage-polticians-dark.jpg');
-  min-height: 300px;
-  color: #fff;
+  // background-image: url('/images/homepage-polticians.jpg');
+  // background-image: url('/images/homepage-polticians-dark.jpg');
+  background-image: url('/images/homepage-polticians-light.jpg');
+  min-height: 325px;
+  // color: #fff;
+  border-bottom: 2px solid #eee;
 }
 
 .homepage--section-bigheader--header {
@@ -20,7 +22,6 @@
   margin-bottom: $grid-gutter-width;
 }
 
-.homepage--section-values {
-  background-color: #fff;
-
+.homepage--section-community {
+  background-color: #eee;
 }

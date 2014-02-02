@@ -1,9 +1,11 @@
 // Bootstrap
 $brand-primary: lighten(#563d7c, 10%);
 $brand-primary: #333;
-$body-bg: #eee;
-$navbar-inverse-bg: #111;
-$navbar-inverse-link-color: #ccc;
+$brand-primary: #1c5889;
+
+$body-bg: #fff;
+// $navbar-inverse-bg: #111;
+// $navbar-inverse-link-color: #ccc;
 $icon-font-path: "/styles/fonts/";
 $padding-large-vertical: 20px;
 $padding-large-horizontal: 20px;
@@ -33,3 +35,15 @@ $white:  #fff;
 $silver: #ddd;
 $gray:   #aaa;
 $black:  #111;
+
+
+// Buttons
+// @bootstrap
+// ------------------------
+$btn-default-color: #666;
+$btn-default-bg: #efefef;
+$btn-default-border: #efefef;
+$btn-default-border: #efefef;
+$btn-default-bg: #efefef;
+
+$link-color: #466188;

@@ -4,7 +4,7 @@ Noselus.PoliticianRoute = Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
-    controller.set('questions', this.store.find('question', {asked_by: model.id, limit: 5}));
+    controller.set('questions', this.store.find('question', {asked_by: model.id, limit: 20}));
     controller.set('model', model);
   },
 

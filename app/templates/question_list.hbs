@@ -1,4 +1,5 @@
-<div class="media">
+<div {{bind-attr class='questionHasAnswer:activityfeed--story-answered :activityfeed--story'}}>
+  <div class="media">
     <div class="pull-left">
       {{#link-to 'politician' askedByPolitician}}
         {{{askedByPolitician.thumbImage}}}
@@ -6,28 +7,27 @@
       {{#link-to 'politician' askedToPolitician}}
         {{{askedToPolitician.thumbImage}}}
       {{/link-to}}
+      <div {{bind-attr class='askedByPolitician.assembly :img-circle :thumbnail :avatar'}}></div>
     </div>
     <div class="media-body">
-      <div {{bind-attr class='askedByPolitician.assembly'}}></div>
       <header class="activityfeed--header">
-        <h3>
-          {{#link-to 'question' question}}
-            {{title}}
-          {{/link-to}}
-        </h3>
+        {{#link-to 'question' question tagName='h3'}}
+          {{title}}
+        {{/link-to}}
       </header>
       <small class="activityfeed--header--authors text-muted small">
         Posée
         {{format-date dateAsked}}
         par
         {{#link-to 'politician' askedByPolitician}}
-          {{askedByPolitician.fullName}}
+          <strong>{{askedByPolitician.fullName}}</strong>
         {{/link-to}}
         à
         {{#link-to 'politician' askedToPolitician}}
-          {{askedToPolitician.fullName}}
+          <strong>{{askedToPolitician.fullName}}</strong>
         {{/link-to}}
-
+      </small>
+      <small>
         {{#if questionHasAnswer}}
           <strong class="activityfeed--header--authors--answer-added text-success">
             <i class="glyphicon glyphicon-share-alt text-success"></i>
@@ -38,17 +38,18 @@
         {{else}}
           <span class="activityfeed--header--authors--answer-added">
             <i class="glyphicon glyphicon-share-alt text-muted"></i>
-            Pas encore de réponse
+            Pas de réponse
           </span>
         {{/if}}
       </small>
       <div class="activityfeed--excerpt">
-        <p>{{{clean-text excerpt}}}</p>
+        <p class='text-muted'>{{{clean-text excerpt}}}</p>
         <p>
-          {{#link-to 'question' question}}
+          {{#link-to 'question' question class='btn btn-xs btn-default'}}
             Lire la suite
           {{/link-to}}
         </p>
       </div>
     </div>
+  </div>
 </div>
