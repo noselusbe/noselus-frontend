@@ -1,8 +1,49 @@
 // Bootstrap
 $brand-primary: lighten(#563d7c, 10%);
-$body-bg: #eee;
-$navbar-inverse-bg: darken($brand-primary, 30%);
-$navbar-inverse-link-color: lighten($brand-primary, 60%);
+$brand-primary: #333;
+$brand-primary: #1c5889;
+
+$body-bg: #fff;
+// $navbar-inverse-bg: #111;
+// $navbar-inverse-link-color: #ccc;
 $icon-font-path: "/styles/fonts/";
 $padding-large-vertical: 20px;
 $padding-large-horizontal: 20px;
+
+// Colors
+
+$aqua:  #7FDBFF;
+$blue:  #0074D9;
+$navy:  #001F3F;
+$teal:  #39CCCC;
+$green: #2ECC40;
+$olive: #3D9970;
+$lime:  #01FF70;
+
+// Warm
+
+$yellow:  #edcf00;
+$orange:  #FF851B;
+$red:     #FF4136;
+$fuchsia: #dd119c;
+$purple:  #B10DC9;
+$maroon:  #85144B;
+
+// Gray Scale
+
+$white:  #fff;
+$silver: #ddd;
+$gray:   #aaa;
+$black:  #111;
+
+
+// Buttons
+// @bootstrap
+// ------------------------
+$btn-default-color: #666;
+$btn-default-bg: #efefef;
+$btn-default-border: #efefef;
+$btn-default-border: #efefef;
+$btn-default-bg: #efefef;
+
+$link-color: #466188;

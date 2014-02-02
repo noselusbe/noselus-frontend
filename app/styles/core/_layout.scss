@@ -7,3 +7,13 @@ html, body {
 .main-wrapper {
   padding-top: $grid-gutter-width;
 }
+
+.navbar-nav{
+  a.active {
+    background: #333;
+    @include link-colors(#fff, #ccc);
+    &:hover {
+      background: #333 !important;
+    }
+  }
+}

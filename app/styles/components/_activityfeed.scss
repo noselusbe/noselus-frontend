@@ -2,26 +2,33 @@
 // ============
 
 .activityfeed--story {
-  border: 1px solid #eee;
-  background: #fff;
-  @include border-radius(3px);
+  padding-top: $padding-large-vertical;
+  border-top: 4px solid #eee;
   margin-bottom: $padding-large-vertical;
-  .media {
-    padding: $padding-large-vertical;
+  &.activityfeed--story-answered {
+    border-top: 4px solid $alert-success-text;
+  }
+  .avatar {
+    margin-bottom: 10px;
   }
 }
 
 .activityfeed--header h3 {
   margin-top: 0;
+  &:hover {
+    color: $link-color;
+    cursor: pointer;
+  }
 }
 
 .activityfeed--header--authors {
-  margin-bottom: $padding-large-vertical;
+  margin-bottom: $padding-large-vertical/2;
   display: block;
 }
 
 .activityfeed--header--authors--answer-added {
-  margin-left: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .activityfeed--socialbox--actions {

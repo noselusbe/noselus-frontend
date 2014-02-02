@@ -13,11 +13,11 @@ Noselus.Politician = DS.Model.extend({
   assembly   : attr('string'),
 
   thumb: function() {
-    return AppConfig.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture';
+    return AppConfig.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
   }.property('id'),
 
   thumbImage: function() {
-    return '<img src="' + AppConfig.apiAdapterUrl + '/politicians/'+this.get('id') + '/picture' + '" class="avatar media-object"/>';
+    return '<img src="' + AppConfig.apiAdapterUrl + '/politicians/'+this.get('id') + '/picture/100/100' + '" class="avatar media-object img-circle thumbnail"/>';
   }.property('id'),
 
   backgroundThumb: function() {

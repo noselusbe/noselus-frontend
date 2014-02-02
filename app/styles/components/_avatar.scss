@@ -1,8 +1,4 @@
 .avatar {
-  background: #efefef;
-  @include border-radius(3px);
-  margin-bottom: $padding-large-vertical;
-  border: 1px solid #eee;
-  padding: 2px;
   width: 48px;
+  height: 48px;
 }
