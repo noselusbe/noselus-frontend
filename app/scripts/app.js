@@ -11,6 +11,7 @@ if (AppConfig.env === 'development') {
 var Noselus = window.Noselus = Ember.Application.create(logger);
 
 // Importing application files
+require('scripts/initializers');
 require('scripts/libs/*');
 require('scripts/mixins/*');
 require('scripts/controllers/*');
