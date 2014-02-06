@@ -5,17 +5,9 @@ Noselus.Question = DS.Model.extend({
   excerpt      : attr('string'),
   questionText : attr('string'),
   answerText   : attr('string'),
-  askedBy      : attr('number'),
-  askedTo      : attr('number'),
+  askedBy      : DS.belongsTo('politician'),
+  askedTo      : DS.belongsTo('politician'),
   dateAsked    : attr('string'),
-  askedByPolitician: function() {
-    var politician = this.store.find('politician', this.get('askedBy'));
-    return politician;
-  }.property(),
-  askedToPolitician: function() {
-    var politician = this.store.find('politician',this.get('askedTo'));
-    return politician;
-  }.property(),
   questionHasAnswer: function() {
     if (this.get('answerText') !== null) {
       return true;

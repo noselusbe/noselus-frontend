@@ -1,13 +1,13 @@
 <div {{bind-attr class='questionHasAnswer:activityfeed--story-answered :activityfeed--story'}}>
   <div class="media">
     <div class="pull-left">
-      {{#link-to 'politician' askedByPolitician}}
-        {{{askedByPolitician.thumbImage}}}
+      {{#link-to 'politician' askedBy}}
+        {{{askedBy.thumbImage}}}
       {{/link-to}}
-      {{#link-to 'politician' askedToPolitician}}
-        {{{askedToPolitician.thumbImage}}}
+      {{#link-to 'politician' askedTo}}
+        {{{askedTo.thumbImage}}}
       {{/link-to}}
-      <div {{bind-attr class='askedByPolitician.assembly :img-circle :thumbnail :avatar'}}></div>
+      <div {{bind-attr class='askedBy.assembly :img-circle :thumbnail :avatar'}}></div>
     </div>
     <div class="media-body">
       <header class="activityfeed--header">
@@ -19,12 +19,12 @@
         Posée
         {{format-date dateAsked}}
         par
-        {{#link-to 'politician' askedByPolitician}}
-          <strong>{{askedByPolitician.fullName}}</strong>
+        {{#link-to 'politician' askedBy}}
+          <strong>{{askedBy.fullName}}</strong>
         {{/link-to}}
         à
-        {{#link-to 'politician' askedToPolitician}}
-          <strong>{{askedToPolitician.fullName}}</strong>
+        {{#link-to 'politician' askedTo}}
+          <strong>{{askedTo.fullName}}</strong>
         {{/link-to}}
       </small>
       <small>

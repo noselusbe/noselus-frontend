@@ -1,5 +1,5 @@
   {{!-- Here we assume you want to go back to the politician that asked the question or the questions index --}}
-  <a {{action 'goBack' askedByPolitician}} class="btn btn-default back-button btn-sm">
+  <a {{action 'goBack' askedBy}} class="btn btn-default back-button btn-sm">
     <i class="glyphicon glyphicon-chevron-left"></i>
     Retours aux questions
   </a>
@@ -12,13 +12,13 @@
 
     <div class="question--text question--text-question media col-md-6">
       <div class="pull-left">
-        {{{askedByPolitician.thumbImage}}}
+        {{{askedBy.thumbImage}}}
       </div>
       <div class="media-body">
         <header>
           <h4 class="question--header--authors text-muted small">
-            {{#link-to 'politician' askedByPolitician}}
-              <strong>{{askedByPolitician.fullName}}</strong>
+            {{#link-to 'politician' askedBy}}
+              <strong>{{askedBy.fullName}}</strong>
             {{/link-to}}
             a demandé
             {{format-date dateAsked}} :
@@ -29,13 +29,13 @@
     </div>
     <div class="question--text question--text-question media col-md-6">
       <div class="pull-left">
-        {{{askedToPolitician.thumbImage}}}
+        {{{askedTo.thumbImage}}}
       </div>
       <div class="media-body">
         <header>
           <h4 class="question--header--authors text-muted small">
-            {{#link-to 'politician' askedToPolitician}}
-              <strong>{{askedToPolitician.fullName}}</strong>
+            {{#link-to 'politician' askedTo}}
+              <strong>{{askedTo.fullName}}</strong>
             {{/link-to}}
             a répondu:
           </h4>
@@ -44,7 +44,7 @@
           {{{clean-text answerText}}}
         {{else}}
           <div class="alert alert-warning">
-            {{askedToPolitician.fullName}} n'a pas encore réondu à la question.
+            {{askedTo.fullName}} n'a pas encore réondu à la question.
           </div>
         {{/if}}
       </div>
@@ -52,5 +52,5 @@
   </div>
 
 {{!--   <aside class="col-xs-4 sidebar">
-    {{widget-authors askedBy=askedByPolitician askedTo=askedToPolitician}}
+    {{widget-authors askedBy=askedBy askedTo=askedTo}}
   </aside> --}}
