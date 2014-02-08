@@ -1,6 +1,8 @@
 Noselus.QuestionsRoute = Ember.Route.extend({
   model: function (params) {
-    return this.store.find('question', {limit: 20});
+    if (!this.controllerFor('questions').get('searchQuery')) {
+      return this.store.find('question', {limit: 20});
+    }
   },
 
   actions: {

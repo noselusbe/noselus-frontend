@@ -1,6 +1,7 @@
 Noselus.QuestionsController = Ember.ArrayController.extend( InfiniteScroll.ControllerMixin, {
   searchQuery: null,
   isSearching: false,
+
   foundQuestionsTotal: function () {
     var meta = this.store.metadataFor('question');
     return meta.total;
