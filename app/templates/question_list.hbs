@@ -7,7 +7,7 @@
       {{#link-to 'politician' askedTo}}
         {{{askedTo.thumbImage}}}
       {{/link-to}}
-      <div {{bind-attr class='askedBy.assembly :img-circle :thumbnail :avatar'}}></div>
+      <div {{bind-attr class='assembly.initials :img-circle :thumbnail :avatar' title='assembly.name'}} rel='tooltip'></div>
     </div>
     <div class="media-body">
       <header class="activityfeed--header">

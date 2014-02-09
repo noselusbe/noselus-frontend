@@ -5,9 +5,10 @@ Noselus.Question = DS.Model.extend({
   excerpt      : attr('string'),
   questionText : attr('string'),
   answerText   : attr('string'),
+  dateAsked    : attr('string'),
   askedBy      : DS.belongsTo('politician'),
   askedTo      : DS.belongsTo('politician'),
-  dateAsked    : attr('string'),
+  assembly     : DS.belongsTo('assembly'),
   questionHasAnswer: function() {
     if (this.get('answerText') !== null) {
       return true;
