@@ -2,26 +2,33 @@
 // ================
 
 .homepage--section {
-  padding: 40px;
+  padding: 100px 0;
 }
 
 .homepage--section-bigheader {
-  // background-image: url('/images/homepage-polticians.jpg');
-  // background-image: url('/images/homepage-polticians-dark.jpg');
-  background-image: url('/images/homepage-polticians-light.jpg');
+  background-color: darken($brand-primary, 10%);
   min-height: 325px;
-  // color: #fff;
-  border-bottom: 2px solid #eee;
 }
 
 .homepage--section-bigheader--header {
   margin-bottom: $grid-gutter-width;
+  color: #fff;
+  h1 {
+    font-size: 64px;
+    margin-top: 0;
+  }
 }
 
 .homepage--section--header {
-  margin-bottom: $grid-gutter-width;
+  margin-bottom: $grid-gutter-width *2;
+  color: $brand-primary;
 }
 
 .homepage--section-community {
-  background-color: #eee;
+  background-color: #fff;
+}
+
+.homepage--section-values {
+  background: #fff;
+  border-bottom: 2px solid #eee;
 }

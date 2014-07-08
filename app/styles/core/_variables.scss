@@ -1,11 +1,7 @@
-// Bootstrap
-$brand-primary: lighten(#563d7c, 10%);
-$brand-primary: #333;
-$brand-primary: #1c5889;
+$container-large-desktop: 1024px;
+$brand-primary: #3b7180;
 
-$body-bg: #fff;
-// $navbar-inverse-bg: #111;
-// $navbar-inverse-link-color: #ccc;
+$body-bg: #efefef;
 $icon-font-path: "/styles/fonts/";
 $padding-large-vertical: 20px;
 $padding-large-horizontal: 20px;
@@ -37,6 +33,8 @@ $gray:   #aaa;
 $black:  #111;
 
 
+$font-size-base: 16px;
+$text-color: #666;
 // Buttons
 // @bootstrap
 // ------------------------
@@ -46,4 +44,19 @@ $btn-default-border: #efefef;
 $btn-default-border: #efefef;
 $btn-default-bg: #efefef;
 
-$link-color: #466188;
+// $link-color: lighten($brand-primary, 5%);
+$link-color: $brand-primary;
+
+// Inverted navbar
+// @bootstrap
+// Reset inverted navbar basics
+$navbar-inverse-color:                      lighten($brand-primary, 30%);
+$navbar-inverse-bg:                         darken($brand-primary, 20%);
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
+
+// Inverted navbar links
+$navbar-inverse-link-color: $navbar-inverse-color;
+$navbar-inverse-link-hover-color: #fff;
+$navbar-inverse-link-hover-bg: darken($brand-primary, 10%);
+// $navbar-inverse-link-disabled-color:        #444 !default;
+// $navbar-inverse-link-disabled-bg:           transparent !default;

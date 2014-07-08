@@ -10,10 +10,6 @@ html, body {
 
 .navbar-nav{
   a.active {
-    background: #333;
-    @include link-colors(#fff, #ccc);
-    &:hover {
-      background: #333 !important;
-    }
+    background: darken($navbar-inverse-link-hover-bg, 5%);
   }
 }
