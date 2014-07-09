@@ -5,11 +5,13 @@
       <h1>{{title}}</h1>
     </div>
     {{#if previousPath}}
-      <p>
-        <a {{action 'goBack' askedBy}} class="btn btn-primary">
-          Retours aux questions
-        </a>
-      </p>
+      <div class="question--header page-header">
+        <p>
+          <a {{action 'goBack' askedBy}} class="btn btn-primary">
+            Retours aux questions
+          </a>
+        </p>
+      </div>
     {{/if}}
   </div>
 
