@@ -218,7 +218,7 @@
           options: {
             variables: {
               ember: 'bower_components/ember/ember.js',
-              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              ember_data: 'bower_components/ember-data/ember-data.js',
               app_config: 'scripts/app_config/development.js'
             }
           },
@@ -274,16 +274,15 @@
         dist: {
           files: [{
             expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
-            cwd: 'heroku',
-            src: '*',
-            rename: function (dest, src) {
-              var path = require('path');
-              if (src === 'distpackage.json') {
-                return path.join(dest, 'package.json');
-              }
-              return path.join(dest, src);
-            }
+            src: [
+                '*.{ico,txt}',
+                '.htaccess',
+                'images/{,*/}*.{webp,gif}',
+                'styles/fonts/*'
+            ]
           }]
         }
       },
@@ -355,7 +354,7 @@
 
     grunt.loadNpmTasks('grunt-manifest');
 
-    grunt.registerTask('server', function (target) {
+    grunt.registerTask('serve', function (target) {
       if (target === 'dist') {
         return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
       }
