@@ -5,10 +5,10 @@ Noselus.QuestionRoute = Ember.Route.extend({
 
   actions: {
     goBack: function (politician) {
-      if (Noselus.previousPath == 'questions') {
-        this.transitionTo('questions');
-      } else {
+      if (Noselus.previousPath === 'politician') {
         this.transitionTo('politician', politician);
+      } else {
+        this.transitionTo('questions');
       }
     }
   }

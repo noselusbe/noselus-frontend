@@ -1,56 +1,77 @@
-  {{!-- Here we assume you want to go back to the politician that asked the question or the questions index --}}
-  <a {{action 'goBack' askedBy}} class="btn btn-default back-button btn-sm">
-    <i class="glyphicon glyphicon-chevron-left"></i>
-    Retours aux questions
-  </a>
-  <div class="panel question row">
-    <div class="col-xs-12">
-      <div class="question--header page-header">
-        <h1>{{title}}</h1>
-      </div>
+{{!-- Here we assume you want to go back to the politician that asked the question or the questions index --}}
+<div class="question">
+  <div class="col-xs-12 centered">
+    <div class="question--header page-header">
+      <h1>{{title}}</h1>
     </div>
+    {{#if previousPath}}
+      <p>
+        <a {{action 'goBack' askedBy}} class="btn btn-primary">
+          Retours aux questions
+        </a>
+      </p>
+    {{/if}}
+  </div>
 
-    <div class="question--text question--text-question media col-md-6">
-      <div class="pull-left">
-        {{{askedBy.thumbImage}}}
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="media panel">
+          <div class="panel-body">
+            <div class="pull-left">
+              {{{askedBy.thumbImage}}}
+            </div>
+            <header>
+              <h4 class="question--header--authors text-muted small media-body">
+                {{#link-to 'politician' askedBy}}
+                  <strong>{{askedBy.fullName}}</strong>
+                {{/link-to}}
+                a demandé
+                {{format-date dateAsked}}
+              </h4>
+            </header>
+            </div>
+        </div>
       </div>
-      <div class="media-body">
-        <header>
-          <h4 class="question--header--authors text-muted small">
-            {{#link-to 'politician' askedBy}}
-              <strong>{{askedBy.fullName}}</strong>
-            {{/link-to}}
-            a demandé
-            {{format-date dateAsked}} :
-          </h4>
-        </header>
-        {{{clean-text questionText}}}
-      </div>
-    </div>
-    <div class="question--text question--text-question media col-md-6">
-      <div class="pull-left">
-        {{{askedTo.thumbImage}}}
-      </div>
-      <div class="media-body">
-        <header>
-          <h4 class="question--header--authors text-muted small">
-            {{#link-to 'politician' askedTo}}
-              <strong>{{askedTo.fullName}}</strong>
-            {{/link-to}}
-            a répondu:
-          </h4>
-        </header>
-        {{#if answerText}}
-          {{{clean-text answerText}}}
-        {{else}}
-          <div class="alert alert-warning">
-            {{askedTo.fullName}} n'a pas encore réondu à la question.
-          </div>
-        {{/if}}
+      <div class="col-md-6">
+        <div class="media panel">
+          <div class="panel-body">
+            <div class="pull-left">
+              {{{askedTo.thumbImage}}}
+            </div>
+            <header>
+              <h4 class="question--header--authors text-muted small media-body">
+                {{#link-to 'politician' askedTo}}
+                  <strong>{{askedTo.fullName}}</strong>
+                {{/link-to}}
+                a répondu
+                {{#if dateAnswered}}
+                  {{format-date dateAnswered}}
+                {{/if}}
+              </h4>
+            </header>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-
-{{!--   <aside class="col-xs-4 sidebar">
-    {{widget-authors askedBy=askedBy askedTo=askedTo}}
-  </aside> --}}
+  <div class="question--text question--text-question col-md-12">
+    {{{clean-text questionText}}}
+    <header class='page-header'>
+      <h2>Réponse</h2>
+    </header>
+    {{#if answerText}}
+      {{{clean-text answerText}}}
+    {{else}}
+      <div class="alert alert-warning">
+        {{askedTo.fullName}} n'a pas encore réondu à la question.
+      </div>
+    {{/if}}
+  </div>
+  <p class="centered">
+    <a {{action 'goBack' askedBy}} class="btn btn-primary">
+      {{!-- <i class="glyphicon glyphicon-chevron-left"></i> --}}
+      Retours aux questions
+    </a>
+  </p>
+</div>

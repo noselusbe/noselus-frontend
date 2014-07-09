@@ -19,6 +19,7 @@ Ember.Route.reopen({
     // Store previous path
     var applicationController = this.controllerFor('application');
     Noselus.previousPath = applicationController.get('currentPath');
+    applicationController.set('previousPath', Noselus.previousPath);
   }
 });
 

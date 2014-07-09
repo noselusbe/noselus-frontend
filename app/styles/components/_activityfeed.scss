@@ -4,7 +4,7 @@
 .activityfeed--story {
   margin-top: 4px;
   margin-bottom: 1px;
-  background: #fff;
+  background: #efefef;
   padding: $padding-large-vertical;
   &.activityfeed--story-answered {
     border-right: 4px solid $alert-success-text;
@@ -14,10 +14,10 @@
   }
 }
 
-.activityfeed--header h3 {
+.activityfeed--header h4 {
   margin-top: 0;
   color: $brand-primary;
-  // font-weight: 500;
+  // font-weight: 100;
   &:hover {
     color: lighten($link-color, 5%);
     cursor: pointer;
@@ -27,6 +27,7 @@
 .activityfeed--header--authors {
   margin-bottom: $padding-large-vertical/2;
   display: block;
+  opacity: 0.8;
 }
 
 .activityfeed--header--authors--answer-added {
