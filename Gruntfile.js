@@ -231,7 +231,7 @@
           options: {
             variables: {
               ember: 'bower_components/ember/ember.js',
-              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              ember_data: 'bower_components/ember-data/ember-data.js',
               app_config: 'scripts/app_config/development_java.js'
             }
           },
@@ -244,7 +244,7 @@
           options: {
             variables: {
               ember: 'bower_components/ember/ember.prod.js',
-              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              ember_data: 'bower_components/ember-data/ember-data.js',
               app_config: 'scripts/app_config/production.js'
             }
           },
