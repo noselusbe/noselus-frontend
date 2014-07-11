@@ -14,12 +14,28 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li>
-            {{#link-to 'homepage'}}Accueil{{/link-to}}
+            {{#link-to 'homepage'}}
+              <i class="glyphicon glyphicon-home"></i>
+              Accueil
+            {{/link-to}}
           </li>
           <li>
-            {{#link-to 'questions'}}Questions parlementaires{{/link-to}}
+            {{#link-to 'questions'}}
+              <i class="glyphicon glyphicon-question-sign"></i>
+              Questions parlementaires
+            {{/link-to}}
           </li>
-          <li>{{#link-to 'politicians'}}Nos élus{{/link-to}}</li>
+          <li>
+            {{#link-to 'politicians'}}
+              <i class="glyphicon glyphicon-user"></i>
+              Nos élus
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'favorites'}}
+              <i class="glyphicon glyphicon-star"></i>
+              Questions sauvegardées
+            {{/link-to}}</li>
         </ul>
       </div><!-- /.navbar-collapse -->
   </div>

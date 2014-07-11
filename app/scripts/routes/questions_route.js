@@ -26,14 +26,11 @@ Noselus.QuestionsRoute = Ember.Route.extend({
         params = {first_element: next, limit: limit};
       }
       var new_questions = this.store.find('question', params);
-      // debugger
+
       new_questions.then(function (data) {
         that.get('controller.model').addObjects(data);
         that.get('controller').send('gotMore');
       });
-      // this.get('store').findQuery('question', params).then(function (data) {
-      //   that.get('controller').send('gotMore');
-      // });
     }
   }
 

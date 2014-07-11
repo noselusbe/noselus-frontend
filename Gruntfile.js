@@ -278,10 +278,10 @@
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
-                '*.{ico,txt}',
-                '.htaccess',
-                'images/{,*/}*.{webp,gif}',
-                'styles/fonts/*'
+              '*.{ico,txt}',
+              '.htaccess',
+              'images/{,*/}*.{webp,gif}',
+              'styles/fonts/*'
             ]
           }]
         }

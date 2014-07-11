@@ -7,6 +7,7 @@ Noselus.Router.map(function () {
 
   this.resource('questions');
   this.resource('question', { path: '/questions/:question_id' });
+  this.resource('favorites');
 
 });
 

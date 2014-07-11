@@ -14,6 +14,14 @@ Noselus.Question = DS.Model.extend({
     } else {
       return false;
     }
-  }.property()
+  }.property(),
+
+  isFavorited: function () {
+    if (this.store.find('favorite', {question: this}).length) {
+      return true;
+    } else {
+      return false;
+    }
+  }.observes('controllers.favorite.model@each')
 });
 
