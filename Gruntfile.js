@@ -349,6 +349,16 @@
           ],
           dest: '<%= yeoman.dist %>/cache.manifest'
         }
+      },
+      buildcontrol: {
+        dist: {
+          options: {
+            remote: 'git@github.com:noselusbe/noselus-frontend.git',
+            branch: 'gh-pages',
+            commit: true,
+            push: true
+          }
+        }
       }
     });
 
@@ -410,6 +420,11 @@
       'usemin',
       'manifest',
       'jshint'
+    ]);
+
+    grunt.registerTask('deploy', [
+      'build',
+      'buildcontrol'
     ]);
 
     grunt.registerTask('default', [
