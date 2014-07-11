@@ -23,7 +23,6 @@ Noselus.QuestionRoute = Ember.Route.extend({
       var existingFavorite = this.store.find('favorite', {question: question});
 
       if (existingFavorite) {
-        debugger;
         var favorite = store.createRecord('favorite', {
           question: question
         });
