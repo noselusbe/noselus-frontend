@@ -2,10 +2,10 @@
 // -------------------------
 
 .media {
-  > .pull-left {
+  .pull-left:first-of-type {
     margin-right: 20px;
   }
-  > .pull-right {
+  .pull-right:first-of-type {
     margin-left: 20px;
   }
 }

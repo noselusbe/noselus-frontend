@@ -11,6 +11,7 @@ Noselus.Politician = DS.Model.extend({
   email      : attr('string'),
   site       : attr('string'),
   assembly   : attr('string'),
+  function   : attr('string'),
 
   thumb: function() {
     return AppConfig.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
