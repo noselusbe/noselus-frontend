@@ -133,11 +133,11 @@
           generatedImagesDir: '.tmp/images/generated',
           imagesDir: '<%= yeoman.app %>/images',
           javascriptsDir: '<%= yeoman.app %>/scripts',
-          fontsDir: '<%= yeoman.app %>/fonts',
+          fontsDir: '<%= yeoman.app %>/styles/fonts',
           importPath: 'app/bower_components',
-          httpImagesPath: '/images',
-          httpGeneratedImagesPath: '/images/generated',
-          httpFontsPath: '/styles/fonts',
+          httpImagesPath: 'https://noselusbe.github.io/noselus-frontend/images',
+          httpGeneratedImagesPath: 'https://noselusbe.github.io/noselus-frontend/images/generated',
+          httpFontsPath: 'https://noselusbe.github.io/noselus-frontend/styles/fonts',
           relativeAssets: false
         },
         dist: {},
@@ -231,7 +231,7 @@
           options: {
             variables: {
               ember: 'bower_components/ember/ember.js',
-              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              ember_data: 'bower_components/ember-data/ember-data.js',
               app_config: 'scripts/app_config/development_java.js'
             }
           },
@@ -244,7 +244,7 @@
           options: {
             variables: {
               ember: 'bower_components/ember/ember.prod.js',
-              ember_data: 'bower_components/ember-data-shim/ember-data.prod.js',
+              ember_data: 'bower_components/ember-data/ember-data.js',
               app_config: 'scripts/app_config/production.js'
             }
           },
@@ -278,10 +278,10 @@
             cwd: '<%= yeoman.app %>',
             dest: '<%= yeoman.dist %>',
             src: [
-                '*.{ico,txt}',
-                '.htaccess',
-                'images/{,*/}*.{webp,gif}',
-                'styles/fonts/*'
+              '*.{ico,txt}',
+              '.htaccess',
+              'images/{,*/}*.{webp,gif}',
+              'styles/fonts/*'
             ]
           }]
         }
@@ -349,6 +349,16 @@
           ],
           dest: '<%= yeoman.dist %>/cache.manifest'
         }
+      },
+      buildcontrol: {
+        dist: {
+          options: {
+            remote: 'git@github.com:noselusbe/noselus-frontend.git',
+            branch: 'gh-pages',
+            commit: true,
+            push: true
+          }
+        }
       }
     });
 
@@ -410,6 +420,11 @@
       'usemin',
       'manifest',
       'jshint'
+    ]);
+
+    grunt.registerTask('deploy', [
+      'build',
+      'buildcontrol'
     ]);
 
     grunt.registerTask('default', [

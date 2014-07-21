@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12 centered">
+    <div class="page-header">
+      <h1>Questions sauvegardées</h1>
+    </div>
+  </div>
+  <div class="col-xs-12">
+  <div class="alert alert-info">
+    <p>Pour l'instant, vos questions sauvegardées ne sont disponibles que sur le navigateur que vous utilisez actuellement.</p>
+    <p>Si vous naviguez le site à partir d'un autre ordinateur, smartphone, et tablette ou même sur un navigateur different de celui que vous utilisez actuellement, vos questions sauvegardées ne seront pas visibles.</p>
+  </div>
+  </div>
+  <div class="col-xs-12 activityfeed">
+    <div class="row">
+      {{#if controller.model}}
+        {{#each favorite in controller.model}}
+          <div class="col-xs-10">
+            {{render 'question_list' favorite.question}}
+          </div>
+          <div class="col-xs-2">
+            <a href="#" {{action 'removeFavorite' favorite}} class="btn btn-danger">Effacer</a>
+          </div>
+        {{/each}}
+      {{else}}
+        <p>Vous n'avez pas encore de questions sauvegardées</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
