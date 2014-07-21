@@ -1,6 +1,6 @@
 <div {{bind-attr class='questionHasAnswer:activityfeed--story-answered :activityfeed--story'}}>
   <div class="media">
-    <div class="pull-left">
+    <div class="pull-left hidden-xs hidden-sm">
       <div {{bind-attr class='askedBy.assembly :img-circle :thumbnail :avatar :pull-left :centered-background'}}></div>
       {{#link-to 'politician' askedBy class='pull-left'}}
         {{{askedBy.thumbImage}}}
