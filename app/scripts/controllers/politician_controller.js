@@ -35,5 +35,5 @@ Noselus.PoliticianController = Ember.ObjectController.extend(InfiniteScroll.Cont
     setTimeout(function() {
       $('.spinner').spin();
     }, 100);
-  }.observes('isSearching'),
+  }.observes('isSearching')
 });
