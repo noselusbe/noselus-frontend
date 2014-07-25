@@ -281,7 +281,8 @@
               '*.{ico,txt}',
               '.htaccess',
               'images/{,*/}*.{webp,gif}',
-              'styles/fonts/*'
+              'styles/fonts/*',
+              'CNAME'
             ]
           }]
         }
