@@ -16,6 +16,13 @@ Noselus.Router.reopen({
 });
 
 Ember.Route.reopen({
+  notifyGoogleAnalytics: function() {
+    return ga('send', 'pageview', {
+        'page': this.get('url'),
+        'title': this.get('url')
+      });
+  }.on('didTransition'),
+
   deactivate: function() {
     // Store previous path
     var applicationController = this.controllerFor('application');
