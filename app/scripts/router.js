@@ -12,17 +12,18 @@ Noselus.Router.map(function () {
 });
 
 Noselus.Router.reopen({
-  location: 'hashbang'
-});
+  location: 'hashbang',
 
-Ember.Route.reopen({
   notifyGoogleAnalytics: function() {
     return ga('send', 'pageview', {
         'page': this.get('url'),
         'title': this.get('url')
       });
-  }.on('didTransition'),
+  }.on('didTransition')
 
+});
+
+Ember.Route.reopen({
   deactivate: function() {
     // Store previous path
     var applicationController = this.controllerFor('application');
