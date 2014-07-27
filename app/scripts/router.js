@@ -11,16 +11,8 @@ Noselus.Router.map(function () {
 
 });
 
-Noselus.Router.reopen({
-  location: 'hashbang',
-
-  notifyGoogleAnalytics: function() {
-    return ga('send', 'pageview', {
-        'page': this.get('url'),
-        'title': this.get('url')
-      });
-  }.on('didTransition')
-
+Noselus.Router.reopen(Ember.GoogleAnalyticsTrackingMixin, {
+  location: 'hashbang'
 });
 
 Ember.Route.reopen({
