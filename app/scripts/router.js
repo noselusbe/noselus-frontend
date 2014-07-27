@@ -11,7 +11,7 @@ Noselus.Router.map(function () {
 
 });
 
-Noselus.Router.reopen({
+Noselus.Router.reopen(Ember.GoogleAnalyticsTrackingMixin, {
   location: 'hashbang'
 });
 
