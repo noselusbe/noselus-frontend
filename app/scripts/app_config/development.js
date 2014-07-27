@@ -7,8 +7,5 @@ var AppConfig = {
 
   // Clone of production + new structure
   // ===================================
-  apiAdapterUrl: 'http://noselus.hurion.eu',
-  mixpanel: {
-    api_key: '7ba8702ce621c550311efeb2d0f2a620'
-  }
+  apiAdapterUrl: 'http://noselus.hurion.eu'
 };
