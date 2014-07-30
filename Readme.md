@@ -46,6 +46,7 @@ More over, if your pull request contains JavaScript patches or features, you mus
 ## Project Management
 
 For all roadmaps and project management related stuffs, refer to the github issues and Milestones
+[https://huboard.com/noselusbe/noselus-frontend/](https://huboard.com/noselusbe/noselus-frontend/)
 
 ## Guideline
 
