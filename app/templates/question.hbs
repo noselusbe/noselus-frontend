@@ -4,21 +4,23 @@
     <div class="question--header page-header">
       <h1>{{title}}</h1>
     </div>
-      {{#if previousPath}}
-        <div class="question--header page-header">
-          <p>
-            <a href='#' {{action 'goBack' askedBy}} class="btn btn-primary">
-              Retours aux questions
-            </a>
-            {{!-- {{#if isFavorited}}
-              <a href='#' {{action 'createFavoriteFromQuestion' this}} class="btn btn-primary">
-                <i class="glyphicon glyphicon-star"></i>
-                Sauvegarder
-              </a>
-            {{/if}} --}}
-          </p>
-        </div>
-      {{/if}}
+        {{#if shouldDisplayActionBar}}
+          <div class="question--header page-header">
+            <p>
+              {{#if previousPath}}
+                <a href='#' {{action 'goBack' askedBy}} class="btn btn-primary">
+                  Retours aux questions
+                </a>
+              {{/if}}
+              {{#unless controller.isFavorited}}
+                <a href='#' {{action 'createFavoriteFromQuestion' this}} class="btn btn-primary">
+                  <i class="glyphicon glyphicon-star"></i>
+                  Sauvegarder
+                </a>
+              {{/unless}}
+            </p>
+          </div>
+        {{/if}}
   </div>
 
   <div class="col-md-12">
@@ -80,10 +82,12 @@
       </div>
     {{/if}}
   </div>
-  <p class="centered">
-    <a {{action 'goBack' askedBy}} class="btn btn-primary">
-      {{!-- <i class="glyphicon glyphicon-chevron-left"></i> --}}
-      Retours aux questions
-    </a>
-  </p>
+  {{#if previousPath}}
+    <p class="centered">
+      <a {{action 'goBack' askedBy}} class="btn btn-primary">
+        {{!-- <i class="glyphicon glyphicon-chevron-left"></i> --}}
+        Retours aux questions
+      </a>
+    </p>
+  {{/if}}
 </div>
