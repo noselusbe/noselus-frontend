@@ -1,5 +1,5 @@
 Noselus.QuestionController = Em.ObjectController.extend({
-  needs: ['application', 'favorites'],
+  needs: ['application'],
   previousPath: Ember.computed.alias('controllers.application.previousPath'),
   shouldDisplayActionBar: Ember.computed.or('isNotFavorited', 'previousPath'),
   isNotFavorited: Ember.computed.not('isFavorited'),
