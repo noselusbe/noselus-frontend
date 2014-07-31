@@ -1,5 +1,10 @@
 # NosElus Frontend application
 
+[![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![HuBoard badge](http://img.shields.io/badge/Hu-Board-7965cc.svg)](https://huboard.com/noselusbe/noselus-frontend)
+
 This the frontend application for the Noselus.be application
 
 ## Tools
@@ -10,11 +15,6 @@ This the frontend application for the Noselus.be application
 * Compass - [http://compass-style.org/](http://compass-style.org/)
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
 * Code climate [https://codeclimate.com/github/noselusbe/noselus-frontend](https://codeclimate.com/github/noselusbe/noselus-frontend)
-
-[![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![HuBoard badge](http://img.shields.io/badge/Hu-Board-7965cc.svg)](https://huboard.com/noselusbe/noselus-frontend)
 
 ## Setup the project locally
 
