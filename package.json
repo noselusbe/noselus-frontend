@@ -30,6 +30,9 @@
     "ember-cli-ic-ajax": "0.1.1",
     "express": "^4.1.1",
     "glob": "^3.2.9",
+    "grunt": "^0.4.5",
+    "grunt-build-control": "^0.1.3",
+    "grunt-exec": "^0.4.6",
     "originate": "0.1.5"
   },
   "dependencies": {
