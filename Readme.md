@@ -7,38 +7,37 @@
 
 This the frontend application for the Noselus.be application
 
+## Installation
+
+* `git clone` this repository
+* `npm install`
+* `bower install`
+
+## Running
+
+* `ember server`
+* Visit your app at http://localhost:4200.
+
+## Running Tests
+
+* `ember test`
+* `ember test --server`
+
+## Building
+
+* `ember build`
+
 ## Tools
 
-* Yeoman - [http://yeoman.io/](http://yeoman.io/)
+* Ember-cli - [http://iamstef.net/ember-cli](http://iamstef.net/ember-cli)
 * Ember.js - [http://emberjs.com](http://emberjs.com)
 * Bower - [http://bower.io/](http://bower.io/)
 * Compass - [http://compass-style.org/](http://compass-style.org/)
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
 * Code climate [https://codeclimate.com/github/noselusbe/noselus-frontend](https://codeclimate.com/github/noselusbe/noselus-frontend)
+* Hubboard [https://huboard.com/noselusbe/noselus-frontend](https://huboard.com/noselusbe/noselus-frontend)
 
-## Setup the project locally
-
-```
-// Install Node - http://madebyhoundstooth.com/blog/install-node-with-homebrew-on-os-x/
-// Install Yeoman - https://github.com/yeoman/yeoman/wiki/Getting-Started
-// Install Bower - http://bower.io/
-// Fork The project https://github.com/noselusbe/noselus-frontend](https://github.com/noselusbe/noselus-frontend
-
-npm install
-bower install
-```
-
-## Run Standalone server with Mock db
-
-```
-grunt server
-```
-
-## Run server with local Java backend
-
-```
-grunt serverJava
-```
+## Contributing
 
 Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
 
