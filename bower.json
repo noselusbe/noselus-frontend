@@ -1,16 +1,21 @@
 {
   "name": "noselus",
-  "version": "0.0.0",
   "dependencies": {
-    "ember": "1.6.0",
-    "ember-data": "1.0.0-beta.6",
-    "bootstrap-sass": "~3.0.0",
-    "jquery": "1.9.0"
-  },
-  "devDependencies": {
-    "ember-mocha-adapter": "0.1.2",
-    "spinjs": "~1.3.3",
-    "momentjs": "~2.5.0",
-    "ember-localstorage-adapter": "~0.3.2"
+    "handlebars": "~1.3.0",
+    "jquery": "^1.11.1",
+    "qunit": "~1.12.0",
+    "ember-qunit": "~0.1.8",
+    "ember": "1.6.1",
+    "ember-resolver": "~0.1.5",
+    "loader": "stefanpenner/loader.js#1.0.0",
+    "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.2",
+    "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
+    "ember-qunit-notifications": "^0.0.3",
+    "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
+    "bootstrap-sass-official": "~3.2.0",
+    "compass-mixins": "1.0.0",
+    "moment": "~2.7.0",
+    "spinjs": "~2.0.1",
+    "ember-localstorage-adapter": "tute/ember-localstorage-adapter#~0.3.2"
   }
 }
