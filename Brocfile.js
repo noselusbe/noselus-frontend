@@ -3,11 +3,21 @@
 var EmberApp            = require('ember-cli/lib/broccoli/ember-app'),
     pickFiles           = require('broccoli-static-compiler'),
     mergeTrees          = require('broccoli-merge-trees'),
-    assetRev            = require('broccoli-asset-rev'),
     writeManifest       = require('broccoli-manifest'),
-    app                 = new EmberApp(),
     bootstrapDir        = 'vendor/bootstrap-sass-official/assets',
     bootstrapComponents = ['dropdown', 'tooltip', 'transition', 'collapse'];
+
+var app = new EmberApp({
+  minifyCSS: {
+    enabled: true
+  },
+
+  fingerprint: {
+    exclude: ['fonts']
+  },
+
+  getEnvJSON: require('./config/environment')
+});
 
 for (var index in bootstrapComponents) {
   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
@@ -23,11 +33,6 @@ app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
 app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 
-var tree = mergeTrees([app.toTree(), extraAssets]),
-    assetTree = assetRev(tree, {
-      extensions: ['js', 'css', 'png', 'jpg', 'gif'],
-      exclude: ['fonts'],
-      replaceExtensions: ['html', 'js', 'css']
-    });
+var tree = mergeTrees([app.toTree(), extraAssets]);
 
-module.exports = mergeTrees([assetTree, writeManifest(assetTree)]);
+module.exports = mergeTrees([tree, writeManifest(tree)]);
