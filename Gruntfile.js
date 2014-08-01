@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     exec: {
       ember_build: {
-        command: 'ember build'
+        command: 'ember build --environment=production'
       }
     },
     buildcontrol: {
