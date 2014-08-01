@@ -1,6 +1,5 @@
 /*globals module*/
 module.exports = function(grunt) {
-
   grunt.initConfig({
     exec: {
       ember_build: {
@@ -24,7 +23,6 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-build-control');
 
   grunt.registerTask('deploy', ['exec:ember_build', 'buildcontrol']);
