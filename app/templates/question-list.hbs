@@ -8,11 +8,27 @@
       {{#link-to 'politician' askedTo class='pull-left'}}
         {{{askedTo.thumbImage}}}
       {{/link-to}}
+      <div class="clearfix"></div>
+      <div class="centered">
+        <small>
+          {{#if questionHasAnswer}}
+            <strong class="activityfeed--header--authors--answer-added text-success">
+              <i class="glyphicon glyphicon-share-alt text-success"></i>
+              Réponse ajoutée
+            </strong>
+          {{else}}
+            <span class="activityfeed--header--authors--answer-added">
+              <i class="glyphicon glyphicon-share-alt text-muted"></i>
+              Pas de réponse
+            </span>
+          {{/if}}
+        </small>
+      </div>
     </div>
     <div class="media-body">
       <header class="activityfeed--header">
-        {{#link-to 'question' this tagName='h4'}}
-          {{title}}
+        {{#link-to 'question' this}}
+          <h4>{{title}}</h4>
         {{/link-to}}
       </header>
       <small class="activityfeed--header--authors small">

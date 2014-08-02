@@ -6,6 +6,7 @@
   margin-bottom: 1px;
   background: #efefef;
   padding: $padding-large-vertical;
+  display: block;
   &.activityfeed--story-answered {
     border-right: 4px solid $alert-success-text;
   }
@@ -14,13 +15,17 @@
   }
 }
 
-.activityfeed--header h4 {
-  margin-top: 0;
+.activityfeed--header a {
   color: $brand-primary;
-  // font-weight: 100;
+
+  h4 {
+    margin-top: 0;
+  }
+
   &:hover {
-    color: lighten($link-color, 5%);
+    color: lighten($link-color, 10%);
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
@@ -31,7 +36,6 @@
 }
 
 .activityfeed--header--authors--answer-added {
-  margin-bottom: 20px;
   display: block;
 }
 
