@@ -33,6 +33,13 @@ app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
 app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 
-var tree = mergeTrees([app.toTree(), extraAssets]);
+var tree = mergeTrees([app.toTree(), extraAssets]),
+    finalTree = tree;
 
-module.exports = mergeTrees([tree, writeManifest(tree)]);
+if (app.environment === 'production') {
+  finalTree = mergeTrees([tree, writeManifest(tree)]);
+} else {
+  finalTree = tree;
+}
+
+module.exports = finalTree;
