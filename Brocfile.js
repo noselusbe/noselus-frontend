@@ -36,7 +36,7 @@ app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 var tree = mergeTrees([app.toTree(), extraAssets]),
     finalTree = tree;
 
-if (app.environment === 'production') {
+if (app.env === 'production') {
   finalTree = mergeTrees([tree, writeManifest(tree)]);
 } else {
   finalTree = tree;
