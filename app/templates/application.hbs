@@ -11,13 +11,11 @@
       </div>
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            {{#link-to 'homepage'}}
-              <i class="glyphicon glyphicon-home"></i>
-              Accueil
+            {{#link-to 'homepage' class='navbar-brand'}}
+              {{!-- <i class="glyphicon glyphicon-home"></i> --}}
+              NosÉlus.be
             {{/link-to}}
-          </li>
+        <ul class="nav navbar-nav pull-right">
           <li>
             {{#link-to 'questions'}}
               <i class="glyphicon glyphicon-question-sign"></i>

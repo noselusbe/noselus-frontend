@@ -6,7 +6,7 @@
 }
 
 .homepage--section-bigheader {
-  background-color: darken($brand-primary, 10%);
+  background: darken($brand-primary, 10%) url('/assets/images/home-bg.jpg') no-repeat;
   min-height: 325px;
 }
 
