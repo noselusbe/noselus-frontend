@@ -31,5 +31,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-build-control');
 
-  grunt.registerTask('deploy', ['exec:ember_build', 'buildcontrol', 'release', 'back_to_dev']);
+  grunt.registerTask('deploy', ['exec:ember_build', 'buildcontrol', 'exec:release', 'exec:back_to_dev']);
 };
