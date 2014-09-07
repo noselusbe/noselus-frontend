@@ -4,6 +4,12 @@ module.exports = function(grunt) {
     exec: {
       ember_build: {
         command: 'ember build --environment=production'
+      },
+      release: {
+        command: 'git checkout master; git merge master;'
+      },
+      back_to_dev: {
+        command: 'git checkout develop;'
       }
     },
     buildcontrol: {
@@ -25,5 +31,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-build-control');
 
-  grunt.registerTask('deploy', ['exec:ember_build', 'buildcontrol']);
+  grunt.registerTask('deploy', ['exec:ember_build', 'buildcontrol', 'release', 'back_to_dev']);
 };
