@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# created 2014-09-07T17:12:57.181Z
+# created 2014-09-07T17:21:35.649Z
 
 CACHE:
 CNAME
@@ -12,8 +12,8 @@ assets/images/logo-fed-3676d8ae87923299d8f887224f0f641b.png
 assets/images/logo-wal-f701f1398eb903981134f9e8a778231b.png
 assets/noselus-2f3ecb30b92dfde9e01c73813d78113a.js
 assets/noselus-4882c5569cc9833646af7413487f310c.css
+assets/vendor-495580bb94889f5adfa8ea0fcc88b227.js
 assets/vendor-7d69e44f8ba1d6ca663711b07f229ec7.css
-assets/vendor-b3ecb0d1b06e8ae7c7eca77aab27b01d.js
 index.html
 
 NETWORK:
