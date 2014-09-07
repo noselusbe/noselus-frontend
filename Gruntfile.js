@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         command: 'ember build --environment=production'
       },
       release: {
-        command: 'git checkout master; git merge develop;'
+        command: 'git checkout master; git merge develop; git push'
       },
       back_to_dev: {
         command: 'git checkout develop;'
