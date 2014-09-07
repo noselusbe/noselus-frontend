@@ -29,6 +29,7 @@ var extraAssets = pickFiles(bootstrapDir + '/fonts/bootstrap', {
 });
 
 app.import('vendor/moment/moment.js');
+app.import('vendor/moment/lang/fr.js');
 app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
 app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
