@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  needs: ['application', 'favorites'],
+  needs: ['application', 'favorites', 'questions'],
   previousPath: Ember.computed.alias('controllers.application.previousPath'),
   shouldDisplayActionBar: Ember.computed.or('isNotFavorited', 'previousPath'),
   isNotFavorited: Ember.computed.not('isFavorited'),
+  searchQuery: Ember.computed.alias('controllers.questions.searchQuery'),
 
   getFavoritesQuestionsIds: function () {
     var existingFavorites = this.get('favorites.content'),

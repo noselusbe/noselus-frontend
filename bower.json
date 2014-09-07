@@ -17,6 +17,7 @@
     "moment": "~2.7.0",
     "spinjs": "~2.0.1",
     "ember-localstorage-adapter": "tute/ember-localstorage-adapter#~0.3.2",
-    "PACE": "git://github.com/HubSpot/pace.git#~0.5.6"
+    "PACE": "git://github.com/HubSpot/pace.git#~0.5.6",
+    "jquery-highlight1": "http://cdn.frightanic.com/blog/wp-content/uploads/2011/02/jquery-highlight1.js"
   }
 }
