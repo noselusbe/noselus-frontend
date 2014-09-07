@@ -32,6 +32,8 @@ app.import('vendor/moment/moment.js');
 app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
 app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
+app.import('vendor/PACE/pace.js');
+app.import('vendor/PACE/themes/pace-theme-flash.css');
 
 var tree = mergeTrees([app.toTree(), extraAssets]),
     finalTree = tree;
