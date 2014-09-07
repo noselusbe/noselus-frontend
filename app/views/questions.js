@@ -1,7 +1,9 @@
+/*global ScrollableMixin:false*/
 import Ember from 'ember';
 import InfiniteScrollViewMixin from '../mixins/infinite-scroll-view';
+import ScrollableMixin from '../mixins/scrollable';
 
-export default Ember.View.extend(InfiniteScrollViewMixin, {
+export default Ember.View.extend(InfiniteScrollViewMixin, ScrollableMixin, {
   classNames: ['container'],
   didInsertElement: function(){
     // we want to make sure 'this' inside `didScroll` refers

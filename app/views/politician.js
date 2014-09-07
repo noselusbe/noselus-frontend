@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import InfiniteScrollViewMixin from '../mixins/infinite-scroll-view';
+import ScrollableMixin from '../mixins/scrollable';
 
-export default Ember.View.extend(InfiniteScrollViewMixin, {
+export default Ember.View.extend(InfiniteScrollViewMixin, ScrollableMixin, {
   templateName: 'politician',
   classNames: ['container'],
 
