@@ -51,14 +51,11 @@ $link-color: $brand-primary;
 
 // Inverted navbar
 // @bootstrap
-// Reset inverted navbar basics
-$navbar-inverse-color:                      lighten($brand-primary, 30%);
-$navbar-inverse-bg:                         darken($brand-primary, 20%);
+$navbar-inverse-color:                      #ccc;
+$navbar-inverse-bg:                         darken($brand-primary, 10%);
 $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
 
 // Inverted navbar links
 $navbar-inverse-link-color: $navbar-inverse-color;
 $navbar-inverse-link-hover-color: #fff;
 $navbar-inverse-link-hover-bg: darken($brand-primary, 10%);
-// $navbar-inverse-link-disabled-color:        #444 !default;
-// $navbar-inverse-link-disabled-bg:           transparent !default;

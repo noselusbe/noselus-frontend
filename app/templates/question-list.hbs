@@ -10,19 +10,12 @@
       {{/link-to}}
       <div class="clearfix"></div>
       <div class="centered">
-        <small>
-          {{#if questionHasAnswer}}
-            <strong class="activityfeed--header--authors--answer-added text-success">
-              <i class="glyphicon glyphicon-share-alt text-success"></i>
-              Réponse ajoutée
-            </strong>
-          {{else}}
-            <span class="activityfeed--header--authors--answer-added">
-              <i class="glyphicon glyphicon-share-alt text-muted"></i>
-              Pas de réponse
-            </span>
-          {{/if}}
-        </small>
+        {{#if questionHasAnswer}}
+          <strong class="activityfeed--header--authors--answer-added label label-success">
+            <i class="glyphicon glyphicon-share-alt text-success"></i>
+            Réponse ajoutée
+          </strong>
+        {{/if}}
       </div>
     </div>
     <div class="media-body">
@@ -43,27 +36,6 @@
           <strong>{{askedTo.fullName}}</strong>
         {{/link-to}}
       </small>
-      {{!-- <small>
-        {{#if questionHasAnswer}}
-          <strong class="activityfeed--header--authors--answer-added text-success">
-            <i class="glyphicon glyphicon-share-alt text-success"></i>
-            Réponse ajoutée
-          </strong>
-        {{else}}
-          <span class="activityfeed--header--authors--answer-added">
-            <i class="glyphicon glyphicon-share-alt text-muted"></i>
-            Pas de réponse
-          </span>
-        {{/if}}
-      </small> --}}
-      {{!-- <div class="activityfeed--excerpt">
-        <p class='text-muted'>{{{clean-text excerpt}}}</p>
-        <p>
-          {{#link-to 'question' question class='btn btn-xs btn-default'}}
-            Lire la suite
-          {{/link-to}}
-        </p>
-      </div> --}}
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ import Ember from 'ember';
 import InfiniteScrollViewMixin from '../mixins/infinite-scroll-view';
 
 export default Ember.View.extend(InfiniteScrollViewMixin, {
-  classNames: ['container main-wrapper'],
+  classNames: ['container'],
   didInsertElement: function(){
     // we want to make sure 'this' inside `didScroll` refers
     // to the IndexView, so we use jquery's `proxy` method to bind it

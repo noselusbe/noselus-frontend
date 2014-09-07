@@ -8,7 +8,7 @@
   padding: $padding-large-vertical;
   display: block;
   &.activityfeed--story-answered {
-    border-right: 4px solid $alert-success-text;
+    border-right: 4px solid $label-success-bg;
   }
   .avatar {
     margin-bottom: 10px;
@@ -37,20 +37,4 @@
 
 .activityfeed--header--authors--answer-added {
   display: block;
-}
-
-.activityfeed--socialbox--actions {
-  list-style: none;
-  padding: $padding-large-vertical;
-  border-top: 1px solid #eee;
-  margin: 0;
-  li {
-    display: inline-block;
-    &:after {
-      content: ' -';
-    }
-    &:last-child:after {
-      content: '';
-    }
-  }
 }
