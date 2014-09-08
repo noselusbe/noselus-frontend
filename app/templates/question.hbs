@@ -1,90 +1,92 @@
 {{!-- Here we assume you want to go back to the politician that asked the question or the questions index --}}
 <div class="question">
-  <div class="col-xs-12">
-    <div class="question--header page-header">
-      <h1>{{title}}</h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="question--header page-header">
+        <h1>{{title}}</h1>
+      </div>
+      {{#if shouldDisplayActionBar}}
+        <div class="question--header page-header">
+          <p>
+            {{#if previousPath}}
+              <a href='#' {{action 'goBack' askedBy}} class="btn btn-primary">
+                Retours aux questions
+              </a>
+            {{/if}}
+            {{#unless controller.isFavorited}}
+              <a href='#' {{action 'createFavoriteFromQuestion' this}} class="btn btn-default">
+                <i class="glyphicon glyphicon-star"></i>
+                Sauvegarder
+              </a>
+            {{/unless}}
+          </p>
+        </div>
+      {{/if}}
     </div>
-        {{#if shouldDisplayActionBar}}
-          <div class="question--header page-header">
-            <p>
-              {{#if previousPath}}
-                <a href='#' {{action 'goBack' askedBy}} class="btn btn-primary">
-                  Retours aux questions
-                </a>
-              {{/if}}
-              {{#unless controller.isFavorited}}
-                <a href='#' {{action 'createFavoriteFromQuestion' this}} class="btn btn-primary">
-                  <i class="glyphicon glyphicon-star"></i>
-                  Sauvegarder
-                </a>
-              {{/unless}}
-            </p>
+  </div>
+  <div class="row">
+    <div class="col-md-8 question--text question--text-question">
+      {{{clean-text questionText}}}
+    </div>
+    <div class="col-md-4">
+      <div class="media panel question-politicians">
+        <div class="panel-body">
+          <div class="pull-left">
+            {{{askedBy.thumbImage}}}
           </div>
-        {{/if}}
-  </div>
-
-  <div class="col-md-12">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="media panel question-politicians">
-          <div class="panel-body">
-            <div class="pull-left">
-              {{{askedBy.thumbImage}}}
-            </div>
-            <header>
-              <h4 class="question--header--authors text-muted small media-body">
-                {{#link-to 'politician' askedBy}}
-                  <strong>{{askedBy.fullName}}</strong>
-                {{/link-to}}
-                a demandé
-                {{format-date dateAsked}}
-              </h4>
-              {{askedBy.function}},
-              {{askedBy.party}}
-            </header>
-            </div>
-        </div>
+          <header>
+            <h4 class="question--header--authors text-muted small media-body">
+              {{#link-to 'politician' askedBy}}
+                <strong>{{askedBy.fullName}}</strong>
+              {{/link-to}}
+              a demandé
+              {{format-date dateAsked}}
+            </h4>
+            {{askedBy.function}},
+            {{askedBy.party}}
+          </header>
+          </div>
       </div>
-      <div class="col-md-6">
-        <div class="media panel question-politicians">
-          <div class="panel-body">
-            <div class="pull-left">
-              {{{askedTo.thumbImage}}}
-            </div>
-            <header>
-              <h4 class="question--header--authors text-muted small media-body">
-                {{#link-to 'politician' askedTo}}
-                  <strong>{{askedTo.fullName}}</strong>
-                {{/link-to}}
-                a répondu
-                {{#if dateAnswered}}
-                  {{format-date dateAnswered}}
-                {{/if}}
-              </h4>
-              {{askedTo.function}},
-              {{askedTo.party}}
-            </header>
-            </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-8 question--text question--text-question">
+      {{#if answerText}}
+        {{{clean-text answerText}}}
+      {{else}}
+        <div class="alert alert-warning">
+          {{askedTo.fullName}} n'a pas encore réondu à la question.
+        </div>
+      {{/if}}
+    </div>
+    <div class="col-md-4">
+      <div class="media panel question-politicians">
+        <div class="panel-body">
+          <div class="pull-left">
+            {{{askedTo.thumbImage}}}
+          </div>
+          <header>
+            <h4 class="question--header--authors text-muted small media-body">
+              {{#link-to 'politician' askedTo}}
+                <strong>{{askedTo.fullName}}</strong>
+              {{/link-to}}
+              a répondu
+              {{#if dateAnswered}}
+                {{format-date dateAnswered}}
+              {{/if}}
+            </h4>
+            {{askedTo.function}},
+            {{askedTo.party}}
+          </header>
         </div>
       </div>
     </div>
   </div>
-  <div class="question--text question--text-question col-md-12">
-    {{{clean-text questionText}}}
-    <header class='page-header'>
-      <h2>Réponse</h2>
-    </header>
-    {{#if answerText}}
-      {{{clean-text answerText}}}
-    {{else}}
-      <div class="alert alert-warning">
-        {{askedTo.fullName}} n'a pas encore réondu à la question.
-      </div>
-    {{/if}}
-  </div>
+  <hr>
   {{#if previousPath}}
-    <p class="centered">
-      <a {{action 'goBack' askedBy}} class="btn btn-primary">
+    <p>
+      <a {{action 'goBack' askedBy}} class="btn btn-default">
         {{!-- <i class="glyphicon glyphicon-chevron-left"></i> --}}
         Retours aux questions
       </a>
