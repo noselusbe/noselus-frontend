@@ -1,3 +1,4 @@
+/*global ga:false*/
 import Ember from 'ember';
 
 var Router = Ember.Router.extend({
@@ -19,6 +20,15 @@ Ember.Route.reopen({
     var applicationController = this.controllerFor('application');
     applicationController.set('previousPath', applicationController.get('currentPath'));
   }
+});
+
+Router.reopen({
+  notifyGoogleAnalytics: function() {
+    return ga('send', 'pageview', {
+        'page': this.get('url'),
+        'title': this.get('url')
+      });
+  }.on('didTransition')
 });
 
 export default Router;
