@@ -26,10 +26,6 @@ export default Ember.Mixin.create({
   }.on('didInsertElement'),
 
   runScrolled: function() {
-    var position = Ember.$(document).height() - Ember.$(window).scrollTop();
-    var viewportHeight = document.documentElement.clientHeight;
-    console.log(Ember.$(window).scrollTop());
-    // debugger;
     this.set('controller.currentPos', Ember.$(window).scrollTop());
   }
 });
