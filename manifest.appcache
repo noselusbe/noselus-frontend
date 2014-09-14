@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# created 2014-09-14T10:32:15.071Z
+# created 2014-09-14T19:04:52.926Z
 
 CACHE:
 CNAME
@@ -10,32 +10,34 @@ assets/bootstrap/glyphicons-halflings-regular.woff
 assets/images/home-bg-85113d8ea54414025c233c8b0f4e6ccf.jpg
 assets/images/logo-fed-3676d8ae87923299d8f887224f0f641b.png
 assets/images/logo-wal-f701f1398eb903981134f9e8a778231b.png
-assets/images/parties/large/cd&v-f14a799d608a81447fd41c11f7c19d24.jpg
-assets/images/parties/large/cdh-ac6f921319a26453b2836fcbc22ef3ba.jpg
-assets/images/parties/large/ecolo-af14c82e13d51d3f8caa1148f33405a5.jpg
-assets/images/parties/large/fdf-19fbe2a5a9158ff2d7a0bb6d04f43f48.jpg
-assets/images/parties/large/mr-15c84152e969112b4e977a48334356e3.jpg
-assets/images/parties/large/nva-9e145f0af1f9040241f5c825ac1bfa15.jpg
-assets/images/parties/large/pp-0943a9397b16afb1f5d15bf1c546a278.jpg
-assets/images/parties/large/ps-772d3dc0cbcc10c385b2e6329295185d.jpg
-assets/images/parties/large/ptb-684b0a0203b340f138599fc36edc82a6.jpg
-assets/images/parties/large/spa-efd4aff5e8eaa8f7d044d205a9a5959e.jpg
-assets/images/parties/large/vb-fed6b70dad3eaecd7c4d38344541847e.jpg
-assets/images/parties/large/vld-eece3fd7fe039afdcd3f3a21df6787ff.jpg
-assets/images/parties/small/cd&v-1bf0e0f356b2304b93ca5f3b72dc2c8a.jpg
-assets/images/parties/small/cdh-60af672976d68d7c9398491ca09d47f2.jpg
-assets/images/parties/small/ecolo-d2083730136e58763f1f2d20a4688e11.jpg
-assets/images/parties/small/fdf-6de6a54e0372672f9a69a602253cfd18.jpg
-assets/images/parties/small/mr-f75a5788f6c700f3d572adfa0a836486.jpg
-assets/images/parties/small/nva-e8806aab7a201285eaf35c073e11464f.jpg
-assets/images/parties/small/pp-709cd5d4c807ebd76b922d667fb1ce55.jpg
-assets/images/parties/small/ps-fd259b2455cfed25191ae6d958e3f321.jpg
-assets/images/parties/small/ptb-fab2660c418097a043d1de8897b76565.jpg
-assets/images/parties/small/spa-94b29c3f4532b25d35dbad8e0a5ab12c.jpg
-assets/images/parties/small/vb-42cb19dc28f3f36137f60daa7df1b238.jpg
-assets/images/parties/small/vld-cdbf96abbd39b029082a736e068688a2.jpg
+assets/images/parties/large/cd&v.jpg
+assets/images/parties/large/cdh.jpg
+assets/images/parties/large/ecolo.jpg
+assets/images/parties/large/fdf.jpg
+assets/images/parties/large/indépendant.jpg
+assets/images/parties/large/mr.jpg
+assets/images/parties/large/nva.jpg
+assets/images/parties/large/pp.jpg
+assets/images/parties/large/ps.jpg
+assets/images/parties/large/ptb.jpg
+assets/images/parties/large/spa.jpg
+assets/images/parties/large/vb.jpg
+assets/images/parties/large/vld.jpg
+assets/images/parties/small/cd&v.jpg
+assets/images/parties/small/cdh.jpg
+assets/images/parties/small/ecolo.jpg
+assets/images/parties/small/fdf.jpg
+assets/images/parties/small/indépendant.jpg
+assets/images/parties/small/mr.jpg
+assets/images/parties/small/nva.jpg
+assets/images/parties/small/pp.jpg
+assets/images/parties/small/ps.jpg
+assets/images/parties/small/ptb.jpg
+assets/images/parties/small/spa.jpg
+assets/images/parties/small/vb.jpg
+assets/images/parties/small/vld.jpg
 assets/noselus-20205ab419e44876a24a519009b1dd45.css
-assets/noselus-26d363e10117e5e130df93ec51a8119d.js
+assets/noselus-d2e8923744ca80f541e9bd9ad7bdf8d7.js
 assets/vendor-495580bb94889f5adfa8ea0fcc88b227.js
 assets/vendor-7d69e44f8ba1d6ca663711b07f229ec7.css
 index.html
