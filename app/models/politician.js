@@ -15,6 +15,13 @@ export default DS.Model.extend({
   assembly   : attr('string'),
   function   : attr('string'),
 
+  partyName: function () {
+    var partyName = this.get('party');
+    if (partyName) {
+      return partyName.trim();
+    }
+  }.property('party'),
+
   thumb: function() {
     return NoselusENV.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
   }.property('id'),
