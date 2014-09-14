@@ -29,11 +29,11 @@
         {{format-date dateAsked}}
         par
         {{#link-to 'politician' askedBy}}
-          <strong>{{askedBy.fullName}}</strong>
+          <strong>{{askedBy.fullName}} ({{askedBy.partyName}})</strong>
         {{/link-to}}
         à
         {{#link-to 'politician' askedTo}}
-          <strong>{{askedTo.fullName}}</strong>
+          <strong>{{askedTo.fullName}} ({{askedBy.partyName}})</strong>
         {{/link-to}}
       </small>
     </div>
