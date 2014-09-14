@@ -13,7 +13,7 @@ var app = new EmberApp({
   },
 
   fingerprint: {
-    exclude: ['fonts']
+    exclude: ['fonts', 'assets/images/parties']
   },
 
   getEnvJSON: require('./config/environment')

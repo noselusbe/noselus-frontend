@@ -3,6 +3,9 @@
     <div {{bind-attr class='model.assembly :img-circle :thumbnail'}}></div>
     <div class="caption">
       {{model.fullName}}
+      {{#if model.partyName}}
+        ({{model.partyName}})
+      {{/if}}
     </div>
   </div>
 {{/link-to}}

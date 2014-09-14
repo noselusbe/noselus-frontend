@@ -22,6 +22,14 @@ export default DS.Model.extend({
     }
   }.property('party'),
 
+  partyThumbSmall: function () {
+    return '/assets/images/parties/small/' + this.get('partyName').toLowerCase() + '.jpg';
+  }.property('partyName'),
+
+  partyThumbLarge: function () {
+    return '/assets/images/parties/large/' + this.get('partyName').toLowerCase() + '.jpg';
+  }.property('partyName'),
+
   thumb: function() {
     return NoselusENV.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
   }.property('id'),

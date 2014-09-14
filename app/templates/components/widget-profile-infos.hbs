@@ -4,10 +4,12 @@
 <div class="panel-body profile--infos">
   <dl>
     <dt>Nom</dt>
-    <dd>{{model.fullName}}</dd>
+    <dd>{{model.fullName}} ({{model.party}})</dd>
     {{#if model.party}}
       <dt>Parti</dt>
-      <dd>{{model.party}}</dd>
+      <dd>
+        <img {{bind-attr src='model.partyThumbSmall'}}/ class='thumbnail'>
+      </dd>
     {{/if}}
     {{#if model.address}}
       <dt>Adresse</dt>
