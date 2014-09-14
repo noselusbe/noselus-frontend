@@ -3,8 +3,8 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 export default DS.Model.extend({
-  fullName   : attr('string'),
-  party      : attr('string'),
+  fullName   : attr('string', {defaultValue: 'inconnu'}),
+  party      : attr('string', {defaultValue: 'inconnu'}),
   address    : attr('string'),
   postalCode : attr('string'),
   town       : attr('string'),
