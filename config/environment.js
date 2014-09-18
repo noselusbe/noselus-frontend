@@ -32,8 +32,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL: '/',
-    ENV.locationType: 'history'
+    ENV.baseURL = '/',
+    ENV.locationType = 'history'
   }
 
   return ENV;
