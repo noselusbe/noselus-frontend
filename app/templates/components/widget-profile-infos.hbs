@@ -11,6 +11,12 @@
         <img {{bind-attr src='model.partyThumbSmall'}}/ class='thumbnail'>
       </dd>
     {{/if}}
+    {{#if model.function}}
+      <dt>Fonction</dt>
+      <dd>
+        {{model.function}}
+      </dd>
+    {{/if}}
     {{#if model.address}}
       <dt>Adresse</dt>
       <dd>

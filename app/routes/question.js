@@ -15,11 +15,11 @@ export default Ember.Route.extend({
 
   actions: {
     goBack: function (politician) {
-      // if (Noselus.previousPath === 'politician') {
+      if (this.controllerFor('application').get('previousPath') === 'politician') {
         this.transitionTo('politician', politician);
-      // } else {
-        // this.transitionTo('questions');
-      // }
+      } else {
+        this.transitionTo('questions');
+      }
     },
 
     createFavoriteFromQuestion: function (question) {

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function () {
-    if (!this.controllerFor('questions').get('searchQuery')) {
+    if (this.controllerFor('questions').get('model.content') === undefined) {
       return this.store.find('question', {limit: 20});
     }
   },

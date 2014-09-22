@@ -23,9 +23,15 @@ for (var index in bootstrapComponents) {
   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
 }
 
+if (app.env === 'production') {
+  fontDestDir = '/assets/bootstrap';
+} else {
+  fontDestDir = '/assets/bootstrap';
+}
+
 var extraAssets = pickFiles(bootstrapDir + '/fonts/bootstrap', {
   srcDir: '/',
-  destDir: '/assets/bootstrap'
+  destDir: fontDestDir
 });
 
 app.import('vendor/moment/moment.js');

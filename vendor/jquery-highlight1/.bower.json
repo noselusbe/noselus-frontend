@@ -1,0 +1,15 @@
+{
+  "name": "jquery-highlight1",
+  "_cacheHeaders": {
+    "ETag": "\"404d320-2093-4d74934302ec0\"",
+    "Last-Modified": "Wed, 06 Mar 2013 22:35:15 GMT",
+    "Content-Length": "8339",
+    "Content-Type": "application/x-javascript"
+  },
+  "_release": "e-tag:404d320-2",
+  "main": "index.js",
+  "_source": "http://cdn.frightanic.com/blog/wp-content/uploads/2011/02/jquery-highlight1.js",
+  "_target": "*",
+  "_originalSource": "http://cdn.frightanic.com/blog/wp-content/uploads/2011/02/jquery-highlight1.js",
+  "_direct": true
+}

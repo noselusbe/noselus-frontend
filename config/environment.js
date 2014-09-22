@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     environment: environment,
     baseURL: '/',
-    locationType: 'hash',
+    locationType: 'history',
     apiAdapterUrl: 'http://noselus.hurion.eu',
     EmberENV: {
       FEATURES: {
@@ -32,7 +32,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = '/',
+    ENV.locationType = 'history'
   }
 
   return ENV;
