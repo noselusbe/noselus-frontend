@@ -24,7 +24,7 @@ for (var index in bootstrapComponents) {
 }
 
 if (app.env === 'production') {
-  fontDestDir = '/fonts/bootstrap';
+  fontDestDir = '/assets/bootstrap';
 } else {
   fontDestDir = '/assets/bootstrap';
 }
