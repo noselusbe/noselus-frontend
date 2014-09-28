@@ -20,7 +20,6 @@ export default Ember.Mixin.create({
   preservePos: function() {
     var that = this;
     Ember.run.schedule('afterRender', function () {
-      console.log('After redner: ' + that.get('controller.currentPos'));
       Ember.$(window).scrollTop(that.get('controller.currentPos'));
     });
   }.on('didInsertElement'),

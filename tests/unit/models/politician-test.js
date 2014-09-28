@@ -2,7 +2,7 @@ import { test, moduleForModel } from 'ember-qunit';
 
 moduleForModel('politician', 'Politician', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:question']
 });
 
 test('it exists', function() {

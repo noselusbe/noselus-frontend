@@ -10,7 +10,7 @@ export default Ember.ArrayController.extend(InfiniteScrollControllerMixin, {
     return meta.total;
   }.property('model'),
 
-  content : [],
+  model : [],
 
   searchQueryObserver: function () {
     var query = this.get('searchQuery').split(' ').join('+');

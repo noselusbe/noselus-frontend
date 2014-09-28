@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import ENV from '../config/environment';
 
 var attr = DS.attr;
 
@@ -31,11 +32,11 @@ export default DS.Model.extend({
   }.property('partyName'),
 
   thumb: function() {
-    return NoselusENV.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
+    return ENV.apiAdapterUrl + '/politicians/' + this.get('id') + '/picture/300/300';
   }.property('id'),
 
   thumbImage: function() {
-    return '<img src="' + NoselusENV.apiAdapterUrl + '/politicians/'+this.get('id') + '/picture/100/100' + '" class="avatar media-object img-circle thumbnail"/>';
+    return '<img src="' + ENV.apiAdapterUrl + '/politicians/'+this.get('id') + '/picture/100/100' + '" class="avatar media-object img-circle thumbnail"/>';
   }.property('id'),
 
   backgroundThumb: function() {

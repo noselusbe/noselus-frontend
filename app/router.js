@@ -1,8 +1,9 @@
 /*global ga:false*/
 import Ember from 'ember';
+import ENV from './config/environment';
 
 var Router = Ember.Router.extend({
-  location: NoselusENV.locationType
+  location: ENV.locationType
 });
 
 Router.map(function() {
@@ -24,7 +25,7 @@ Ember.Route.reopen({
 
 Router.reopen({
   notifyGoogleAnalytics: function() {
-    if (NoselusENV.environment === 'production') {
+    if (ENV.environment === 'production') {
       return ga('send', 'pageview', {
           'page': this.get('url'),
           'title': this.get('url')

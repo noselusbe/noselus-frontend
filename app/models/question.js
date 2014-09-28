@@ -7,11 +7,11 @@ export default DS.Model.extend({
   excerpt      : attr('string'),
   questionText : attr('string'),
   answerText   : attr('string'),
-  askedBy      : DS.belongsTo('politician'),
-  askedTo      : DS.belongsTo('politician'),
+  askedBy      : DS.belongsTo('politician', { async: true }),
+  askedTo      : DS.belongsTo('politician', { async: true }),
   dateAsked    : attr('string'),
   questionHasAnswer: function() {
-    if (this.get('answerText') !== null) {
+    if (this.get('answerText') !== undefined) {
       return true;
     } else {
       return false;

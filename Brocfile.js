@@ -1,5 +1,3 @@
-/* global require, module */
-
 var EmberApp            = require('ember-cli/lib/broccoli/ember-app'),
     pickFiles           = require('broccoli-static-compiler'),
     mergeTrees          = require('broccoli-merge-trees'),

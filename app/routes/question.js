@@ -13,6 +13,10 @@ export default Ember.Route.extend({
     });
   },
 
+  titleToken: function(model) {
+    return model.get('title');
+  },
+
   actions: {
     goBack: function (politician) {
       if (this.controllerFor('application').get('previousPath') === 'politician') {
@@ -25,7 +29,7 @@ export default Ember.Route.extend({
     createFavoriteFromQuestion: function (question) {
       var store = this.store;
       var questionsIds = Ember.A([]);
-      this.get('controller.favorites.content').forEach(function(favorite) {
+      this.get('controller.favorites.model').forEach(function(favorite) {
         questionsIds.push(favorite.get('question.id'));
       });
 
