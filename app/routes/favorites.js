@@ -5,6 +5,8 @@ export default Ember.Route.extend({
     return this.store.findAll('favorite');
   },
 
+  titleToken: 'Vos questions parlementaires sauvegardées',
+
   actions: {
     removeFavorite: function (favorite) {
       favorite.deleteRecord();

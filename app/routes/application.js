@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   title: function(tokens) {
-    return tokens.join(' - ') + 'Nos élus';
+    return tokens.join(' - ') + ' - Nos élus .be';
   }
 });

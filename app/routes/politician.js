@@ -10,6 +10,10 @@ export default Ember.Route.extend({
     controller.set('model', model);
   },
 
+  titleToken: function(model) {
+    return model.get('fullName');
+  },
+
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),

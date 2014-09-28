@@ -7,6 +7,8 @@ export default Ember.Route.extend({
     }
   },
 
+  titleToken: 'Recherchez dans les questions parlementaires belges',
+
   actions: {
     getMore: function(){
       var meta   = this.store.metadataFor('question'),
