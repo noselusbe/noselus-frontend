@@ -35,12 +35,14 @@ This the frontend application for the Noselus.be application
 * Twitter bootstrap - [http://getbootstrap.com](http://getbootstrap.com)
 * Code climate [https://codeclimate.com/github/noselusbe/noselus-frontend](https://codeclimate.com/github/noselusbe/noselus-frontend)
 * Hubboard [https://huboard.com/noselusbe/noselus-frontend](https://huboard.com/noselusbe/noselus-frontend)
+* Travis Ci [https://travis-ci.org](https://travis-ci.org)
+* Codeship [https://codeship.io](https://codeship.io)
 
 ## Contributing
 
 Please read through our contributing guidelines. Included are directions for opening issues, coding standards, and notes on development.
 
-More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests.
+More over, if your pull request contains JavaScript patches or features, you must include relevant unit and/or integration tests.
 
 ## Project Management
 
@@ -67,4 +69,4 @@ Share as much information as possible. Include operating system and version, bro
 * CSS changes must be done in .scss files first, never just the compiled .css files.
 * Try not to pollute your pull request with unintended changes -- keep them simple and small
 * Try to share which browsers your code has been tested in before submitting a pull request
-* Build must pass all test (try to run "grunt build")
+* Build must pass all test (try to run "ember test") or [check on travis](https://travis-ci.org/noselusbe/noselus-frontend/pull_requests)
