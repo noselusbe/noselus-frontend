@@ -2,8 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
 [![HuBoard badge](http://img.shields.io/badge/Hu-Board-7965cc.svg)](https://huboard.com/noselusbe/noselus-frontend)
-[ ![Codeship Status for noselusbe/noselus-frontend](https://codeship.io/projects/06dead00-2944-0132-0d7b-72f84374274a/status?branch=master)](https://codeship.io/projects/38049)
 [![Build Status](https://travis-ci.org/noselusbe/noselus-frontend.svg?branch=develop)](https://travis-ci.org/noselusbe/noselus-frontend)
+[ ![Codeship Status for noselusbe/noselus-frontend](https://codeship.io/projects/06dead00-2944-0132-0d7b-72f84374274a/status?branch=master)](https://codeship.io/projects/38049)
 
 This the frontend application for the Noselus.be application
 ## Installation
