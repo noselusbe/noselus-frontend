@@ -4,9 +4,10 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![HuBoard badge](http://img.shields.io/badge/Hu-Board-7965cc.svg)](https://huboard.com/noselusbe/noselus-frontend)
+[ ![Codeship Status for noselusbe/noselus-frontend](https://codeship.io/projects/06dead00-2944-0132-0d7b-72f84374274a/status?branch=master)](https://codeship.io/projects/38049)
+[![Build Status](https://travis-ci.org/noselusbe/noselus-frontend.svg?branch=develop)](https://travis-ci.org/noselusbe/noselus-frontend)
 
 This the frontend application for the Noselus.be application
-
 ## Installation
 
 * `git clone` this repository
@@ -69,6 +70,3 @@ Share as much information as possible. Include operating system and version, bro
 * Try not to pollute your pull request with unintended changes -- keep them simple and small
 * Try to share which browsers your code has been tested in before submitting a pull request
 * Build must pass all test (try to run "grunt build")
-
-
-
