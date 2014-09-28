@@ -1,8 +1,6 @@
 # NosElus Frontend application
 
 [![Code Climate](https://codeclimate.com/github/noselusbe/noselus-frontend.png)](https://codeclimate.com/github/noselusbe/noselus-frontend)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/noselusbe/noselus-frontend/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![HuBoard badge](http://img.shields.io/badge/Hu-Board-7965cc.svg)](https://huboard.com/noselusbe/noselus-frontend)
 [ ![Codeship Status for noselusbe/noselus-frontend](https://codeship.io/projects/06dead00-2944-0132-0d7b-72f84374274a/status?branch=master)](https://codeship.io/projects/38049)
 [![Build Status](https://travis-ci.org/noselusbe/noselus-frontend.svg?branch=develop)](https://travis-ci.org/noselusbe/noselus-frontend)
