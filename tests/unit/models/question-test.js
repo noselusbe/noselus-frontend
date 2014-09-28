@@ -10,3 +10,18 @@ test('it exists', function() {
   // var store = this.store();
   ok(model);
 });
+
+test('answered questions', function() {
+  var model = this.subject({answerText: 'Hello'});
+  equal(model.get('questionHasAnswer'), true);
+});
+
+test('null answered questions', function() {
+  var model = this.subject({answerText: null});
+  equal(model.get('questionHasAnswer'), false);
+});
+
+test('undefined answered questions', function() {
+  var model = this.subject({answerText: undefined});
+  equal(model.get('questionHasAnswer'), false);
+});

@@ -11,7 +11,7 @@ export default DS.Model.extend({
   askedTo      : DS.belongsTo('politician', { async: true }),
   dateAsked    : attr('string'),
   questionHasAnswer: function() {
-    if (this.get('answerText') !== undefined) {
+    if (this.get('answerText') !== undefined && this.get('answerText') !== null) {
       return true;
     } else {
       return false;
