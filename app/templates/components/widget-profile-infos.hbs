@@ -39,11 +39,11 @@
       <dt>Email</dt>
       <dd>{{model.email}}</dd>
     {{/if}}
-    {{#if model.site}}
+    {{#if model.siteWithPrefix}}
       <dt>Site</dt>
       <dd>
-        <a {{bind-attr href=model.site}}>
-          {{model.site}}
+        <a {{bind-attr href=model.siteWithPrefix}}>
+          {{model.siteWithPrefix}}
         </a>
       </dd>
     {{/if}}
