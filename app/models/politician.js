@@ -41,5 +41,16 @@ export default DS.Model.extend({
 
   backgroundThumb: function() {
     return 'background-image: url("'+this.get('thumb')+'")';
-  }.property('thumb')
+  }.property('thumb'),
+
+  siteWithPrefix: function() {
+    var site = this.get('site');
+    if (site) {
+      site = site.trim();
+      if (site.indexOf('://') === -1) {
+        site = "http://" + site;
+      }
+      return site;
+    }
+  }.property('site')
 });
