@@ -31,7 +31,7 @@ module.exports = function(environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    locationType: 'history',
+    ENV.locationType = 'history';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -41,8 +41,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/',
-    ENV.locationType = 'history'
+    ENV.baseURL = '/';
+    ENV.locationType = 'history';
   }
 
   return ENV;

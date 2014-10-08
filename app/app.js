@@ -1,14 +1,15 @@
 import Ember from 'ember';
 import Resolver from 'ember/resolver';
 import loadInitializers from 'ember/load-initializers';
+import config from './config/environment';
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 var App = Ember.Application.extend({
-  modulePrefix: 'noselus',
+  modulePrefix: config.modulePrefix,
   Resolver: Resolver
 });
 
-loadInitializers(App, 'noselus');
+loadInitializers(App, config.modulePrefix);
 
 export default App;
