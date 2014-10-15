@@ -1,5 +1,5 @@
-import DS from 'ember-data';
-
-export default DS.LSAdapter.extend({
-  namespace: 'noselus-favorites'
-});
+// import DS from 'ember-data';
+//
+// export default DS.LSAdapter.extend({
+//   namespace: 'noselus-favorites'
+// });

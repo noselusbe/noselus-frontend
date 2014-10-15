@@ -12,7 +12,7 @@ Router.map(function() {
   this.resource('question', { path: 'questions/:question_id' });
   this.resource('politician', { path: 'politicians/:politician_id' });
   this.route('politicians');
-  this.resource('favorites');
+  // this.resource('favorites');
 });
 
 Ember.Route.reopen({
