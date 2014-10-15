@@ -9,3 +9,13 @@ html, body {
     background: darken($navbar-inverse-link-hover-bg, 5%);
   }
 }
+
+.footer {
+  padding: 20px;
+  background: $brand-primary;
+  color: #fff;
+  font-size: 12px;
+  a, a:hover {
+    color: #fff;
+  }
+}

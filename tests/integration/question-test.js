@@ -23,6 +23,7 @@ test("Viewing a question page", function() {
       equal(currentRouteName(), 'question');
     });
   });
+  
 });
 
 test("it should display reading time", function() {
