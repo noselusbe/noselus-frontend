@@ -14,17 +14,20 @@ var app = new EmberApp({
     exclude: ['fonts', 'assets/images/parties']
   },
 
-  getEnvJSON: require('./config/environment')
+  getEnvJSON: require('./config/environment'),
 });
+
+var fontDestDir = '/assets/bootstrap';
+
+// Adds 3rd script like GA
+if (app.env === 'production') {
+  app.options.inlineContent = {
+    'google-analytics' : 'vendor/ga/google-analytics.js'
+  };
+}
 
 for (var index in bootstrapComponents) {
   app.import(bootstrapDir + '/javascripts/bootstrap/' + bootstrapComponents[index] + '.js');
-}
-
-if (app.env === 'production') {
-  fontDestDir = '/assets/bootstrap';
-} else {
-  fontDestDir = '/assets/bootstrap';
 }
 
 var extraAssets = pickFiles(bootstrapDir + '/fonts/bootstrap', {
@@ -36,7 +39,6 @@ app.import('vendor/moment/moment.js');
 app.import('vendor/moment/lang/fr.js');
 app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
-app.import('vendor/ember-localstorage-adapter/localstorage_adapter.js');
 app.import('vendor/PACE/pace.js');
 app.import('vendor/PACE/themes/pace-theme-flash.css');
 

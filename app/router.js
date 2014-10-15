@@ -1,9 +1,9 @@
 /*global ga:false*/
 import Ember from 'ember';
-import ENV from './config/environment';
+import config from './config/environment';
 
 var Router = Ember.Router.extend({
-  location: ENV.locationType
+  location: config.locationType
 });
 
 Router.map(function() {
@@ -12,7 +12,7 @@ Router.map(function() {
   this.resource('question', { path: 'questions/:question_id' });
   this.resource('politician', { path: 'politicians/:politician_id' });
   this.route('politicians');
-  this.resource('favorites');
+  // this.resource('favorites');
 });
 
 Ember.Route.reopen({
@@ -25,7 +25,7 @@ Ember.Route.reopen({
 
 Router.reopen({
   notifyGoogleAnalytics: function() {
-    if (ENV.environment === 'production') {
+    if (config.environment === 'production') {
       return ga('send', 'pageview', {
           'page': this.get('url'),
           'title': this.get('url')
