@@ -7,6 +7,10 @@
       </div>
       {{#if shouldDisplayActionBar}}
         <div class="question--header page-header">
+          <div class="pull-right reading-time" rel='tooltip' title='Temps de lecture estimé' data-placement='left'>
+            <i class='glyphicon glyphicon-time'></i>
+            {{reading-time textTarget='.question' language='fr' displayWordCount=false}}
+          </div>
           <p>
             {{#if previousPath}}
               <a href='#' {{action 'goBack' askedBy}} class="btn btn-primary">

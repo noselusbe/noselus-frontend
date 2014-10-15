@@ -24,3 +24,11 @@ test("Viewing a question page", function() {
     });
   });
 });
+
+test("it should display reading time", function() {
+  expect(1);
+  visit('/questions');
+  andThen(function() {
+    ok($('.reading-time'));
+  });
+});
