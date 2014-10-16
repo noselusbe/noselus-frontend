@@ -12,7 +12,10 @@
     </div>
     <div class="form-group">
       <div class="col-md-8 col-md-offset-2">
-        {{input type="text" class="form-control search-field input-lg " placeholder="Recherchez les questions par mot-clé ou homme politique" action="search"}}
+        <div class="input-group">
+          {{input type="text" class="form-control search-field input-lg " placeholder="Mot-clé, homme politique, ..." action="search"}}
+          <a class="btn-submit input-group-addon" {{action search}}>Rechercher</a>
+        </div>
       </div>
     </div>
   </div>

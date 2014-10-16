@@ -2,12 +2,12 @@
   <div class="col-xs-12 activityfeed">
     <div class="search-form form">
       <div class="form-group">
-        {{view Ember.TextField valueBinding="searchQuery" class='form-control input-lg search-field' placeholder="Rechercher une question, une thématique ou un politique"}}
+        {{view Ember.TextField valueBinding="q" class='form-control input-lg search-field' placeholder="Rechercher une question, une thématique ou un politique"}}
       </div>
     </div>
-    {{#if searchQuery}}
+    {{#if q}}
       <div class="search-query">
-        <h3>{{foundQuestionsTotal}} résultats pour: {{searchQuery}}</h3>
+        <h3>{{foundQuestionsTotal}} résultats pour: {{q}}</h3>
       </div>
     {{/if}}
 

@@ -22,7 +22,7 @@ export default Ember.Route.extend({
     fetchPage: function(next, limit){
       var that = this,
           params,
-          query = that.get('controller').get('searchQuery');
+          query = that.get('controller').get('q');
 
       if (query) {
         params = {q: query, first_element: next, limit: limit};
