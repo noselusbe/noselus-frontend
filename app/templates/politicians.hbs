@@ -1,6 +1,6 @@
 <div class="search-form form col-xs-12">
   <div class="form-group">
-    {{view Ember.TextField valueBinding="searchQuery" class='form-control input-lg search-field' placeholder="Rechercher par nom ou fonction. ex: Di Rupo ou Premier Ministre"}}
+    {{view Ember.TextField valueBinding="q" class='form-control input-lg search-field' placeholder="Rechercher par nom ou fonction. ex: Di Rupo ou Premier Ministre"}}
   </div>
 </div>
 {{#each politician in controller}}

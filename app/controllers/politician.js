@@ -3,16 +3,17 @@ import InfiniteScrollControllerMixin from '../mixins/infinite-scroll-controller'
 
 export default Ember.ObjectController.extend(InfiniteScrollControllerMixin, {
   questions: [],
-  searchQuery: null,
+  queryParams: ['q'],
+  q: null,
   isSearching: false,
 
   searchQueryObserver: function () {
     Ember.run.debounce(this, this.execQuery, 600);
-  }.observes('searchQuery'),
+  }.observes('q'),
 
   execQuery: function () {
-    var query = this.get('searchQuery').split(' ').join('+');
-    
+    var query = this.get('q').split(' ').join('+');
+
     var limit = 20,
         politician_id = this.get('model').get('id'),
         params;

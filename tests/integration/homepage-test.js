@@ -1,9 +1,10 @@
+/*global jQuery*/
 import Ember from "ember";
 import { test } from 'ember-qunit';
 import startApp from '../helpers/start-app';
 var App;
 
-module('Integration - Questions', {
+module('Integration - Homepage', {
   setup: function() {
     App = startApp();
   },
@@ -12,20 +13,15 @@ module('Integration - Questions', {
   }
 });
 
-test("Viewing the list of questions", function() {
-  expect(2);
-  visit('/questions').then(function() {
-    equal(find('.inf-scroll-inner-container').length, 1, "Page contains list of questions");
-    equal(find('.activityfeed--story').length, 20, "Page contains the correct list of models");
-  });
-});
+test("Searching questions via homepage", function() {
+  expect(4);
+  visit('/').then(function() {
 
-test("Searching questions", function() {
-  expect(3);
-  visit('/questions').then(function() {
     fillIn('.search-field', 'gouvernement');
-    triggerEvent('.search-field', 'blur');
+    $('.search-field').siblings('.btn-submit').click();
+
     andThen(function() {
+      equal(currentPath(), 'questions');
       equal(find('.search-query').text().match('résultats pour: gouvernement').length, 1, 'Page contains search query');
       equal(find('.inf-scroll-inner-container').length, 1, "Page contains list of questions");
       ok(find('.activityfeed--story').length > 0, "Page contains the correct list of models");

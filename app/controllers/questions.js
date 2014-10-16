@@ -2,8 +2,9 @@ import Ember from 'ember';
 import InfiniteScrollControllerMixin from '../mixins/infinite-scroll-controller';
 
 export default Ember.ArrayController.extend(InfiniteScrollControllerMixin, {
-  searchQuery: null,
   isSearching: false,
+  queryParams: ['q'],
+  q: null,
 
   foundQuestionsTotal: function () {
     var meta = this.store.metadataFor('question');
@@ -14,10 +15,10 @@ export default Ember.ArrayController.extend(InfiniteScrollControllerMixin, {
 
   searchQueryObserver: function () {
     Ember.run.debounce(this, this.execQuery, 300);
-  }.observes('searchQuery'),
+  }.observes('q'),
 
   execQuery: function () {
-    var query = this.get('searchQuery').split(' ').join('+');
+    var query = this.get('q').split(' ').join('+');
 
     var limit = 20,
         params;

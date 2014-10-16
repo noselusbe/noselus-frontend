@@ -5,13 +5,13 @@ export default Ember.Route.extend({
     return this.store.find('question', params.question_id);
   },
 
-  setupController: function (controller, model) {
-    controller.set('model', model);
-    // var favorites = this.store.find('favorite');
-    // favorites.then(function (data) {
-    //   controller.set('favorites', data);
-    // });
-  },
+  // setupController: function (controller, model) {
+  //   controller.set('model', model);
+  //   // var favorites = this.store.find('favorite');
+  //   // favorites.then(function (data) {
+  //   //   controller.set('favorites', data);
+  //   // });
+  // },
 
   titleToken: function(model) {
     return model.get('title');
