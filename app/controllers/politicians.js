@@ -1,36 +1,30 @@
 import Ember from 'ember';
+import DebouncedPropertiesMixin from '../mixins/debounced-properties';
 
-export default Ember.ArrayController.extend({
+
+export default Ember.ArrayController.extend(DebouncedPropertiesMixin, {
   queryParams: ['q'],
   q: null,
   isSearching: false,
+  debouncedProperties: ['q'],
+  qDelay: 600,
 
-  searchQueryObserver: function () {
-    Ember.run.debounce(this, this.updateContent, 600);
-  }.observes('q'),
+  filteredPoliticians: function () {
+    var query = this.get('q') || '';
+    var regexp = new RegExp(query.toLowerCase()),
+        politicians = this.get('model');
 
-  updateContent: function () {
-    var that = this;
-    var query = this.get('q').toLowerCase();
-    var regexp = new RegExp(query);
-
-    that.clearResults();
-    var politicians = that.store.filter('politician', {}, function(item) {
+    return politicians.filter(function(politician) {
       if (query !== '') {
-        return regexp.test(item.get('fullName').toLowerCase());
+        return regexp.test(politician.get('fullName').toLowerCase());
       } else {
         return true;
       }
     });
 
-    politicians.then(function(data) {
-      that.set('isSearching', false);
-      that.set('model', data);
-    });
-  },
+  }.property('debouncedQ', 'model'),
 
   clearResults: function () {
-    this.set('isSearching', true);
-    this.store.unloadAll('politician');
+    this.set('q', null);
   }
 });

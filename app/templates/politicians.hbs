@@ -3,7 +3,7 @@
     {{view Ember.TextField valueBinding="q" class='form-control input-lg search-field' placeholder="Rechercher par nom ou fonction. ex: Di Rupo ou Premier Ministre"}}
   </div>
 </div>
-{{#each politician in controller}}
+{{#each politician in filteredPoliticians}}
   <div class='col-lg-3 col-md-3 col-xs-6 mini-profile-small'>
     {{widget-mini-profile model=politician}}
   </div>
