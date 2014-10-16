@@ -13,7 +13,7 @@ export default Ember.ArrayController.extend(InfiniteScrollControllerMixin, {
   model : [],
 
   searchQueryObserver: function () {
-    Ember.run.debounce(this, this.execQuery, 600);
+    Ember.run.debounce(this, this.execQuery, 300);
   }.observes('searchQuery'),
 
   execQuery: function () {
