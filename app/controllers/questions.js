@@ -13,11 +13,12 @@ export default Ember.ArrayController.extend(InfiniteScrollControllerMixin, {
   model : [],
 
   searchQueryObserver: function () {
-    var query = this.get('searchQuery').split(' ').join('+');
-    Ember.run.debounce(this, this.execQuery(query), 600);
+    Ember.run.debounce(this, this.execQuery, 600);
   }.observes('searchQuery'),
 
-  execQuery: function (query) {
+  execQuery: function () {
+    var query = this.get('searchQuery').split(' ').join('+');
+
     var limit = 20,
         params;
 

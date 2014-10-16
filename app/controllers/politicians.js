@@ -5,12 +5,12 @@ export default Ember.ArrayController.extend({
   isSearching: false,
 
   searchQueryObserver: function () {
-    var query = this.get('searchQuery').toLowerCase();
-    Ember.run.debounce(this, this.updateContent(query), 600);
+    Ember.run.debounce(this, this.updateContent, 600);
   }.observes('searchQuery'),
 
-  updateContent: function (query) {
+  updateContent: function () {
     var that = this;
+    var query = this.get('searchQuery').toLowerCase();
     var regexp = new RegExp(query);
 
     that.clearResults();
