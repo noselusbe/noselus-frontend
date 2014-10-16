@@ -7,11 +7,12 @@ export default Ember.ObjectController.extend(InfiniteScrollControllerMixin, {
   isSearching: false,
 
   searchQueryObserver: function () {
-    var query = this.get('searchQuery').split(' ').join('+');
-    Ember.run.debounce(this, this.execQuery(query), 600);
+    Ember.run.debounce(this, this.execQuery, 600);
   }.observes('searchQuery'),
 
-  execQuery: function (query) {
+  execQuery: function () {
+    var query = this.get('searchQuery').split(' ').join('+');
+    
     var limit = 20,
         politician_id = this.get('model').get('id'),
         params;
