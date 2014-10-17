@@ -22,7 +22,8 @@ module.exports = function(environment) {
 
   ENV['simple-auth-oauth2'] = {
     serverTokenEndpoint: '/auth_token',
-    serverTokenRevocationEndpoint: '/revoke'
+    serverTokenRevocationEndpoint: '/revoke',
+    routeAfterAuthentication: 'questions'
   };
 
 

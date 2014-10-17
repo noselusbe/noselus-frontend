@@ -1,9 +1,20 @@
-<h3>Créer un compte</h3>
-
-<form {{action 'register' on='submit'}}>
-  <label for="identification">Email</label>
-  {{input id='email' placeholder='Votre email' value=email}}
-  <label for="password">Mot de passe</label>
-  {{input id='password' placeholder='Mot de passe' type='password' value=password}}
-  <button type="submit">Envoyer</button>
-</form>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h3>Créer un compte</h3>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <form {{action 'register' on='submit'}}>
+      <div class="form-group">
+        <label for="identification">Email</label>
+        {{input id='email' placeholder='Votre email' value=email class='form-control'}}
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        {{input id='password' placeholder='Mot de passe' type='password' value=password class='form-control'}}
+      </div>
+      <button type="submit" class='btn btn-primary'>Envoyer</button>
+    </form>
+  </div>
+</div>

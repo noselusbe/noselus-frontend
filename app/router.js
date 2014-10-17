@@ -14,7 +14,9 @@ Router.map(function() {
   this.route('politicians');
   // this.resource('favorites');
   this.route('login');
-  this.route('account');
+  this.resource('user', function () {
+    this.route('account');
+  });
   this.route('register');
 });
 
