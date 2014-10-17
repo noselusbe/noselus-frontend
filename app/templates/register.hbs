@@ -1,0 +1,9 @@
+<h3>Créer un compte</h3>
+
+<form {{action 'register' on='submit'}}>
+  <label for="identification">Email</label>
+  {{input id='identification' placeholder='Votre email' value=identification}}
+  <label for="password">Mot de passe</label>
+  {{input id='password' placeholder='Mot de passe' type='password' value=password}}
+  <button type="submit">Envoyer</button>
+</form>

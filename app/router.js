@@ -13,6 +13,9 @@ Router.map(function() {
   this.resource('politician', { path: 'politicians/:politician_id' });
   this.route('politicians');
   // this.resource('favorites');
+  this.route('login');
+  this.route('account');
+  this.route('register');
 });
 
 Ember.Route.reopen({
