@@ -1,18 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  firstname: '',
-  lastname: '',
-  username: '',
+  email: '',
   password: '',
   actions: {
-    registerUser: function(){
+    register: function() {
+      var that = this;
       var user = this.store.createRecord('user', {
-        first_name: this.get('firstname'),
-        last_name: this.get('lastname'),
-        username: this.get('username')
+        email: that.get('email'),
+        password: that.get('password')
       });
-      user.set('typedPass', this.get('password'));
+
       user.save().then(function() {
         //this is basically what happens when you trigger the LoginControllerMixin's "authenticate" action
         this.get('session').authenticate('app:authenticators:custom', {

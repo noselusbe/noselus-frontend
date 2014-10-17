@@ -21,7 +21,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: ENV.apiAdapterUrl + '/auth_token',
+    serverTokenEndpoint: '/auth_token',
     serverTokenRevocationEndpoint: '/revoke'
   };
 
@@ -50,6 +50,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+
+    ENV['simple-auth-oauth2'] = {
+      serverTokenEndpoint: ENV.apiAdapterUrl + '/auth_token',
+      serverTokenRevocationEndpoint: '/revoke'
+    };
+
     ENV.baseURL = '/';
     ENV.locationType = 'history';
   }
