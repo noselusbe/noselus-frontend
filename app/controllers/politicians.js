@@ -6,6 +6,7 @@ export default Ember.ArrayController.extend({
   isSearching: false,
 
   searchQueryObserver: function () {
+    debugger;
     Ember.run.debounce(this, this.updateContent, 600);
   }.observes('q'),
 

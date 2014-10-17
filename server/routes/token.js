@@ -7,7 +7,7 @@ module.exports = function(app) {
         res.send({
           access_token: 'secret token!',
           token_type: "bearer",
-          user_id: '1'
+          user_id: 1
         });
       } else {
         res.status(400).send({ error: 'invalid_grant' });
