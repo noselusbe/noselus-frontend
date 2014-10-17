@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.post('/token', function(req, res) {
+  app.post('/auth_token', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.body.grant_type === 'password') {
