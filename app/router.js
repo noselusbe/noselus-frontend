@@ -15,7 +15,10 @@ Router.map(function() {
   // this.resource('favorites');
   this.route('login');
   this.resource('user', function () {
-    this.route('account');
+    this.route('account', function () {
+      this.route('notifications');
+      this.route('infos');
+    });
   });
   this.route('register');
 });

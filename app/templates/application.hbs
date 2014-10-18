@@ -32,12 +32,16 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Name <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  {{#link-to 'user.account'}}Account{{/link-to}}
+                  {{#link-to 'user.account.infos'}}Mon compte{{/link-to}}
+                </li>
+                <li>
+                  {{#link-to 'user.account.notifications'}}Mes notifications{{/link-to}}
+                </li>
+                <li class='separator'></li>
+                <li>
+                  <a {{ action 'invalidateSession' }}>Logout</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a {{ action 'invalidateSession' }}>Logout</a>
             </li>
           {{else}}
             <li>
