@@ -8,13 +8,13 @@ export default {
     Session.reopen({
       updateCurrentUser: function() {
         var self = this;
-        var userId = this.get('user_id');
-        if (!Ember.isEmpty(userId)) {
-          container.lookup('store:main').find('user', userId).then(function(user){
-            self.set("currentUser", user);
-          });
-        }
-      }.observes('user_id')
+         Ember.$.ajax({
+          url: "/me",
+        }).then(function(response) {
+          container.lookup('store:main').push('user', response.user);
+          self.set("currentUser", container.lookup('store:main').getById('user', response.user));
+        });
+      }.observes('token')
     });
   }
 };
