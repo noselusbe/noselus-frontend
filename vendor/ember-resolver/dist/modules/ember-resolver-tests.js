@@ -125,6 +125,54 @@ test("can lookup something", function(){
   adapter();
 });
 
+test("can lookup something in another namespace", function(){
+  expect(2);
+
+  define('other/adapters/post', [], function(){
+    ok(true, "adapter was invoked properly");
+
+    return Ember.K;
+  });
+
+  var adapter = resolver.resolve('other@adapter:post');
+
+  ok(adapter, 'adapter was returned');
+
+  adapter();
+});
+
+test("can lookup a view in another namespace", function() {
+  expect(2);
+
+  define('other/views/post', [], function(){
+    ok(true, "view was invoked properly");
+
+    return Ember.K;
+  });
+
+  var view = resolver.resolve('view:other@post');
+
+  ok(view, 'view was returned');
+
+  view();
+});
+
+test("can lookup a view", function() {
+  expect(2);
+
+  define('appkit/views/queue-list', [], function(){
+    ok(true, "view was invoked properly");
+
+    return Ember.K;
+  });
+
+  var view = resolver.resolve('view:queue-list');
+
+  ok(view, 'view was returned');
+
+  view();
+});
+
 test("will return the raw value if no 'default' is available", function() {
   define('appkit/fruits/orange', [], function(){
     return 'is awesome';
@@ -423,6 +471,66 @@ test("will not lookup non component templates in components/", function() {
   });
 
   resolver.resolve('template:foo-bar');
+});
+
+module("custom pluralization", {
+  teardown: resetRegistry
+});
+
+test("will use the pluralization specified for a given type", function() {
+  expect(1);
+
+  setupResolver({
+    namespace: {
+      modulePrefix: 'appkit'
+    },
+
+    pluralizedTypes: {
+      'sheep': 'sheep',
+      'octipus': 'octipii'
+    }
+  });
+
+  define('appkit/sheep/baaaaaa', [], function(){
+    ok(true, 'custom pluralization used');
+    return 'whatever';
+  });
+
+  resolver.resolve('sheep:baaaaaa');
+});
+
+test("will pluralize 'config' as 'config' by default", function() {
+  expect(1);
+
+  setupResolver();
+
+  define('appkit/config/environment', [], function(){
+    ok(true, 'config/environment is found');
+    return 'whatever';
+  });
+
+  resolver.resolve('config:environment');
+});
+
+test("'config' can be overridden", function() {
+  expect(1);
+
+  setupResolver({
+    namespace: {
+      modulePrefix: 'appkit'
+    },
+
+    pluralizedTypes: {
+      'config': 'super-duper-config'
+    }
+  });
+
+  define('appkit/super-duper-config/environment', [], function(){
+    ok(true, 'super-duper-config/environment is found');
+    return 'whatever';
+  });
+
+  resolver.resolve('config:environment');
 });
 
 })();

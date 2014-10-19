@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "qunit-notifications",
   "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/dockyard/qunit-notifications",
   "authors": [
     "Brian Cardarella <bcardarella@gmail.com>"
@@ -15,13 +15,13 @@
     "test",
     "tests"
   ],
-  "_release": "0.0.2",
+  "_release": "0.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.0.2",
-    "commit": "0f36109b53a74108fd39451a6488ada048874796"
+    "tag": "v0.0.3",
+    "commit": "5572b6643c9dc1b1147bc3c87956aa562773b0ce"
   },
   "_source": "git://github.com/dockyard/qunit-notifications.git",
-  "_target": "~0.0.2",
+  "_target": "~0.0.3",
   "_originalSource": "qunit-notifications"
 }

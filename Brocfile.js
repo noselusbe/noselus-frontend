@@ -41,6 +41,7 @@ app.import('vendor/spinjs/spin.js');
 app.import('vendor/spinjs/jquery.spin.js');
 app.import('vendor/PACE/pace.js');
 app.import('vendor/PACE/themes/pace-theme-flash.css');
+app.import('bower_components/underscore/underscore.js');
 
 var tree = mergeTrees([app.toTree(), extraAssets]),
     finalTree = tree;

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { initialize } from 'noselus/initializers/session-cutom';
+import { initialize } from 'noselus/initializers/custom-session';
 
 var container, application;
 
@@ -16,8 +16,6 @@ module('SessionCutomInitializer', {
 // Replace this with your real tests.
 test('it works', function() {
   initialize(container, application);
-
   // you would normally confirm the results of the initializer here
   ok(true);
 });
-

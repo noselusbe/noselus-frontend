@@ -34,7 +34,7 @@ define("ember/resolver",
     };
   }
 
-  if (!Object.create && !Object.create(null).hasOwnProperty) {
+  if (!(Object.create && !Object.create(null).hasOwnProperty)) {
     throw new Error("This browser does not support Object.create(null), please polyfil with es5-sham: http://git.io/yBU2rg");
   }
 
@@ -54,15 +54,28 @@ define("ember/resolver",
 
     if (fullName.parsedName === true) { return fullName; }
 
-    var nameParts = fullName.split(":"),
-        type = nameParts[0], fullNameWithoutType = nameParts[1],
-        name = fullNameWithoutType,
-        namespace = get(this, 'namespace'),
-        root = namespace;
+    var prefixParts = fullName.split('@');
+    var prefix;
+
+    if (prefixParts.length === 2) {
+      if (prefixParts[0].split(':')[0] === 'view') {
+        prefixParts[0] = prefixParts[0].split(':')[1];
+        prefixParts[1] = 'view:' + prefixParts[1];
+      }
+
+      prefix = prefixParts[0];
+    }
+
+    var nameParts = prefixParts[prefixParts.length - 1].split(":");
+    var type = nameParts[0], fullNameWithoutType = nameParts[1];
+    var name = fullNameWithoutType;
+    var namespace = get(this, 'namespace');
+    var root = namespace;
 
     return {
       parsedName: true,
       fullName: fullName,
+      prefix: prefix || this.prefix({type: type}),
       type: type,
       fullNameWithoutType: fullNameWithoutType,
       name: name,
@@ -130,6 +143,7 @@ define("ember/resolver",
   var Resolver = Ember.DefaultResolver.extend({
     resolveOther: resolveOther,
     resolveTemplate: resolveOther,
+    pluralizedTypes: null,
 
     makeToString: function(factory, fullName) {
       return '' + this.namespace.modulePrefix + '@' + fullName + ':';
@@ -141,6 +155,12 @@ define("ember/resolver",
     init: function() {
       this._super();
       this._normalizeCache = makeDictionary();
+
+      this.pluralizedTypes = this.pluralizedTypes || makeDictionary();
+
+      if (!this.pluralizedTypes.config) {
+        this.pluralizedTypes.config = 'config';
+      }
     },
     normalize: function(fullName) {
       return this._normalizeCache[fullName] || (this._normalizeCache[fullName] = this._normalize(fullName));
@@ -156,6 +176,10 @@ define("ember/resolver",
       } else {
         return fullName;
       }
+    },
+
+    pluralize: function(type) {
+      return this.pluralizedTypes[type] || (this.pluralizedTypes[type] = type + 's');
     },
 
     podBasedLookupWithPrefix: function(podPrefix, parsedName) {
@@ -185,7 +209,7 @@ define("ember/resolver",
 
     mainModuleName: function(parsedName) {
       // if router:main or adapter:main look for a module with just the type first
-      var tmpModuleName = this.prefix(parsedName) + '/' + parsedName.type;
+      var tmpModuleName = parsedName.prefix + '/' + parsedName.type;
 
       if (parsedName.fullNameWithoutType === 'main') {
         return tmpModuleName;
@@ -193,7 +217,7 @@ define("ember/resolver",
     },
 
     defaultModuleName: function(parsedName) {
-      return this.prefix(parsedName) + '/' +  parsedName.type + 's/' + parsedName.fullNameWithoutType;
+      return parsedName.prefix + '/' +  this.pluralize(parsedName.type) + '/' + parsedName.fullNameWithoutType;
     },
 
     prefix: function(parsedName) {

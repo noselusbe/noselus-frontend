@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  email: '',
+  username: '',
   password: '',
   actions: {
     register: function() {
       var that = this;
       var user = this.store.createRecord('user', {
-        email: that.get('email'),
+        username: that.get('username'),
         password: that.get('password')
       });
 

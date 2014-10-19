@@ -1,6 +1,6 @@
 {
   "name": "ember-qunit-notifications",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "homepage": "https://github.com/dockyard/ember-qunit-notifications",
   "authors": [
     "Brian Cardarella <bcardarella@gmail.com>"
@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "qunit-notifications": "~0.0.2"
+    "qunit-notifications": "~0.0.3"
   }
 }

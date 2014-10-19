@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="page-header">
+      <h1>Questions sauvegardées</h1>
+    </div>
+  </div>
+  <div class="col-xs-12 activityfeed">
+    <div class="row">
+      {{#if controller.model}}
+        {{#each favorite in controller}}
+          <div class="col-xs-10">
+            {{render 'question_list' favorite.question}}
+          </div>
+          <div class="col-xs-2">
+            <a href="#" {{action 'removeFavorite' favorite}} class="btn btn-danger">Effacer</a>
+          </div>
+        {{/each}}
+      {{else}}
+        <p>Vous n'avez pas encore de questions sauvegardées</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

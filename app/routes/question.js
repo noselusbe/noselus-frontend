@@ -5,14 +5,6 @@ export default Ember.Route.extend({
     return this.store.find('question', params.question_id);
   },
 
-  // setupController: function (controller, model) {
-  //   controller.set('model', model);
-  //   // var favorites = this.store.find('favorite');
-  //   // favorites.then(function (data) {
-  //   //   controller.set('favorites', data);
-  //   // });
-  // },
-
   titleToken: function(model) {
     return model.get('title');
   },
@@ -26,25 +18,20 @@ export default Ember.Route.extend({
       }
     },
 
-    // createFavoriteFromQuestion: function (question) {
-    //   var store = this.store;
-    //   var questionsIds = Ember.A([]);
-    //   this.get('controller.favorites.model').forEach(function(favorite) {
-    //     questionsIds.push(favorite.get('question.id'));
-    //   });
-    //
-    //   if ($.inArray(question.id, questionsIds) === -1) {
-    //     console.dir(questionsIds);
-    //     var favorite = store.createRecord('favorite', {
-    //       question: question
-    //     });
-    //
-    //     favorite.save();
-    //     this.get('controller.favorites').pushObject(favorite);
-    //
-    //   } else {
-    //     alert('Cette question est deja dans votre liste de question sauvegardées');
-    //   }
-    // }
+    createFavoriteFromQuestion: function (question) {
+      var store = this.store;
+      var user = store.getById('user', 1);
+      // if (user) {
+        var favorite = this.store.createRecord('favorite', {
+          question: question
+        });
+
+        this.get('controller').set('isFavorited', true);
+
+        // user.get('favorites').pushObject(favorite);
+        this.controllerFor('user/favorites').get('model').addObject(favorite);
+        // user.save();
+      // }
+    }
   }
 });

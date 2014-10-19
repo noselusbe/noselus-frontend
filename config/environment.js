@@ -20,10 +20,18 @@ module.exports = function(environment) {
     }
   };
 
+  // session: 'session:withCurrentUser',
+  //
+  ENV['simle-auth'] = {
+    session: 'session:custom',
+    routeAfterAuthentication: 'homepage',
+    // crossOriginWhitelist: ['http://localhost:4200']
+    // authorizer: 'simple-auth-authorizer:oauth2-bearer'
+  };
+
   ENV['simple-auth-oauth2'] = {
     serverTokenEndpoint: '/auth_token',
-    serverTokenRevocationEndpoint: '/revoke',
-    routeAfterAuthentication: 'questions'
+    serverTokenRevocationEndpoint: '/revoke'
   };
 
 

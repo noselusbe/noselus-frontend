@@ -12,9 +12,9 @@ Router.map(function() {
   this.resource('question', { path: 'questions/:question_id' });
   this.resource('politician', { path: 'politicians/:politician_id' });
   this.route('politicians');
-  // this.resource('favorites');
   this.route('login');
   this.resource('user', function () {
+    this.route('favorites');
     this.route('account', function () {
       this.route('notifications');
       this.route('infos');
