@@ -18,7 +18,8 @@
     "moment": "~2.7.0",
     "spinjs": "~2.0.1",
     "PACE": "git://github.com/HubSpot/pace.git#~0.5.6",
-    "reading-time": "~1.0.0"
+    "reading-time": "~1.0.0",
+    "ember-simple-auth": "0.7.1"
   },
   "resolutions": {
     "ember": "beta",

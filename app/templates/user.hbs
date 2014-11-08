@@ -1,0 +1,8 @@
+{{#if session.isAuthenticated}}
+  <div class="alert alert-info">
+    You are currently authenticated as <em>"{{session.currentUser.username}}"</em> (login <code>{{session.currentUser.id}}</code>)
+  </div>
+{{/if}}
+
+
+{{outlet}}

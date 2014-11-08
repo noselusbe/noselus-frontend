@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'history',
     apiAdapterUrl: 'http://noselus.hurion.eu',
+    userApiAdapterUrl: 'http://localhost:4200',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,6 +20,16 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+  ENV['simple-auth'] = {
+    routeAfterAuthentication: 'user'
+  };
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: '/auth_token',
+    serverTokenRevocationEndpoint: '/revoke'
+  };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

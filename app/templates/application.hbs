@@ -27,6 +27,18 @@
               Nos élus
             {{/link-to}}
           </li>
+          {{#if session.isAuthenticated}}
+            <li>
+              {{#link-to 'user'}}Account{{/link-to}}
+            </li>
+            <li>
+              <a {{ action 'invalidateSession' }}>Logout</a>
+            </li>
+          {{else}}
+            <li>
+              {{#link-to 'login'}}Login{{/link-to}}
+            </li>
+          {{/if}}
         </ul>
       </div>
   </div>

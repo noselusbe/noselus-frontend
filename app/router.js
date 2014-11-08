@@ -13,6 +13,8 @@ Router.map(function() {
   this.resource('politician', { path: 'politicians/:politician_id' });
   this.route('politicians');
   // this.resource('favorites');
+  this.route('login');
+  this.route('user');
 });
 
 Ember.Route.reopen({
